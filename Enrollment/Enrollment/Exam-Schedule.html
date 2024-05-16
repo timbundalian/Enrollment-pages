@@ -1,0 +1,2292 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Dashboard Enrollment</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="../assets/images/lvcc-logo.png"> <!-- Set favicon to LVCC logo -->
+
+        <!-- Theme Config Js -->
+        <script src="../assets/js/hyper-config.js"></script>
+
+        <!-- App css -->
+        <link href="../assets/css/app-creative.min.css" rel="stylesheet" type="text/css" id="app-style" />
+        <!-- LVCC css -->
+        <link rel="stylesheet" type="text/css" href="../assets/css/lvcc.css">
+
+        <!-- Icons css -->
+        <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" /> <!-- link for locale icons from Hyper Kit -->
+
+		<!-- Datatables css -->
+		<link href="../assets/vendor/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+		<link href="../assets/vendor/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+    </head>
+
+	<body>
+        <!-- Begin page -->
+        <div class="wrapper">
+
+    <!-- ========== Topbar Start ========== -->
+    <div class="navbar-custom">
+    <div class="topbar container-fluid">
+        <div class="d-flex align-items-center gap-lg-2 gap-1">
+
+            <!-- Sidebar Menu Toggle Button -->
+            <button class="button-toggle-menu text-secondary">
+                <i class="mdi mdi-menu"></i> <!-- burger menu icon -->
+            </button>
+        </div>
+
+        <ul class="topbar-menu d-flex align-items-center gap-3">
+            <!-- Notification List Start -->
+            <li class="dropdown notification-list">
+                                    <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <i class="ri-notification-3-line font-22 text-secondary"></i>
+                                                    <span class="noti-icon-badge"></span>
+                                            </a>
+                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg py-0">
+                    <div class="p-2 border-top-0 border-start-0 border-end-0 border-dashed border">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h6 class="m-0 font-16 fw-semibold"> Notification</h6>
+                            </div>
+                            <!-- <div class="col-auto">
+                                <a href="javascript: void(0);" class="text-dark text-decoration-underline">
+                                    <small>Clear All</small>
+                                </a>
+                            </div> -->
+                        </div>
+                    </div>
+
+                    <div class="px-3" style="max-height: 300px;" data-simplebar>
+
+                        <!-- <h5 class="text-muted font-13 fw-normal mt-2">Today</h5> -->
+
+                        <!-- item-->
+                                                    <form id="notificationForm_1219" action="https://app.laverdad.edu.ph/admin/read-noti/1219" method="post">
+                                <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                <a href="#" onclick="document.getElementById('notificationForm_1219').submit()" class="dropdown-item p-0 notify-item card shadow-none mb-2 unread-noti">
+                                    <div class="card-body">
+                                        <!-- <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span> -->
+                                        <div class="d-flex align-items-center">
+                                            <div class="flex-shrink-0">
+                                                <div class="notify-icon bg-primary">
+                                                    <i class="mdi mdi-comment-account-outline"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                <h5 class="noti-item-title fw-semibold font-14">New Upload <small class="fw-normal text-muted ms-1">35 minutes ago</small></h5>
+                                                <small class="noti-item-subtitle text-muted">Axl Ulrich Giron has new uploads.</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </form>
+                            <!-- <a href="https://app.laverdad.edu.ph/admin/review-requirements/2754" class="dropdown-item p-0 notify-item card shadow-none mb-2 unread-noti"> -->
+            <!-- item-->
+                        <!-- <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card unread-noti shadow-none mb-2">
+                            <div class="card-body">
+                                <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-shrink-0">
+                                        <div class="notify-icon bg-primary">
+                                            <i class="mdi mdi-comment-account-outline"></i>
+                                        </div>
+                                    </div>
+                                    <div class="flex-grow-1 text-truncate ms-2">
+                                        <h5 class="noti-item-title fw-semibold font-14">New Reupload</h5>
+                                        <small class="noti-item-subtitle text-muted">[Applicant's name] has new reupload</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </a> -->
+
+                        <!-- <div class="text-center">
+                            <i class="mdi mdi-dots-circle mdi-spin text-muted h3 mt-0"></i>
+                        </div> -->
+                    </div>
+
+                    <!-- All-->
+                    <!-- <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item border-top border-light py-2">
+                        View All
+                    </a> -->
+
+                </div>
+            </li>
+            <!-- Notification List End -->
+
+
+            <!-- logged in user tab in header -->
+            <li class="dropdown">
+                <a id="profile-dropdown" class="border-0 nav-link dropdown-toggle arrow-none nav-user px-2 text-dark bg-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                    <span class="account-user-avatar">
+                        <img src="https://app.laverdad.edu.ph/assets/images/users/default-profile-picture1.jpg" alt="user-image" width="32" class="rounded-circle"> <!-- user avatar -->
+                    </span>
+                    <span class="d-lg-flex flex-column gap-1 d-none">
+                        <h5 class="my-0">
+                            Timothy Carl Bundalian
+                        </h5> <!-- user name -->
+                        <h6 class="my-0 fw-normal">System Admin</h6> <!-- user position -->
+                    </span>
+                </a>
+                <!-- dropdown menu at user tab in header -->
+                <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated profile-dropdown">
+                    <!-- item-->
+                    <div class=" dropdown-header noti-title">
+                        <h6 class="text-overflow m-0">Welcome !</h6>
+                    </div>
+
+                    <!-- item-->
+                    <a href="https://app.laverdad.edu.ph/admin/profile" class="dropdown-item">
+                        <i class="mdi mdi-account-circle me-1"></i>
+                        <span>My Account</span>
+                    </a>
+                   <!-- item-->
+                    <form method="POST" action="https://app.laverdad.edu.ph/logout">
+                        <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                        <button class="dropdown-item btn btn-link" type="submit">
+                            <i class="mdi mdi-logout me-1"></i>
+                            <span>Logout</span>
+                        </button>
+
+                    </form>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+            <!-- ========== Topbar End ========== -->             
+
+             <!-- ========== Left Sidebar Start ========== -->
+             <div class="leftside-menu">
+
+                <a id="logo-bg" href="" class="logo logo-light">
+                    <span class="logo-lg">
+                        <img src="https://app.laverdad.edu.ph/assets/images/lvcc-logo.png" id="logo" alt="logo"> <!-- LVCC logo in side nav -->
+                    </span>
+                    <span class="logo-sm">
+                        <img id="logo-sm" src="https://app.laverdad.edu.ph/assets/images/lvcc-logo.png" alt="small logo"> <!-- LVCC logo in collapsed side nav -->
+                    </span>
+                </a>
+            
+                <!-- Sidebar Hover Menu Toggle Button -->
+                <div class="button-sm-hover" data-bs-toggle="tooltip" data-bs-placement="right" title="Show Full Sidebar">
+                    <i class="ri-checkbox-blank-circle-line align-middle"></i>
+                </div>
+            
+                <!-- Full Sidebar Menu Close Button -->
+                <div class="button-close-fullsidebar">
+                    <i class="ri-close-fill align-middle"></i>
+                </div>
+            
+                <!-- Sidebar -left -->
+                <div class="h-100" id="leftside-menu-container" data-simplebar>
+            
+                    <!--- Sidemenu -->
+                    <ul class="side-nav">
+            
+                        <li class="side-nav-title">Home</li>
+            
+                        <li class="side-nav-item loadScreen">
+                            <a href="../Enrollment/Dashboard.html" class="side-nav-link" id="hover">
+                                <i class="uil-home-alt"></i>
+                                <span> Dashboards </span>
+                            </a>
+                        </li>
+            
+                        <li class="side-nav-title">Scholarship Management</li>
+            
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#scheduling" aria-expanded="false"
+                                aria-controls="sidebarEcommerce" class="side-nav-link " id="hover">
+                                <i class="mdi mdi-calendar-text"></i>
+                                <span>Scheduling</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="scheduling">
+                                <ul class="side-nav-second-level mt-2">
+            
+                                    <li>
+                                        <a href="../Enrollment/Application Schedule.html" class="side-nav-link loadScreen" id="hover">
+                                            <span>Application Schedule</span>
+                                        </a>
+                                    </li>
+            
+                                    <li>
+                                        <a href="../Enrollment/Exam-Schedule.html" class="side-nav-link loadScreen" id="hover">
+                                            <span>Exam Schedule</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../Enrollment/Interview-Schedule.html"class="side-nav-link loadScreen" id="hover">
+                                            <span>Interview Schedule</span>
+                                        </a>
+                                    </li>
+            
+                                    <li>
+                                        <a href="../Enrollment/Orientation-Schedule.html" class="side-nav-link loadScreen" id="hover">
+                                            <span>Orientation Schedule</span>
+                                        </a>
+                                    </li>
+            
+            
+                                </ul>
+                            </div>
+                        </li>
+            
+                        <li class="side-nav-item loadScreen">
+                            <a href="../Enrollment/Application-Email-Verification.html" class="side-nav-link " id="hover">
+                                <i class="mdi mdi-card-account-details"></i>
+                                <span>Applicant Email Verification</span>
+                            </a>
+                        </li>
+            
+                        <li class="side-nav-item loadScreen">
+                            <a href="../Enrollment/Scholarship-Applicants.html" class="side-nav-link " id="hover">
+                                <i class="mdi mdi-card-account-details"></i>
+                                <span> Scholarship Applicants </span>
+                            </a>
+                        </li>
+            
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#applicant-screening" aria-expanded="false"
+                                aria-controls="applicant-screening" class="side-nav-link " id="hover">
+                                <i class="mdi mdi-newspaper-variant-multiple"></i>
+                                <span> Applicant Screening </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="applicant-screening">
+                                <ul class="side-nav-second-level mt-2">
+                                    <li>
+                                        <a class="loadScreen" href="../Enrollment//For-Examination.html" class="side-nav-link" id="hover">
+                                            <span>For Examination</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="loadScreen" href="../Enrollment//For-Interview.html" id="hover">
+                                            <span>For Interview</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="loadScreen" href="../Enrollment//For-Orientation.html" id="hover">
+                                            <span>For Orientation</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="loadScreen" href="../Enrollment//For-Enrollment.html" id="hover">
+                                            <span>For Enrollment</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+            
+                        
+            
+                                        <li class="side-nav-item">
+                                <a data-bs-toggle="collapse" href="#export-reports" aria-expanded="false"
+                                    aria-controls="export-reports" class="side-nav-link" id="hover">
+                                    <i class="mdi mdi-application-export"></i>
+                                    <span>Export Reports</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="export-reports">
+                                    <ul class="side-nav-second-level mt-2">
+                                                                        <li>
+                                                <a class="loadScreen" href="#" id="hover">
+                                                    <span>Dashboard (Overall)</span>
+                                                </a>
+                                            </li>
+                                                                    <li>
+                                            <a class="loadScreen" href="#" class="side-nav-link" id="hover">
+                                                <span>Applicants Profile</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="loadScreen" href="#" id="hover">
+                                                <span>Examination Attendance</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="loadScreen" href="#" id="hover">
+                                                <span>Interview Attendance</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="loadScreen" href="#" id="hover">
+                                                <span>Orientation Attendance</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        
+                        <li class="side-nav-title">Pages</li>
+            
+                        
+                        <li class="side-nav-item loadScreen">
+                            <a href="../Enrollment/School-Branch.html" class="side-nav-link" id="hover" >
+                                <i class="ri-building-fill"></i>
+                                <span>School Branch</span>
+                            </a>
+                        </li>
+            
+                        
+                                        <li class="side-nav-item loadScreen">
+                                <a href="../Enrollment/Applicant-status-checking.html" class="side-nav-link" id="hover" >
+                                    <i class="mdi mdi-list-status"></i>
+                                    <span>Applicant Status Checking</span>
+                                </a>
+                            </li>
+                        
+                        
+            
+                        <li class="side-nav-item loadScreen">
+                            <a href="../Enrollment//Activity-logs.html" class="side-nav-link" id="hover" >
+                                <i class="mdi mdi-file-sign"></i>
+                                <span>Activity Logs</span>
+                            </a>
+                        </li>
+            
+                        <li class="side-nav-title">User Management</li>
+            
+                        <li class="side-nav-item loadScreen">
+                            <a href="../Enrollment/Users.html" class="side-nav-link" id="hover">
+                                <i class="mdi mdi-account-group"></i>
+                                <span>Users</span>
+                            </a>
+                        </li>
+            
+                        <li class="side-nav-item loadScreen">
+                            <a href="../Enrollment/Deleted-Users.html" class="side-nav-link" id="hover">
+                                <i class="mdi mdi-archive"></i>
+                                <span>Deleted Users</span>
+                            </a>
+                        </li>
+            
+                        
+            
+                        <li class="side-nav-item loadScreen">
+                            <a href="../Enrollment/Roles-&-Permissions.html" class="side-nav-link" id="hover">
+                                <i class="mdi mdi-account-lock-open"></i>
+                                <span>Roles and Permissions</span>
+                            </a>
+                        </li>
+            
+                        <li class="side-nav-item loadScreen">
+                            <a href="../Enrollment/Permissions.html" class="side-nav-link" id="hover">
+                                <i class="mdi mdi-account-lock-open"></i>
+                                <span>Permission</span>
+                            </a>
+                        </li>
+            
+                        
+            
+            
+            
+                        <br class="mb-5">
+            
+            
+            
+                    </ul>
+                    <!--- End Sidemenu -->
+            
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+             <!-- ========== Left Sidebar End ========== -->
+
+           
+            <!-- Start Content-->
+            <div class="content-page">
+                <!-- Start Content -->
+<div class="container-fluid">
+    <!-- start page title -->
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box">
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="javascript: void(0);">Pages</a></li>
+                                                        <li class="breadcrumb-item active">Examination Schedules</li>
+                                                </ol>
+                </div>
+                                        <h4 class="page-title">Examination Schedules</h4>
+                                </div>
+        </div>
+    </div>
+    <!-- end page title -->
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="d-flex card-header justify-content-between align-items-center">
+                    <h3 class="header-title fw-bolder">
+                                                        Manage Examination Schedules
+                                                </h3>
+                    <button type="button"
+                        class="btn btn-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#add-schedule-modal"
+                        style="background-color: #1F3463; border: none;"
+                        >
+                        <i class="mdi mdi-plus-thick"></i> Add Schedule
+                    </button>
+                    <!-- Add Schedule Modal -->
+                    <div class="modal fade" id="add-schedule-modal" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="myCenterModalLabel">Add Schedule</h4>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="needs-validation" action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/add-schedule" method="post" novalidate>
+                                        <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">
+                                        <input type="hidden" name="current_route_name" id="current_route_name" value="examination.index">
+
+                                                                                        <input type="hidden" name="screening_type_id" id="screening_type_id" class="form-control" value="1">
+                                        
+                                        <div class="mb-3 position-relative" id="datepicker1">
+                                            <label for="schedule_date" class="form-label">Schedule Date</label>
+                                            <input type="date" class="form-control" name="schedule_date" id="schedule_date" data-provide="datepicker" data-date-container="#datepicker1" required>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="schedule_time" class="form-label">Schedule Time</label>
+                                            <input type="time" class="form-control" name="schedule_time" id="schedule_time" required>
+                                        </div>
+
+                                        <div class="mb-3 position-relative" id="datepicker1">
+                                            <label for="venue" class="form-label">Venue</label>
+                                            <textarea class="form-control" name="venue" id="venue" rows="4" placeholder="Enter the venue" required></textarea>
+                                            
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <input type="hidden" name="staff_name" id="staff_name" class="form-control" value="Timothy Carl Bundalian">
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button class="btn btn-primary loadScreen" type="submit">Add</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+                </div>
+                <div class="card-body">
+                    
+                    
+                    <div class="table-responsive">
+                        <table id="basic-datatable" class="table dt-responsive nowrap w-100">
+                            <thead style="background-color: #1F3463; color: #fff;">
+                                <tr>
+                                    <!-- <th>Screening Type</th> -->
+                                    <th>Schedule Date</th>
+                                    <th>Schedule Time</th>
+                                                                                <th>No. of Examinees</th>
+                                                                            <th>Venue</th>
+                                    <th>Scheduled By</th>
+                                    <th style="width: 125px;">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                                                        <tr>
+                                        <!-- <td>Exam</td> -->
+                                        <td>March 16, 2024</td>
+                                        <td>9:00 AM</td>
+                                        <td>18</td>
+                                        <td>La Verda Christian College Inc - Apalit</td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-shrink-0">
+                                                        <img src="https://app.laverdad.edu.ph/assets/images/users/avatar-1.jpg"
+                                                            class="rounded-circle avatar-xs" alt="friend">
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-2">
+                                                        <h5 class="my-0">Registrar</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="table-action">
+                                                                                                <a type="button" data-bs-toggle="modal" data-bs-target="#editSchedule-1" class="action-icon" style="color: #1F3463"> <i class="mdi mdi-pencil"></i></a>
+                                                                                            <!-- <a type="button" class="action-icon text-danger" data-bs-toggle="modal" data-bs-target="#deleteSchedule-1"> <i class="mdi mdi-delete"></i></a> -->
+                                        </td>
+                                    </tr>
+                                    <!-- Edit Schedule Modal -->
+                                    <div id="editSchedule-1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="multiple-oneModalLabel">Edit Schedule</h4>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form class="needs-validation" action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/edit-schedule/1" method="post" novalidate>
+                                                        <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                            <input type="hidden" name="_method" value="PUT">
+                                                        <input type="hidden" name="current_route_name" id="current_route_name"
+                                                            value="examination.index">
+
+                                                                                                                        <input type="hidden" name="screening_type_id" id="screening_type_id" class="form-control" value="1">
+                                                        
+                                                        <div class="mb-3 position-relative" id="datepicker1">
+                                                            <label for="schedule_date" class="form-label">Schedule Date</label>
+                                                            <input type="date" class="form-control" name="schedule_date" id="schedule_date" data-provide="datepicker" data-date-container="#datepicker1" value="2024-03-16">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="schedule_time" class="form-label">Schedule Time</label>
+                                                            <input type="time" class="form-control" name="schedule_time" id="schedule_time" value="09:00:00">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="venue" class="form-label">Venue</label>
+                                                            <textarea class="form-control" name="venue" id="venue" rows="4" placeholder="Enter the venue" required>La Verda Christian College Inc - Apalit</textarea>
+                                                            
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <input type="hidden" name="staff_name" id="staff_name" class="form-control" value="Timothy Carl Bundalian">
+                                                        </div>
+
+                                                        <div class="modal-footer">
+                                                            <button class="btn btn-primary loadScreen" type="submit">Save</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                    <!-- Danger Alert Modal -->
+                                    <div id="deleteSchedule-1" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-sm">
+                                            <div class="modal-content modal-filled bg-danger">
+                                                <div class="modal-body p-4">
+                                                    <div class="text-center">
+                                                        <form action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/destroy-schedule/1" method="post">
+                                                            <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                                <input type="hidden" name="_method" value="DELETE">                                                                <i class="ri-close-circle-line h1"></i>
+                                                            <h4 class="mt-2">Oh snap!</h4>
+                                                            <p class="mt-3">Are you sure to delete this schedule?</p>
+                                                            <input type="hidden" name="current_route_name" id="current_route_name" value="examination.index">
+                                                            <button type="submit" class="btn btn-light my-2 loadScreen" data-bs-dismiss="modal">Continue</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                                                        <tr>
+                                        <!-- <td>Exam</td> -->
+                                        <td>April 13, 2024</td>
+                                        <td>9:00 AM</td>
+                                        <td>27</td>
+                                        <td>La Verda Christian College Inc - Apalit</td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-shrink-0">
+                                                        <img src="https://app.laverdad.edu.ph/assets/images/users/avatar-1.jpg"
+                                                            class="rounded-circle avatar-xs" alt="friend">
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-2">
+                                                        <h5 class="my-0">Alma Lacerna</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="table-action">
+                                                                                                <a type="button" data-bs-toggle="modal" data-bs-target="#editSchedule-2" class="action-icon" style="color: #1F3463"> <i class="mdi mdi-pencil"></i></a>
+                                                                                            <!-- <a type="button" class="action-icon text-danger" data-bs-toggle="modal" data-bs-target="#deleteSchedule-2"> <i class="mdi mdi-delete"></i></a> -->
+                                        </td>
+                                    </tr>
+                                    <!-- Edit Schedule Modal -->
+                                    <div id="editSchedule-2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="multiple-oneModalLabel">Edit Schedule</h4>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form class="needs-validation" action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/edit-schedule/2" method="post" novalidate>
+                                                        <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                            <input type="hidden" name="_method" value="PUT">
+                                                        <input type="hidden" name="current_route_name" id="current_route_name"
+                                                            value="examination.index">
+
+                                                                                                                        <input type="hidden" name="screening_type_id" id="screening_type_id" class="form-control" value="1">
+                                                        
+                                                        <div class="mb-3 position-relative" id="datepicker1">
+                                                            <label for="schedule_date" class="form-label">Schedule Date</label>
+                                                            <input type="date" class="form-control" name="schedule_date" id="schedule_date" data-provide="datepicker" data-date-container="#datepicker1" value="2024-04-13">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="schedule_time" class="form-label">Schedule Time</label>
+                                                            <input type="time" class="form-control" name="schedule_time" id="schedule_time" value="09:00:00">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="venue" class="form-label">Venue</label>
+                                                            <textarea class="form-control" name="venue" id="venue" rows="4" placeholder="Enter the venue" required>La Verda Christian College Inc - Apalit</textarea>
+                                                            
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <input type="hidden" name="staff_name" id="staff_name" class="form-control" value="Timothy Carl Bundalian">
+                                                        </div>
+
+                                                        <div class="modal-footer">
+                                                            <button class="btn btn-primary loadScreen" type="submit">Save</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                    <!-- Danger Alert Modal -->
+                                    <div id="deleteSchedule-2" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-sm">
+                                            <div class="modal-content modal-filled bg-danger">
+                                                <div class="modal-body p-4">
+                                                    <div class="text-center">
+                                                        <form action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/destroy-schedule/2" method="post">
+                                                            <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                                <input type="hidden" name="_method" value="DELETE">                                                                <i class="ri-close-circle-line h1"></i>
+                                                            <h4 class="mt-2">Oh snap!</h4>
+                                                            <p class="mt-3">Are you sure to delete this schedule?</p>
+                                                            <input type="hidden" name="current_route_name" id="current_route_name" value="examination.index">
+                                                            <button type="submit" class="btn btn-light my-2 loadScreen" data-bs-dismiss="modal">Continue</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                                                        <tr>
+                                        <!-- <td>Exam</td> -->
+                                        <td>May 18, 2024</td>
+                                        <td>9:00 AM</td>
+                                        <td>112</td>
+                                        <td>La Verda Christian College Inc - Apalit</td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-shrink-0">
+                                                        <img src="https://app.laverdad.edu.ph/assets/images/users/avatar-1.jpg"
+                                                            class="rounded-circle avatar-xs" alt="friend">
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-2">
+                                                        <h5 class="my-0">Registrar</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="table-action">
+                                                                                                <a type="button" data-bs-toggle="modal" data-bs-target="#editSchedule-3" class="action-icon" style="color: #1F3463"> <i class="mdi mdi-pencil"></i></a>
+                                                                                            <!-- <a type="button" class="action-icon text-danger" data-bs-toggle="modal" data-bs-target="#deleteSchedule-3"> <i class="mdi mdi-delete"></i></a> -->
+                                        </td>
+                                    </tr>
+                                    <!-- Edit Schedule Modal -->
+                                    <div id="editSchedule-3" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="multiple-oneModalLabel">Edit Schedule</h4>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form class="needs-validation" action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/edit-schedule/3" method="post" novalidate>
+                                                        <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                            <input type="hidden" name="_method" value="PUT">
+                                                        <input type="hidden" name="current_route_name" id="current_route_name"
+                                                            value="examination.index">
+
+                                                                                                                        <input type="hidden" name="screening_type_id" id="screening_type_id" class="form-control" value="1">
+                                                        
+                                                        <div class="mb-3 position-relative" id="datepicker1">
+                                                            <label for="schedule_date" class="form-label">Schedule Date</label>
+                                                            <input type="date" class="form-control" name="schedule_date" id="schedule_date" data-provide="datepicker" data-date-container="#datepicker1" value="2024-05-18">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="schedule_time" class="form-label">Schedule Time</label>
+                                                            <input type="time" class="form-control" name="schedule_time" id="schedule_time" value="09:00:00">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="venue" class="form-label">Venue</label>
+                                                            <textarea class="form-control" name="venue" id="venue" rows="4" placeholder="Enter the venue" required>La Verda Christian College Inc - Apalit</textarea>
+                                                            
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <input type="hidden" name="staff_name" id="staff_name" class="form-control" value="Timothy Carl Bundalian">
+                                                        </div>
+
+                                                        <div class="modal-footer">
+                                                            <button class="btn btn-primary loadScreen" type="submit">Save</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                    <!-- Danger Alert Modal -->
+                                    <div id="deleteSchedule-3" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-sm">
+                                            <div class="modal-content modal-filled bg-danger">
+                                                <div class="modal-body p-4">
+                                                    <div class="text-center">
+                                                        <form action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/destroy-schedule/3" method="post">
+                                                            <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                                <input type="hidden" name="_method" value="DELETE">                                                                <i class="ri-close-circle-line h1"></i>
+                                                            <h4 class="mt-2">Oh snap!</h4>
+                                                            <p class="mt-3">Are you sure to delete this schedule?</p>
+                                                            <input type="hidden" name="current_route_name" id="current_route_name" value="examination.index">
+                                                            <button type="submit" class="btn btn-light my-2 loadScreen" data-bs-dismiss="modal">Continue</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                                                        <tr>
+                                        <!-- <td>Exam</td> -->
+                                        <td>April 15, 2024</td>
+                                        <td>1:00 PM</td>
+                                        <td>0</td>
+                                        <td>LVCS (Pre-School Room) - Apalit, Pampanga</td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-shrink-0">
+                                                        <img src="https://app.laverdad.edu.ph/assets/images/users/avatar-1.jpg"
+                                                            class="rounded-circle avatar-xs" alt="friend">
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-2">
+                                                        <h5 class="my-0">Joeward Peralta</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="table-action">
+                                                                                                <a type="button" data-bs-toggle="modal" data-bs-target="#editSchedule-10" class="action-icon" style="color: #1F3463"> <i class="mdi mdi-pencil"></i></a>
+                                                                                            <!-- <a type="button" class="action-icon text-danger" data-bs-toggle="modal" data-bs-target="#deleteSchedule-10"> <i class="mdi mdi-delete"></i></a> -->
+                                        </td>
+                                    </tr>
+                                    <!-- Edit Schedule Modal -->
+                                    <div id="editSchedule-10" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="multiple-oneModalLabel">Edit Schedule</h4>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form class="needs-validation" action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/edit-schedule/10" method="post" novalidate>
+                                                        <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                            <input type="hidden" name="_method" value="PUT">
+                                                        <input type="hidden" name="current_route_name" id="current_route_name"
+                                                            value="examination.index">
+
+                                                                                                                        <input type="hidden" name="screening_type_id" id="screening_type_id" class="form-control" value="1">
+                                                        
+                                                        <div class="mb-3 position-relative" id="datepicker1">
+                                                            <label for="schedule_date" class="form-label">Schedule Date</label>
+                                                            <input type="date" class="form-control" name="schedule_date" id="schedule_date" data-provide="datepicker" data-date-container="#datepicker1" value="2024-04-15">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="schedule_time" class="form-label">Schedule Time</label>
+                                                            <input type="time" class="form-control" name="schedule_time" id="schedule_time" value="13:00:00">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="venue" class="form-label">Venue</label>
+                                                            <textarea class="form-control" name="venue" id="venue" rows="4" placeholder="Enter the venue" required>LVCS (Pre-School Room) - Apalit, Pampanga</textarea>
+                                                            
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <input type="hidden" name="staff_name" id="staff_name" class="form-control" value="Timothy Carl Bundalian">
+                                                        </div>
+
+                                                        <div class="modal-footer">
+                                                            <button class="btn btn-primary loadScreen" type="submit">Save</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                    <!-- Danger Alert Modal -->
+                                    <div id="deleteSchedule-10" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-sm">
+                                            <div class="modal-content modal-filled bg-danger">
+                                                <div class="modal-body p-4">
+                                                    <div class="text-center">
+                                                        <form action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/destroy-schedule/10" method="post">
+                                                            <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                                <input type="hidden" name="_method" value="DELETE">                                                                <i class="ri-close-circle-line h1"></i>
+                                                            <h4 class="mt-2">Oh snap!</h4>
+                                                            <p class="mt-3">Are you sure to delete this schedule?</p>
+                                                            <input type="hidden" name="current_route_name" id="current_route_name" value="examination.index">
+                                                            <button type="submit" class="btn btn-light my-2 loadScreen" data-bs-dismiss="modal">Continue</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                                                        <tr>
+                                        <!-- <td>Exam</td> -->
+                                        <td>April 16, 2024</td>
+                                        <td>1:00 PM</td>
+                                        <td>0</td>
+                                        <td>LVCS (Pre-School Room) - Apalit, Pampanga</td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-shrink-0">
+                                                        <img src="https://app.laverdad.edu.ph/assets/images/users/avatar-1.jpg"
+                                                            class="rounded-circle avatar-xs" alt="friend">
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-2">
+                                                        <h5 class="my-0">Joeward Peralta</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="table-action">
+                                                                                                <a type="button" data-bs-toggle="modal" data-bs-target="#editSchedule-11" class="action-icon" style="color: #1F3463"> <i class="mdi mdi-pencil"></i></a>
+                                                                                            <!-- <a type="button" class="action-icon text-danger" data-bs-toggle="modal" data-bs-target="#deleteSchedule-11"> <i class="mdi mdi-delete"></i></a> -->
+                                        </td>
+                                    </tr>
+                                    <!-- Edit Schedule Modal -->
+                                    <div id="editSchedule-11" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="multiple-oneModalLabel">Edit Schedule</h4>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form class="needs-validation" action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/edit-schedule/11" method="post" novalidate>
+                                                        <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                            <input type="hidden" name="_method" value="PUT">
+                                                        <input type="hidden" name="current_route_name" id="current_route_name"
+                                                            value="examination.index">
+
+                                                                                                                        <input type="hidden" name="screening_type_id" id="screening_type_id" class="form-control" value="1">
+                                                        
+                                                        <div class="mb-3 position-relative" id="datepicker1">
+                                                            <label for="schedule_date" class="form-label">Schedule Date</label>
+                                                            <input type="date" class="form-control" name="schedule_date" id="schedule_date" data-provide="datepicker" data-date-container="#datepicker1" value="2024-04-16">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="schedule_time" class="form-label">Schedule Time</label>
+                                                            <input type="time" class="form-control" name="schedule_time" id="schedule_time" value="13:00:00">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="venue" class="form-label">Venue</label>
+                                                            <textarea class="form-control" name="venue" id="venue" rows="4" placeholder="Enter the venue" required>LVCS (Pre-School Room) - Apalit, Pampanga</textarea>
+                                                            
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <input type="hidden" name="staff_name" id="staff_name" class="form-control" value="Timothy Carl Bundalian">
+                                                        </div>
+
+                                                        <div class="modal-footer">
+                                                            <button class="btn btn-primary loadScreen" type="submit">Save</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                    <!-- Danger Alert Modal -->
+                                    <div id="deleteSchedule-11" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-sm">
+                                            <div class="modal-content modal-filled bg-danger">
+                                                <div class="modal-body p-4">
+                                                    <div class="text-center">
+                                                        <form action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/destroy-schedule/11" method="post">
+                                                            <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                                <input type="hidden" name="_method" value="DELETE">                                                                <i class="ri-close-circle-line h1"></i>
+                                                            <h4 class="mt-2">Oh snap!</h4>
+                                                            <p class="mt-3">Are you sure to delete this schedule?</p>
+                                                            <input type="hidden" name="current_route_name" id="current_route_name" value="examination.index">
+                                                            <button type="submit" class="btn btn-light my-2 loadScreen" data-bs-dismiss="modal">Continue</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                                                        <tr>
+                                        <!-- <td>Exam</td> -->
+                                        <td>April 20, 2024</td>
+                                        <td>9:00 AM</td>
+                                        <td>107</td>
+                                        <td>La Verdad Christian College Inc - Apalit</td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-shrink-0">
+                                                        <img src="https://app.laverdad.edu.ph/assets/images/users/avatar-1.jpg"
+                                                            class="rounded-circle avatar-xs" alt="friend">
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-2">
+                                                        <h5 class="my-0">Alma Lacerna</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="table-action">
+                                                                                                <a type="button" data-bs-toggle="modal" data-bs-target="#editSchedule-12" class="action-icon" style="color: #1F3463"> <i class="mdi mdi-pencil"></i></a>
+                                                                                            <!-- <a type="button" class="action-icon text-danger" data-bs-toggle="modal" data-bs-target="#deleteSchedule-12"> <i class="mdi mdi-delete"></i></a> -->
+                                        </td>
+                                    </tr>
+                                    <!-- Edit Schedule Modal -->
+                                    <div id="editSchedule-12" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="multiple-oneModalLabel">Edit Schedule</h4>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form class="needs-validation" action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/edit-schedule/12" method="post" novalidate>
+                                                        <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                            <input type="hidden" name="_method" value="PUT">
+                                                        <input type="hidden" name="current_route_name" id="current_route_name"
+                                                            value="examination.index">
+
+                                                                                                                        <input type="hidden" name="screening_type_id" id="screening_type_id" class="form-control" value="1">
+                                                        
+                                                        <div class="mb-3 position-relative" id="datepicker1">
+                                                            <label for="schedule_date" class="form-label">Schedule Date</label>
+                                                            <input type="date" class="form-control" name="schedule_date" id="schedule_date" data-provide="datepicker" data-date-container="#datepicker1" value="2024-04-20">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="schedule_time" class="form-label">Schedule Time</label>
+                                                            <input type="time" class="form-control" name="schedule_time" id="schedule_time" value="09:00:00">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="venue" class="form-label">Venue</label>
+                                                            <textarea class="form-control" name="venue" id="venue" rows="4" placeholder="Enter the venue" required>La Verdad Christian College Inc - Apalit</textarea>
+                                                            
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <input type="hidden" name="staff_name" id="staff_name" class="form-control" value="Timothy Carl Bundalian">
+                                                        </div>
+
+                                                        <div class="modal-footer">
+                                                            <button class="btn btn-primary loadScreen" type="submit">Save</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                    <!-- Danger Alert Modal -->
+                                    <div id="deleteSchedule-12" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-sm">
+                                            <div class="modal-content modal-filled bg-danger">
+                                                <div class="modal-body p-4">
+                                                    <div class="text-center">
+                                                        <form action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/destroy-schedule/12" method="post">
+                                                            <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                                <input type="hidden" name="_method" value="DELETE">                                                                <i class="ri-close-circle-line h1"></i>
+                                                            <h4 class="mt-2">Oh snap!</h4>
+                                                            <p class="mt-3">Are you sure to delete this schedule?</p>
+                                                            <input type="hidden" name="current_route_name" id="current_route_name" value="examination.index">
+                                                            <button type="submit" class="btn btn-light my-2 loadScreen" data-bs-dismiss="modal">Continue</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                                                        <tr>
+                                        <!-- <td>Exam</td> -->
+                                        <td>April 23, 2024</td>
+                                        <td>1:00 PM</td>
+                                        <td>2</td>
+                                        <td>@LVCS Apalit - Pre-School Room</td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-shrink-0">
+                                                        <img src="https://app.laverdad.edu.ph/assets/images/users/avatar-1.jpg"
+                                                            class="rounded-circle avatar-xs" alt="friend">
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-2">
+                                                        <h5 class="my-0">Joeward Peralta</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="table-action">
+                                                                                                <a type="button" data-bs-toggle="modal" data-bs-target="#editSchedule-14" class="action-icon" style="color: #1F3463"> <i class="mdi mdi-pencil"></i></a>
+                                                                                            <!-- <a type="button" class="action-icon text-danger" data-bs-toggle="modal" data-bs-target="#deleteSchedule-14"> <i class="mdi mdi-delete"></i></a> -->
+                                        </td>
+                                    </tr>
+                                    <!-- Edit Schedule Modal -->
+                                    <div id="editSchedule-14" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="multiple-oneModalLabel">Edit Schedule</h4>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form class="needs-validation" action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/edit-schedule/14" method="post" novalidate>
+                                                        <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                            <input type="hidden" name="_method" value="PUT">
+                                                        <input type="hidden" name="current_route_name" id="current_route_name"
+                                                            value="examination.index">
+
+                                                                                                                        <input type="hidden" name="screening_type_id" id="screening_type_id" class="form-control" value="1">
+                                                        
+                                                        <div class="mb-3 position-relative" id="datepicker1">
+                                                            <label for="schedule_date" class="form-label">Schedule Date</label>
+                                                            <input type="date" class="form-control" name="schedule_date" id="schedule_date" data-provide="datepicker" data-date-container="#datepicker1" value="2024-04-23">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="schedule_time" class="form-label">Schedule Time</label>
+                                                            <input type="time" class="form-control" name="schedule_time" id="schedule_time" value="13:00:00">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="venue" class="form-label">Venue</label>
+                                                            <textarea class="form-control" name="venue" id="venue" rows="4" placeholder="Enter the venue" required>@LVCS Apalit - Pre-School Room</textarea>
+                                                            
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <input type="hidden" name="staff_name" id="staff_name" class="form-control" value="Timothy Carl Bundalian">
+                                                        </div>
+
+                                                        <div class="modal-footer">
+                                                            <button class="btn btn-primary loadScreen" type="submit">Save</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                    <!-- Danger Alert Modal -->
+                                    <div id="deleteSchedule-14" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-sm">
+                                            <div class="modal-content modal-filled bg-danger">
+                                                <div class="modal-body p-4">
+                                                    <div class="text-center">
+                                                        <form action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/destroy-schedule/14" method="post">
+                                                            <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                                <input type="hidden" name="_method" value="DELETE">                                                                <i class="ri-close-circle-line h1"></i>
+                                                            <h4 class="mt-2">Oh snap!</h4>
+                                                            <p class="mt-3">Are you sure to delete this schedule?</p>
+                                                            <input type="hidden" name="current_route_name" id="current_route_name" value="examination.index">
+                                                            <button type="submit" class="btn btn-light my-2 loadScreen" data-bs-dismiss="modal">Continue</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                                                        <tr>
+                                        <!-- <td>Exam</td> -->
+                                        <td>April 23, 2024</td>
+                                        <td>1:30 PM</td>
+                                        <td>3</td>
+                                        <td>@LVCS Apalit - Pre-School Room</td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-shrink-0">
+                                                        <img src="https://app.laverdad.edu.ph/assets/images/users/avatar-1.jpg"
+                                                            class="rounded-circle avatar-xs" alt="friend">
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-2">
+                                                        <h5 class="my-0">Joeward Peralta</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="table-action">
+                                                                                                <a type="button" data-bs-toggle="modal" data-bs-target="#editSchedule-15" class="action-icon" style="color: #1F3463"> <i class="mdi mdi-pencil"></i></a>
+                                                                                            <!-- <a type="button" class="action-icon text-danger" data-bs-toggle="modal" data-bs-target="#deleteSchedule-15"> <i class="mdi mdi-delete"></i></a> -->
+                                        </td>
+                                    </tr>
+                                    <!-- Edit Schedule Modal -->
+                                    <div id="editSchedule-15" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="multiple-oneModalLabel">Edit Schedule</h4>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form class="needs-validation" action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/edit-schedule/15" method="post" novalidate>
+                                                        <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                            <input type="hidden" name="_method" value="PUT">
+                                                        <input type="hidden" name="current_route_name" id="current_route_name"
+                                                            value="examination.index">
+
+                                                                                                                        <input type="hidden" name="screening_type_id" id="screening_type_id" class="form-control" value="1">
+                                                        
+                                                        <div class="mb-3 position-relative" id="datepicker1">
+                                                            <label for="schedule_date" class="form-label">Schedule Date</label>
+                                                            <input type="date" class="form-control" name="schedule_date" id="schedule_date" data-provide="datepicker" data-date-container="#datepicker1" value="2024-04-23">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="schedule_time" class="form-label">Schedule Time</label>
+                                                            <input type="time" class="form-control" name="schedule_time" id="schedule_time" value="13:30:00">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="venue" class="form-label">Venue</label>
+                                                            <textarea class="form-control" name="venue" id="venue" rows="4" placeholder="Enter the venue" required>@LVCS Apalit - Pre-School Room</textarea>
+                                                            
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <input type="hidden" name="staff_name" id="staff_name" class="form-control" value="Timothy Carl Bundalian">
+                                                        </div>
+
+                                                        <div class="modal-footer">
+                                                            <button class="btn btn-primary loadScreen" type="submit">Save</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                    <!-- Danger Alert Modal -->
+                                    <div id="deleteSchedule-15" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-sm">
+                                            <div class="modal-content modal-filled bg-danger">
+                                                <div class="modal-body p-4">
+                                                    <div class="text-center">
+                                                        <form action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/destroy-schedule/15" method="post">
+                                                            <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                                <input type="hidden" name="_method" value="DELETE">                                                                <i class="ri-close-circle-line h1"></i>
+                                                            <h4 class="mt-2">Oh snap!</h4>
+                                                            <p class="mt-3">Are you sure to delete this schedule?</p>
+                                                            <input type="hidden" name="current_route_name" id="current_route_name" value="examination.index">
+                                                            <button type="submit" class="btn btn-light my-2 loadScreen" data-bs-dismiss="modal">Continue</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                                                        <tr>
+                                        <!-- <td>Exam</td> -->
+                                        <td>April 25, 2024</td>
+                                        <td>1:00 PM</td>
+                                        <td>4</td>
+                                        <td>@LVCS Apalit - Pre-School Room</td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-shrink-0">
+                                                        <img src="https://app.laverdad.edu.ph/assets/images/users/avatar-1.jpg"
+                                                            class="rounded-circle avatar-xs" alt="friend">
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-2">
+                                                        <h5 class="my-0">Joeward Peralta</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="table-action">
+                                                                                                <a type="button" data-bs-toggle="modal" data-bs-target="#editSchedule-16" class="action-icon" style="color: #1F3463"> <i class="mdi mdi-pencil"></i></a>
+                                                                                            <!-- <a type="button" class="action-icon text-danger" data-bs-toggle="modal" data-bs-target="#deleteSchedule-16"> <i class="mdi mdi-delete"></i></a> -->
+                                        </td>
+                                    </tr>
+                                    <!-- Edit Schedule Modal -->
+                                    <div id="editSchedule-16" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="multiple-oneModalLabel">Edit Schedule</h4>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form class="needs-validation" action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/edit-schedule/16" method="post" novalidate>
+                                                        <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                            <input type="hidden" name="_method" value="PUT">
+                                                        <input type="hidden" name="current_route_name" id="current_route_name"
+                                                            value="examination.index">
+
+                                                                                                                        <input type="hidden" name="screening_type_id" id="screening_type_id" class="form-control" value="1">
+                                                        
+                                                        <div class="mb-3 position-relative" id="datepicker1">
+                                                            <label for="schedule_date" class="form-label">Schedule Date</label>
+                                                            <input type="date" class="form-control" name="schedule_date" id="schedule_date" data-provide="datepicker" data-date-container="#datepicker1" value="2024-04-25">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="schedule_time" class="form-label">Schedule Time</label>
+                                                            <input type="time" class="form-control" name="schedule_time" id="schedule_time" value="13:00:00">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="venue" class="form-label">Venue</label>
+                                                            <textarea class="form-control" name="venue" id="venue" rows="4" placeholder="Enter the venue" required>@LVCS Apalit - Pre-School Room</textarea>
+                                                            
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <input type="hidden" name="staff_name" id="staff_name" class="form-control" value="Timothy Carl Bundalian">
+                                                        </div>
+
+                                                        <div class="modal-footer">
+                                                            <button class="btn btn-primary loadScreen" type="submit">Save</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                    <!-- Danger Alert Modal -->
+                                    <div id="deleteSchedule-16" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-sm">
+                                            <div class="modal-content modal-filled bg-danger">
+                                                <div class="modal-body p-4">
+                                                    <div class="text-center">
+                                                        <form action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/destroy-schedule/16" method="post">
+                                                            <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                                <input type="hidden" name="_method" value="DELETE">                                                                <i class="ri-close-circle-line h1"></i>
+                                                            <h4 class="mt-2">Oh snap!</h4>
+                                                            <p class="mt-3">Are you sure to delete this schedule?</p>
+                                                            <input type="hidden" name="current_route_name" id="current_route_name" value="examination.index">
+                                                            <button type="submit" class="btn btn-light my-2 loadScreen" data-bs-dismiss="modal">Continue</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                                                        <tr>
+                                        <!-- <td>Exam</td> -->
+                                        <td>April 25, 2024</td>
+                                        <td>1:30 PM</td>
+                                        <td>3</td>
+                                        <td>@LVCS Apalit - Pre-School Room</td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-shrink-0">
+                                                        <img src="https://app.laverdad.edu.ph/assets/images/users/avatar-1.jpg"
+                                                            class="rounded-circle avatar-xs" alt="friend">
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-2">
+                                                        <h5 class="my-0">Joeward Peralta</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="table-action">
+                                                                                                <a type="button" data-bs-toggle="modal" data-bs-target="#editSchedule-17" class="action-icon" style="color: #1F3463"> <i class="mdi mdi-pencil"></i></a>
+                                                                                            <!-- <a type="button" class="action-icon text-danger" data-bs-toggle="modal" data-bs-target="#deleteSchedule-17"> <i class="mdi mdi-delete"></i></a> -->
+                                        </td>
+                                    </tr>
+                                    <!-- Edit Schedule Modal -->
+                                    <div id="editSchedule-17" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="multiple-oneModalLabel">Edit Schedule</h4>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form class="needs-validation" action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/edit-schedule/17" method="post" novalidate>
+                                                        <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                            <input type="hidden" name="_method" value="PUT">
+                                                        <input type="hidden" name="current_route_name" id="current_route_name"
+                                                            value="examination.index">
+
+                                                                                                                        <input type="hidden" name="screening_type_id" id="screening_type_id" class="form-control" value="1">
+                                                        
+                                                        <div class="mb-3 position-relative" id="datepicker1">
+                                                            <label for="schedule_date" class="form-label">Schedule Date</label>
+                                                            <input type="date" class="form-control" name="schedule_date" id="schedule_date" data-provide="datepicker" data-date-container="#datepicker1" value="2024-04-25">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="schedule_time" class="form-label">Schedule Time</label>
+                                                            <input type="time" class="form-control" name="schedule_time" id="schedule_time" value="13:30:00">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="venue" class="form-label">Venue</label>
+                                                            <textarea class="form-control" name="venue" id="venue" rows="4" placeholder="Enter the venue" required>@LVCS Apalit - Pre-School Room</textarea>
+                                                            
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <input type="hidden" name="staff_name" id="staff_name" class="form-control" value="Timothy Carl Bundalian">
+                                                        </div>
+
+                                                        <div class="modal-footer">
+                                                            <button class="btn btn-primary loadScreen" type="submit">Save</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                    <!-- Danger Alert Modal -->
+                                    <div id="deleteSchedule-17" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-sm">
+                                            <div class="modal-content modal-filled bg-danger">
+                                                <div class="modal-body p-4">
+                                                    <div class="text-center">
+                                                        <form action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/destroy-schedule/17" method="post">
+                                                            <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                                <input type="hidden" name="_method" value="DELETE">                                                                <i class="ri-close-circle-line h1"></i>
+                                                            <h4 class="mt-2">Oh snap!</h4>
+                                                            <p class="mt-3">Are you sure to delete this schedule?</p>
+                                                            <input type="hidden" name="current_route_name" id="current_route_name" value="examination.index">
+                                                            <button type="submit" class="btn btn-light my-2 loadScreen" data-bs-dismiss="modal">Continue</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                                                        <tr>
+                                        <!-- <td>Exam</td> -->
+                                        <td>April 26, 2024</td>
+                                        <td>1:00 PM</td>
+                                        <td>4</td>
+                                        <td>@LVCS Apalit - Pre-School Room</td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-shrink-0">
+                                                        <img src="https://app.laverdad.edu.ph/assets/images/users/avatar-1.jpg"
+                                                            class="rounded-circle avatar-xs" alt="friend">
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-2">
+                                                        <h5 class="my-0">Joeward Peralta</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="table-action">
+                                                                                                <a type="button" data-bs-toggle="modal" data-bs-target="#editSchedule-18" class="action-icon" style="color: #1F3463"> <i class="mdi mdi-pencil"></i></a>
+                                                                                            <!-- <a type="button" class="action-icon text-danger" data-bs-toggle="modal" data-bs-target="#deleteSchedule-18"> <i class="mdi mdi-delete"></i></a> -->
+                                        </td>
+                                    </tr>
+                                    <!-- Edit Schedule Modal -->
+                                    <div id="editSchedule-18" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="multiple-oneModalLabel">Edit Schedule</h4>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form class="needs-validation" action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/edit-schedule/18" method="post" novalidate>
+                                                        <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                            <input type="hidden" name="_method" value="PUT">
+                                                        <input type="hidden" name="current_route_name" id="current_route_name"
+                                                            value="examination.index">
+
+                                                                                                                        <input type="hidden" name="screening_type_id" id="screening_type_id" class="form-control" value="1">
+                                                        
+                                                        <div class="mb-3 position-relative" id="datepicker1">
+                                                            <label for="schedule_date" class="form-label">Schedule Date</label>
+                                                            <input type="date" class="form-control" name="schedule_date" id="schedule_date" data-provide="datepicker" data-date-container="#datepicker1" value="2024-04-26">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="schedule_time" class="form-label">Schedule Time</label>
+                                                            <input type="time" class="form-control" name="schedule_time" id="schedule_time" value="13:00:00">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="venue" class="form-label">Venue</label>
+                                                            <textarea class="form-control" name="venue" id="venue" rows="4" placeholder="Enter the venue" required>@LVCS Apalit - Pre-School Room</textarea>
+                                                            
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <input type="hidden" name="staff_name" id="staff_name" class="form-control" value="Timothy Carl Bundalian">
+                                                        </div>
+
+                                                        <div class="modal-footer">
+                                                            <button class="btn btn-primary loadScreen" type="submit">Save</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                    <!-- Danger Alert Modal -->
+                                    <div id="deleteSchedule-18" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-sm">
+                                            <div class="modal-content modal-filled bg-danger">
+                                                <div class="modal-body p-4">
+                                                    <div class="text-center">
+                                                        <form action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/destroy-schedule/18" method="post">
+                                                            <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                                <input type="hidden" name="_method" value="DELETE">                                                                <i class="ri-close-circle-line h1"></i>
+                                                            <h4 class="mt-2">Oh snap!</h4>
+                                                            <p class="mt-3">Are you sure to delete this schedule?</p>
+                                                            <input type="hidden" name="current_route_name" id="current_route_name" value="examination.index">
+                                                            <button type="submit" class="btn btn-light my-2 loadScreen" data-bs-dismiss="modal">Continue</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                                                        <tr>
+                                        <!-- <td>Exam</td> -->
+                                        <td>April 26, 2024</td>
+                                        <td>1:30 PM</td>
+                                        <td>1</td>
+                                        <td>@LVCS Apalit - Pre-School Room</td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-shrink-0">
+                                                        <img src="https://app.laverdad.edu.ph/assets/images/users/avatar-1.jpg"
+                                                            class="rounded-circle avatar-xs" alt="friend">
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-2">
+                                                        <h5 class="my-0">Joeward Peralta</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="table-action">
+                                                                                                <a type="button" data-bs-toggle="modal" data-bs-target="#editSchedule-19" class="action-icon" style="color: #1F3463"> <i class="mdi mdi-pencil"></i></a>
+                                                                                            <!-- <a type="button" class="action-icon text-danger" data-bs-toggle="modal" data-bs-target="#deleteSchedule-19"> <i class="mdi mdi-delete"></i></a> -->
+                                        </td>
+                                    </tr>
+                                    <!-- Edit Schedule Modal -->
+                                    <div id="editSchedule-19" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="multiple-oneModalLabel">Edit Schedule</h4>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form class="needs-validation" action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/edit-schedule/19" method="post" novalidate>
+                                                        <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                            <input type="hidden" name="_method" value="PUT">
+                                                        <input type="hidden" name="current_route_name" id="current_route_name"
+                                                            value="examination.index">
+
+                                                                                                                        <input type="hidden" name="screening_type_id" id="screening_type_id" class="form-control" value="1">
+                                                        
+                                                        <div class="mb-3 position-relative" id="datepicker1">
+                                                            <label for="schedule_date" class="form-label">Schedule Date</label>
+                                                            <input type="date" class="form-control" name="schedule_date" id="schedule_date" data-provide="datepicker" data-date-container="#datepicker1" value="2024-04-26">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="schedule_time" class="form-label">Schedule Time</label>
+                                                            <input type="time" class="form-control" name="schedule_time" id="schedule_time" value="13:30:00">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="venue" class="form-label">Venue</label>
+                                                            <textarea class="form-control" name="venue" id="venue" rows="4" placeholder="Enter the venue" required>@LVCS Apalit - Pre-School Room</textarea>
+                                                            
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <input type="hidden" name="staff_name" id="staff_name" class="form-control" value="Timothy Carl Bundalian">
+                                                        </div>
+
+                                                        <div class="modal-footer">
+                                                            <button class="btn btn-primary loadScreen" type="submit">Save</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                    <!-- Danger Alert Modal -->
+                                    <div id="deleteSchedule-19" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-sm">
+                                            <div class="modal-content modal-filled bg-danger">
+                                                <div class="modal-body p-4">
+                                                    <div class="text-center">
+                                                        <form action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/destroy-schedule/19" method="post">
+                                                            <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                                <input type="hidden" name="_method" value="DELETE">                                                                <i class="ri-close-circle-line h1"></i>
+                                                            <h4 class="mt-2">Oh snap!</h4>
+                                                            <p class="mt-3">Are you sure to delete this schedule?</p>
+                                                            <input type="hidden" name="current_route_name" id="current_route_name" value="examination.index">
+                                                            <button type="submit" class="btn btn-light my-2 loadScreen" data-bs-dismiss="modal">Continue</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                                                        <tr>
+                                        <!-- <td>Exam</td> -->
+                                        <td>May 2, 2024</td>
+                                        <td>1:00 PM</td>
+                                        <td>4</td>
+                                        <td>@LVCS Apalit - Pre-School Room</td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-shrink-0">
+                                                        <img src="https://app.laverdad.edu.ph/assets/images/users/avatar-1.jpg"
+                                                            class="rounded-circle avatar-xs" alt="friend">
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-2">
+                                                        <h5 class="my-0">Joeward Peralta</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="table-action">
+                                                                                                <a type="button" data-bs-toggle="modal" data-bs-target="#editSchedule-20" class="action-icon" style="color: #1F3463"> <i class="mdi mdi-pencil"></i></a>
+                                                                                            <!-- <a type="button" class="action-icon text-danger" data-bs-toggle="modal" data-bs-target="#deleteSchedule-20"> <i class="mdi mdi-delete"></i></a> -->
+                                        </td>
+                                    </tr>
+                                    <!-- Edit Schedule Modal -->
+                                    <div id="editSchedule-20" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="multiple-oneModalLabel">Edit Schedule</h4>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form class="needs-validation" action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/edit-schedule/20" method="post" novalidate>
+                                                        <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                            <input type="hidden" name="_method" value="PUT">
+                                                        <input type="hidden" name="current_route_name" id="current_route_name"
+                                                            value="examination.index">
+
+                                                                                                                        <input type="hidden" name="screening_type_id" id="screening_type_id" class="form-control" value="1">
+                                                        
+                                                        <div class="mb-3 position-relative" id="datepicker1">
+                                                            <label for="schedule_date" class="form-label">Schedule Date</label>
+                                                            <input type="date" class="form-control" name="schedule_date" id="schedule_date" data-provide="datepicker" data-date-container="#datepicker1" value="2024-05-02">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="schedule_time" class="form-label">Schedule Time</label>
+                                                            <input type="time" class="form-control" name="schedule_time" id="schedule_time" value="13:00:00">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="venue" class="form-label">Venue</label>
+                                                            <textarea class="form-control" name="venue" id="venue" rows="4" placeholder="Enter the venue" required>@LVCS Apalit - Pre-School Room</textarea>
+                                                            
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <input type="hidden" name="staff_name" id="staff_name" class="form-control" value="Timothy Carl Bundalian">
+                                                        </div>
+
+                                                        <div class="modal-footer">
+                                                            <button class="btn btn-primary loadScreen" type="submit">Save</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                    <!-- Danger Alert Modal -->
+                                    <div id="deleteSchedule-20" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-sm">
+                                            <div class="modal-content modal-filled bg-danger">
+                                                <div class="modal-body p-4">
+                                                    <div class="text-center">
+                                                        <form action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/destroy-schedule/20" method="post">
+                                                            <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                                <input type="hidden" name="_method" value="DELETE">                                                                <i class="ri-close-circle-line h1"></i>
+                                                            <h4 class="mt-2">Oh snap!</h4>
+                                                            <p class="mt-3">Are you sure to delete this schedule?</p>
+                                                            <input type="hidden" name="current_route_name" id="current_route_name" value="examination.index">
+                                                            <button type="submit" class="btn btn-light my-2 loadScreen" data-bs-dismiss="modal">Continue</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                                                        <tr>
+                                        <!-- <td>Exam</td> -->
+                                        <td>May 2, 2024</td>
+                                        <td>1:30 PM</td>
+                                        <td>3</td>
+                                        <td>@LVCS Apalit - Pre-School Room</td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-shrink-0">
+                                                        <img src="https://app.laverdad.edu.ph/assets/images/users/avatar-1.jpg"
+                                                            class="rounded-circle avatar-xs" alt="friend">
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-2">
+                                                        <h5 class="my-0">Joeward Peralta</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="table-action">
+                                                                                                <a type="button" data-bs-toggle="modal" data-bs-target="#editSchedule-21" class="action-icon" style="color: #1F3463"> <i class="mdi mdi-pencil"></i></a>
+                                                                                            <!-- <a type="button" class="action-icon text-danger" data-bs-toggle="modal" data-bs-target="#deleteSchedule-21"> <i class="mdi mdi-delete"></i></a> -->
+                                        </td>
+                                    </tr>
+                                    <!-- Edit Schedule Modal -->
+                                    <div id="editSchedule-21" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="multiple-oneModalLabel">Edit Schedule</h4>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form class="needs-validation" action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/edit-schedule/21" method="post" novalidate>
+                                                        <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                            <input type="hidden" name="_method" value="PUT">
+                                                        <input type="hidden" name="current_route_name" id="current_route_name"
+                                                            value="examination.index">
+
+                                                                                                                        <input type="hidden" name="screening_type_id" id="screening_type_id" class="form-control" value="1">
+                                                        
+                                                        <div class="mb-3 position-relative" id="datepicker1">
+                                                            <label for="schedule_date" class="form-label">Schedule Date</label>
+                                                            <input type="date" class="form-control" name="schedule_date" id="schedule_date" data-provide="datepicker" data-date-container="#datepicker1" value="2024-05-02">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="schedule_time" class="form-label">Schedule Time</label>
+                                                            <input type="time" class="form-control" name="schedule_time" id="schedule_time" value="13:30:00">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="venue" class="form-label">Venue</label>
+                                                            <textarea class="form-control" name="venue" id="venue" rows="4" placeholder="Enter the venue" required>@LVCS Apalit - Pre-School Room</textarea>
+                                                            
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <input type="hidden" name="staff_name" id="staff_name" class="form-control" value="Timothy Carl Bundalian">
+                                                        </div>
+
+                                                        <div class="modal-footer">
+                                                            <button class="btn btn-primary loadScreen" type="submit">Save</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                    <!-- Danger Alert Modal -->
+                                    <div id="deleteSchedule-21" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-sm">
+                                            <div class="modal-content modal-filled bg-danger">
+                                                <div class="modal-body p-4">
+                                                    <div class="text-center">
+                                                        <form action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/destroy-schedule/21" method="post">
+                                                            <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                                <input type="hidden" name="_method" value="DELETE">                                                                <i class="ri-close-circle-line h1"></i>
+                                                            <h4 class="mt-2">Oh snap!</h4>
+                                                            <p class="mt-3">Are you sure to delete this schedule?</p>
+                                                            <input type="hidden" name="current_route_name" id="current_route_name" value="examination.index">
+                                                            <button type="submit" class="btn btn-light my-2 loadScreen" data-bs-dismiss="modal">Continue</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                                                        <tr>
+                                        <!-- <td>Exam</td> -->
+                                        <td>May 3, 2024</td>
+                                        <td>1:00 PM</td>
+                                        <td>3</td>
+                                        <td>@LVCS Apalit - Pre-School Room</td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-shrink-0">
+                                                        <img src="https://app.laverdad.edu.ph/assets/images/users/avatar-1.jpg"
+                                                            class="rounded-circle avatar-xs" alt="friend">
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-2">
+                                                        <h5 class="my-0">Joeward Peralta</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="table-action">
+                                                                                                <a type="button" data-bs-toggle="modal" data-bs-target="#editSchedule-22" class="action-icon" style="color: #1F3463"> <i class="mdi mdi-pencil"></i></a>
+                                                                                            <!-- <a type="button" class="action-icon text-danger" data-bs-toggle="modal" data-bs-target="#deleteSchedule-22"> <i class="mdi mdi-delete"></i></a> -->
+                                        </td>
+                                    </tr>
+                                    <!-- Edit Schedule Modal -->
+                                    <div id="editSchedule-22" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="multiple-oneModalLabel">Edit Schedule</h4>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form class="needs-validation" action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/edit-schedule/22" method="post" novalidate>
+                                                        <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                            <input type="hidden" name="_method" value="PUT">
+                                                        <input type="hidden" name="current_route_name" id="current_route_name"
+                                                            value="examination.index">
+
+                                                                                                                        <input type="hidden" name="screening_type_id" id="screening_type_id" class="form-control" value="1">
+                                                        
+                                                        <div class="mb-3 position-relative" id="datepicker1">
+                                                            <label for="schedule_date" class="form-label">Schedule Date</label>
+                                                            <input type="date" class="form-control" name="schedule_date" id="schedule_date" data-provide="datepicker" data-date-container="#datepicker1" value="2024-05-03">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="schedule_time" class="form-label">Schedule Time</label>
+                                                            <input type="time" class="form-control" name="schedule_time" id="schedule_time" value="13:00:00">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="venue" class="form-label">Venue</label>
+                                                            <textarea class="form-control" name="venue" id="venue" rows="4" placeholder="Enter the venue" required>@LVCS Apalit - Pre-School Room</textarea>
+                                                            
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <input type="hidden" name="staff_name" id="staff_name" class="form-control" value="Timothy Carl Bundalian">
+                                                        </div>
+
+                                                        <div class="modal-footer">
+                                                            <button class="btn btn-primary loadScreen" type="submit">Save</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                    <!-- Danger Alert Modal -->
+                                    <div id="deleteSchedule-22" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-sm">
+                                            <div class="modal-content modal-filled bg-danger">
+                                                <div class="modal-body p-4">
+                                                    <div class="text-center">
+                                                        <form action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/destroy-schedule/22" method="post">
+                                                            <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                                <input type="hidden" name="_method" value="DELETE">                                                                <i class="ri-close-circle-line h1"></i>
+                                                            <h4 class="mt-2">Oh snap!</h4>
+                                                            <p class="mt-3">Are you sure to delete this schedule?</p>
+                                                            <input type="hidden" name="current_route_name" id="current_route_name" value="examination.index">
+                                                            <button type="submit" class="btn btn-light my-2 loadScreen" data-bs-dismiss="modal">Continue</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                                                        <tr>
+                                        <!-- <td>Exam</td> -->
+                                        <td>May 3, 2024</td>
+                                        <td>1:30 PM</td>
+                                        <td>1</td>
+                                        <td>@LVCS Apalit - Pre-School Room</td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-shrink-0">
+                                                        <img src="https://app.laverdad.edu.ph/assets/images/users/avatar-1.jpg"
+                                                            class="rounded-circle avatar-xs" alt="friend">
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-2">
+                                                        <h5 class="my-0">Joeward Peralta</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="table-action">
+                                                                                                <a type="button" data-bs-toggle="modal" data-bs-target="#editSchedule-23" class="action-icon" style="color: #1F3463"> <i class="mdi mdi-pencil"></i></a>
+                                                                                            <!-- <a type="button" class="action-icon text-danger" data-bs-toggle="modal" data-bs-target="#deleteSchedule-23"> <i class="mdi mdi-delete"></i></a> -->
+                                        </td>
+                                    </tr>
+                                    <!-- Edit Schedule Modal -->
+                                    <div id="editSchedule-23" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="multiple-oneModalLabel">Edit Schedule</h4>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form class="needs-validation" action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/edit-schedule/23" method="post" novalidate>
+                                                        <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                            <input type="hidden" name="_method" value="PUT">
+                                                        <input type="hidden" name="current_route_name" id="current_route_name"
+                                                            value="examination.index">
+
+                                                                                                                        <input type="hidden" name="screening_type_id" id="screening_type_id" class="form-control" value="1">
+                                                        
+                                                        <div class="mb-3 position-relative" id="datepicker1">
+                                                            <label for="schedule_date" class="form-label">Schedule Date</label>
+                                                            <input type="date" class="form-control" name="schedule_date" id="schedule_date" data-provide="datepicker" data-date-container="#datepicker1" value="2024-05-03">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="schedule_time" class="form-label">Schedule Time</label>
+                                                            <input type="time" class="form-control" name="schedule_time" id="schedule_time" value="13:30:00">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="venue" class="form-label">Venue</label>
+                                                            <textarea class="form-control" name="venue" id="venue" rows="4" placeholder="Enter the venue" required>@LVCS Apalit - Pre-School Room</textarea>
+                                                            
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <input type="hidden" name="staff_name" id="staff_name" class="form-control" value="Timothy Carl Bundalian">
+                                                        </div>
+
+                                                        <div class="modal-footer">
+                                                            <button class="btn btn-primary loadScreen" type="submit">Save</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                    <!-- Danger Alert Modal -->
+                                    <div id="deleteSchedule-23" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-sm">
+                                            <div class="modal-content modal-filled bg-danger">
+                                                <div class="modal-body p-4">
+                                                    <div class="text-center">
+                                                        <form action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/destroy-schedule/23" method="post">
+                                                            <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                                <input type="hidden" name="_method" value="DELETE">                                                                <i class="ri-close-circle-line h1"></i>
+                                                            <h4 class="mt-2">Oh snap!</h4>
+                                                            <p class="mt-3">Are you sure to delete this schedule?</p>
+                                                            <input type="hidden" name="current_route_name" id="current_route_name" value="examination.index">
+                                                            <button type="submit" class="btn btn-light my-2 loadScreen" data-bs-dismiss="modal">Continue</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                                                        <tr>
+                                        <!-- <td>Exam</td> -->
+                                        <td>May 9, 2024</td>
+                                        <td>1:00 PM</td>
+                                        <td>5</td>
+                                        <td>@LVCS Apalit - Pre-School Room</td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-shrink-0">
+                                                        <img src="https://app.laverdad.edu.ph/assets/images/users/avatar-1.jpg"
+                                                            class="rounded-circle avatar-xs" alt="friend">
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-2">
+                                                        <h5 class="my-0">Alma Lacerna</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="table-action">
+                                                                                                <a type="button" data-bs-toggle="modal" data-bs-target="#editSchedule-29" class="action-icon" style="color: #1F3463"> <i class="mdi mdi-pencil"></i></a>
+                                                                                            <!-- <a type="button" class="action-icon text-danger" data-bs-toggle="modal" data-bs-target="#deleteSchedule-29"> <i class="mdi mdi-delete"></i></a> -->
+                                        </td>
+                                    </tr>
+                                    <!-- Edit Schedule Modal -->
+                                    <div id="editSchedule-29" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="multiple-oneModalLabel">Edit Schedule</h4>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form class="needs-validation" action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/edit-schedule/29" method="post" novalidate>
+                                                        <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                            <input type="hidden" name="_method" value="PUT">
+                                                        <input type="hidden" name="current_route_name" id="current_route_name"
+                                                            value="examination.index">
+
+                                                                                                                        <input type="hidden" name="screening_type_id" id="screening_type_id" class="form-control" value="1">
+                                                        
+                                                        <div class="mb-3 position-relative" id="datepicker1">
+                                                            <label for="schedule_date" class="form-label">Schedule Date</label>
+                                                            <input type="date" class="form-control" name="schedule_date" id="schedule_date" data-provide="datepicker" data-date-container="#datepicker1" value="2024-05-09">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="schedule_time" class="form-label">Schedule Time</label>
+                                                            <input type="time" class="form-control" name="schedule_time" id="schedule_time" value="13:00:00">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="venue" class="form-label">Venue</label>
+                                                            <textarea class="form-control" name="venue" id="venue" rows="4" placeholder="Enter the venue" required>@LVCS Apalit - Pre-School Room</textarea>
+                                                            
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <input type="hidden" name="staff_name" id="staff_name" class="form-control" value="Timothy Carl Bundalian">
+                                                        </div>
+
+                                                        <div class="modal-footer">
+                                                            <button class="btn btn-primary loadScreen" type="submit">Save</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                    <!-- Danger Alert Modal -->
+                                    <div id="deleteSchedule-29" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-sm">
+                                            <div class="modal-content modal-filled bg-danger">
+                                                <div class="modal-body p-4">
+                                                    <div class="text-center">
+                                                        <form action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/destroy-schedule/29" method="post">
+                                                            <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                                <input type="hidden" name="_method" value="DELETE">                                                                <i class="ri-close-circle-line h1"></i>
+                                                            <h4 class="mt-2">Oh snap!</h4>
+                                                            <p class="mt-3">Are you sure to delete this schedule?</p>
+                                                            <input type="hidden" name="current_route_name" id="current_route_name" value="examination.index">
+                                                            <button type="submit" class="btn btn-light my-2 loadScreen" data-bs-dismiss="modal">Continue</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                                                        <tr>
+                                        <!-- <td>Exam</td> -->
+                                        <td>May 10, 2024</td>
+                                        <td>1:00 PM</td>
+                                        <td>4</td>
+                                        <td>@LVCS Apalit - Pre-School Room</td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-shrink-0">
+                                                        <img src="https://app.laverdad.edu.ph/assets/images/users/avatar-1.jpg"
+                                                            class="rounded-circle avatar-xs" alt="friend">
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-2">
+                                                        <h5 class="my-0">Alma Lacerna</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="table-action">
+                                                                                                <a type="button" data-bs-toggle="modal" data-bs-target="#editSchedule-32" class="action-icon" style="color: #1F3463"> <i class="mdi mdi-pencil"></i></a>
+                                                                                            <!-- <a type="button" class="action-icon text-danger" data-bs-toggle="modal" data-bs-target="#deleteSchedule-32"> <i class="mdi mdi-delete"></i></a> -->
+                                        </td>
+                                    </tr>
+                                    <!-- Edit Schedule Modal -->
+                                    <div id="editSchedule-32" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="multiple-oneModalLabel">Edit Schedule</h4>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form class="needs-validation" action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/edit-schedule/32" method="post" novalidate>
+                                                        <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                            <input type="hidden" name="_method" value="PUT">
+                                                        <input type="hidden" name="current_route_name" id="current_route_name"
+                                                            value="examination.index">
+
+                                                                                                                        <input type="hidden" name="screening_type_id" id="screening_type_id" class="form-control" value="1">
+                                                        
+                                                        <div class="mb-3 position-relative" id="datepicker1">
+                                                            <label for="schedule_date" class="form-label">Schedule Date</label>
+                                                            <input type="date" class="form-control" name="schedule_date" id="schedule_date" data-provide="datepicker" data-date-container="#datepicker1" value="2024-05-10">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="schedule_time" class="form-label">Schedule Time</label>
+                                                            <input type="time" class="form-control" name="schedule_time" id="schedule_time" value="13:00:00">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="venue" class="form-label">Venue</label>
+                                                            <textarea class="form-control" name="venue" id="venue" rows="4" placeholder="Enter the venue" required>@LVCS Apalit - Pre-School Room</textarea>
+                                                            
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <input type="hidden" name="staff_name" id="staff_name" class="form-control" value="Timothy Carl Bundalian">
+                                                        </div>
+
+                                                        <div class="modal-footer">
+                                                            <button class="btn btn-primary loadScreen" type="submit">Save</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                    <!-- Danger Alert Modal -->
+                                    <div id="deleteSchedule-32" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-sm">
+                                            <div class="modal-content modal-filled bg-danger">
+                                                <div class="modal-body p-4">
+                                                    <div class="text-center">
+                                                        <form action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/destroy-schedule/32" method="post">
+                                                            <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                                <input type="hidden" name="_method" value="DELETE">                                                                <i class="ri-close-circle-line h1"></i>
+                                                            <h4 class="mt-2">Oh snap!</h4>
+                                                            <p class="mt-3">Are you sure to delete this schedule?</p>
+                                                            <input type="hidden" name="current_route_name" id="current_route_name" value="examination.index">
+                                                            <button type="submit" class="btn btn-light my-2 loadScreen" data-bs-dismiss="modal">Continue</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                                                        <tr>
+                                        <!-- <td>Exam</td> -->
+                                        <td>May 16, 2024</td>
+                                        <td>1:00 PM</td>
+                                        <td>4</td>
+                                        <td>at La Verdad Christian College - Apalit, Pampanga</td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-shrink-0">
+                                                        <img src="https://app.laverdad.edu.ph/assets/images/users/avatar-1.jpg"
+                                                            class="rounded-circle avatar-xs" alt="friend">
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-2">
+                                                        <h5 class="my-0">Alma Lacerna</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="table-action">
+                                                                                                <a type="button" data-bs-toggle="modal" data-bs-target="#editSchedule-44" class="action-icon" style="color: #1F3463"> <i class="mdi mdi-pencil"></i></a>
+                                                                                            <!-- <a type="button" class="action-icon text-danger" data-bs-toggle="modal" data-bs-target="#deleteSchedule-44"> <i class="mdi mdi-delete"></i></a> -->
+                                        </td>
+                                    </tr>
+                                    <!-- Edit Schedule Modal -->
+                                    <div id="editSchedule-44" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="multiple-oneModalLabel">Edit Schedule</h4>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form class="needs-validation" action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/edit-schedule/44" method="post" novalidate>
+                                                        <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                            <input type="hidden" name="_method" value="PUT">
+                                                        <input type="hidden" name="current_route_name" id="current_route_name"
+                                                            value="examination.index">
+
+                                                                                                                        <input type="hidden" name="screening_type_id" id="screening_type_id" class="form-control" value="1">
+                                                        
+                                                        <div class="mb-3 position-relative" id="datepicker1">
+                                                            <label for="schedule_date" class="form-label">Schedule Date</label>
+                                                            <input type="date" class="form-control" name="schedule_date" id="schedule_date" data-provide="datepicker" data-date-container="#datepicker1" value="2024-05-16">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="schedule_time" class="form-label">Schedule Time</label>
+                                                            <input type="time" class="form-control" name="schedule_time" id="schedule_time" value="13:00:00">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="venue" class="form-label">Venue</label>
+                                                            <textarea class="form-control" name="venue" id="venue" rows="4" placeholder="Enter the venue" required>at La Verdad Christian College - Apalit, Pampanga</textarea>
+                                                            
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <input type="hidden" name="staff_name" id="staff_name" class="form-control" value="Timothy Carl Bundalian">
+                                                        </div>
+
+                                                        <div class="modal-footer">
+                                                            <button class="btn btn-primary loadScreen" type="submit">Save</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                    <!-- Danger Alert Modal -->
+                                    <div id="deleteSchedule-44" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-sm">
+                                            <div class="modal-content modal-filled bg-danger">
+                                                <div class="modal-body p-4">
+                                                    <div class="text-center">
+                                                        <form action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/destroy-schedule/44" method="post">
+                                                            <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                                <input type="hidden" name="_method" value="DELETE">                                                                <i class="ri-close-circle-line h1"></i>
+                                                            <h4 class="mt-2">Oh snap!</h4>
+                                                            <p class="mt-3">Are you sure to delete this schedule?</p>
+                                                            <input type="hidden" name="current_route_name" id="current_route_name" value="examination.index">
+                                                            <button type="submit" class="btn btn-light my-2 loadScreen" data-bs-dismiss="modal">Continue</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                                                        <tr>
+                                        <!-- <td>Exam</td> -->
+                                        <td>May 25, 2024</td>
+                                        <td>9:00 AM</td>
+                                        <td>99</td>
+                                        <td>@La Verdad Christian College - Apalit Pampanga</td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-shrink-0">
+                                                        <img src="https://app.laverdad.edu.ph/assets/images/users/avatar-1.jpg"
+                                                            class="rounded-circle avatar-xs" alt="friend">
+                                                    </div>
+                                                    <div class="flex-grow-1 ms-2">
+                                                        <h5 class="my-0">Godiosa Delos Santos</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="table-action">
+                                                                                                <a type="button" data-bs-toggle="modal" data-bs-target="#editSchedule-45" class="action-icon" style="color: #1F3463"> <i class="mdi mdi-pencil"></i></a>
+                                                                                            <!-- <a type="button" class="action-icon text-danger" data-bs-toggle="modal" data-bs-target="#deleteSchedule-45"> <i class="mdi mdi-delete"></i></a> -->
+                                        </td>
+                                    </tr>
+                                    <!-- Edit Schedule Modal -->
+                                    <div id="editSchedule-45" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="multiple-oneModalLabel">Edit Schedule</h4>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form class="needs-validation" action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/edit-schedule/45" method="post" novalidate>
+                                                        <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                            <input type="hidden" name="_method" value="PUT">
+                                                        <input type="hidden" name="current_route_name" id="current_route_name"
+                                                            value="examination.index">
+
+                                                                                                                        <input type="hidden" name="screening_type_id" id="screening_type_id" class="form-control" value="1">
+                                                        
+                                                        <div class="mb-3 position-relative" id="datepicker1">
+                                                            <label for="schedule_date" class="form-label">Schedule Date</label>
+                                                            <input type="date" class="form-control" name="schedule_date" id="schedule_date" data-provide="datepicker" data-date-container="#datepicker1" value="2024-05-25">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="schedule_time" class="form-label">Schedule Time</label>
+                                                            <input type="time" class="form-control" name="schedule_time" id="schedule_time" value="09:00:00">
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <label for="venue" class="form-label">Venue</label>
+                                                            <textarea class="form-control" name="venue" id="venue" rows="4" placeholder="Enter the venue" required>@La Verdad Christian College - Apalit Pampanga</textarea>
+                                                            
+                                                        </div>
+
+                                                        <div class="mb-3">
+                                                            <input type="hidden" name="staff_name" id="staff_name" class="form-control" value="Timothy Carl Bundalian">
+                                                        </div>
+
+                                                        <div class="modal-footer">
+                                                            <button class="btn btn-primary loadScreen" type="submit">Save</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                    <!-- Danger Alert Modal -->
+                                    <div id="deleteSchedule-45" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-sm">
+                                            <div class="modal-content modal-filled bg-danger">
+                                                <div class="modal-body p-4">
+                                                    <div class="text-center">
+                                                        <form action="https://app.laverdad.edu.ph/admin/screening-batch-schedule/destroy-schedule/45" method="post">
+                                                            <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                                <input type="hidden" name="_method" value="DELETE">                                                                <i class="ri-close-circle-line h1"></i>
+                                                            <h4 class="mt-2">Oh snap!</h4>
+                                                            <p class="mt-3">Are you sure to delete this schedule?</p>
+                                                            <input type="hidden" name="current_route_name" id="current_route_name" value="examination.index">
+                                                            <button type="submit" class="btn btn-light my-2 loadScreen" data-bs-dismiss="modal">Continue</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                                                </tbody>
+                        </table>
+                    </div>
+                </div> <!-- end card-body-->
+            </div> <!-- end card-->
+        </div> <!-- end col -->
+    </div> <!-- end row -->
+</div>
+<!-- end of content -->
+
+            <!-- End Content-->
+        
+                    <!-- ============================================================== -->
+                    <!-- End Page content -->
+                    <!-- ============================================================== -->
+                    <!-- Warning Alert Modal -->
+    <!-- container -->
+    
+
+  
+</div>
+            </div>
+
+            <!-- Footer Start -->
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="text-md-end footer-links d-none d-md-block">
+                                <strong>
+                                    <u>
+                                        <a href="https://app.laverdad.edu.ph/scholarship-application/privacy-policy" target="_blank">
+                                            Terms and Conditions
+                                        </a>
+                                    </u>
+                                </strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- end Footer -->
+
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+        </div>
+        
+        <!-- END wrapper -->   
+        
+        <!-- Vendor js -->
+        <script src="../assets/js/vendor.min.js"></script>
+
+        <!-- Dashboard App js -->
+        <script src="../assets/js/pages/demo.dashboard.js"></script>
+
+        <!-- App js -->
+        <script src="../assets/js/app.min.js"></script>
+        <script src="js/app.js"></script>
+          <!-- Apex Charts js -->
+          <script src="https://app.laverdad.edu.ph/assets/vendor/apexcharts/apexcharts.min.js"></script>
+
+        <!-- Datatables js -->
+		<script src="../assets/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+		<script src="../assets/vendor/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+		<script src="../assets/vendor/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+		<script src="../assets/vendor/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
+
+		<!-- Datatable Init js -->
+		<script src="../assets/js/pages/demo.datatable-init.js"></script>
+
+    </body>
+</html> 

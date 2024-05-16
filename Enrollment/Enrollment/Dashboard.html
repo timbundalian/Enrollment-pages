@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Dashboard Enrollment</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="../assets/images/lvcc-logo.png"> <!-- Set favicon to LVCC logo -->
+
+        <!-- Theme Config Js -->
+        <script src="../assets/js/hyper-config.js"></script>
+
+        <!-- App css -->
+        <link href="../assets/css/app-creative.min.css" rel="stylesheet" type="text/css" id="app-style" />
+        <!-- LVCC css -->
+        <link rel="stylesheet" type="text/css" href="../assets/css/lvcc.css">
+
+        <!-- Icons css -->
+        <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" /> <!-- link for locale icons from Hyper Kit -->
+
+		<!-- Datatables css -->
+		<link href="../assets/vendor/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+		<link href="../assets/vendor/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+    </head>
+
+	<body>
+        <!-- Begin page -->
+        <div class="wrapper">
+
+    <!-- ========== Topbar Start ========== -->
+    <div class="navbar-custom">
+    <div class="topbar container-fluid">
+        <div class="d-flex align-items-center gap-lg-2 gap-1">
+
+            <!-- Sidebar Menu Toggle Button -->
+            <button class="button-toggle-menu text-secondary">
+                <i class="mdi mdi-menu"></i> <!-- burger menu icon -->
+            </button>
+        </div>
+
+        <ul class="topbar-menu d-flex align-items-center gap-3">
+            <!-- Notification List Start -->
+            <li class="dropdown notification-list">
+                                    <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <i class="ri-notification-3-line font-22 text-secondary"></i>
+                                                    <span class="noti-icon-badge"></span>
+                                            </a>
+                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg py-0">
+                    <div class="p-2 border-top-0 border-start-0 border-end-0 border-dashed border">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h6 class="m-0 font-16 fw-semibold"> Notification</h6>
+                            </div>
+                            <!-- <div class="col-auto">
+                                <a href="javascript: void(0);" class="text-dark text-decoration-underline">
+                                    <small>Clear All</small>
+                                </a>
+                            </div> -->
+                        </div>
+                    </div>
+
+                    <div class="px-3" style="max-height: 300px;" data-simplebar>
+
+                        <!-- <h5 class="text-muted font-13 fw-normal mt-2">Today</h5> -->
+
+                        <!-- item-->
+                                                    <form id="notificationForm_1219" action="https://app.laverdad.edu.ph/admin/read-noti/1219" method="post">
+                                <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                <a href="#" onclick="document.getElementById('notificationForm_1219').submit()" class="dropdown-item p-0 notify-item card shadow-none mb-2 unread-noti">
+                                    <div class="card-body">
+                                        <!-- <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span> -->
+                                        <div class="d-flex align-items-center">
+                                            <div class="flex-shrink-0">
+                                                <div class="notify-icon bg-primary">
+                                                    <i class="mdi mdi-comment-account-outline"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                <h5 class="noti-item-title fw-semibold font-14">New Upload <small class="fw-normal text-muted ms-1">35 minutes ago</small></h5>
+                                                <small class="noti-item-subtitle text-muted">Axl Ulrich Giron has new uploads.</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </form>
+                            <!-- <a href="https://app.laverdad.edu.ph/admin/review-requirements/2754" class="dropdown-item p-0 notify-item card shadow-none mb-2 unread-noti"> -->
+            <!-- item-->
+                        <!-- <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card unread-noti shadow-none mb-2">
+                            <div class="card-body">
+                                <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-shrink-0">
+                                        <div class="notify-icon bg-primary">
+                                            <i class="mdi mdi-comment-account-outline"></i>
+                                        </div>
+                                    </div>
+                                    <div class="flex-grow-1 text-truncate ms-2">
+                                        <h5 class="noti-item-title fw-semibold font-14">New Reupload</h5>
+                                        <small class="noti-item-subtitle text-muted">[Applicant's name] has new reupload</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </a> -->
+
+                        <!-- <div class="text-center">
+                            <i class="mdi mdi-dots-circle mdi-spin text-muted h3 mt-0"></i>
+                        </div> -->
+                    </div>
+
+                    <!-- All-->
+                    <!-- <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item border-top border-light py-2">
+                        View All
+                    </a> -->
+
+                </div>
+            </li>
+            <!-- Notification List End -->
+
+
+            <!-- logged in user tab in header -->
+            <li class="dropdown">
+                <a id="profile-dropdown" class="border-0 nav-link dropdown-toggle arrow-none nav-user px-2 text-dark bg-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                    <span class="account-user-avatar">
+                        <img src="https://app.laverdad.edu.ph/assets/images/users/default-profile-picture1.jpg" alt="user-image" width="32" class="rounded-circle"> <!-- user avatar -->
+                    </span>
+                    <span class="d-lg-flex flex-column gap-1 d-none">
+                        <h5 class="my-0">
+                            Timothy Carl Bundalian
+                        </h5> <!-- user name -->
+                        <h6 class="my-0 fw-normal">System Admin</h6> <!-- user position -->
+                    </span>
+                </a>
+                <!-- dropdown menu at user tab in header -->
+                <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated profile-dropdown">
+                    <!-- item-->
+                    <div class=" dropdown-header noti-title">
+                        <h6 class="text-overflow m-0">Welcome !</h6>
+                    </div>
+
+                    <!-- item-->
+                    <a href="https://app.laverdad.edu.ph/admin/profile" class="dropdown-item">
+                        <i class="mdi mdi-account-circle me-1"></i>
+                        <span>My Account</span>
+                    </a>
+                   <!-- item-->
+                    <form method="POST" action="https://app.laverdad.edu.ph/logout">
+                        <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                        <button class="dropdown-item btn btn-link" type="submit">
+                            <i class="mdi mdi-logout me-1"></i>
+                            <span>Logout</span>
+                        </button>
+
+                    </form>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+            <!-- ========== Topbar End ========== -->             
+
+             <!-- ========== Left Sidebar Start ========== -->
+             <div class="leftside-menu">
+
+                <a id="logo-bg" href="" class="logo logo-light">
+                    <span class="logo-lg">
+                        <img src="https://app.laverdad.edu.ph/assets/images/lvcc-logo.png" id="logo" alt="logo"> <!-- LVCC logo in side nav -->
+                    </span>
+                    <span class="logo-sm">
+                        <img id="logo-sm" src="https://app.laverdad.edu.ph/assets/images/lvcc-logo.png" alt="small logo"> <!-- LVCC logo in collapsed side nav -->
+                    </span>
+                </a>
+            
+                <!-- Sidebar Hover Menu Toggle Button -->
+                <div class="button-sm-hover" data-bs-toggle="tooltip" data-bs-placement="right" title="Show Full Sidebar">
+                    <i class="ri-checkbox-blank-circle-line align-middle"></i>
+                </div>
+            
+                <!-- Full Sidebar Menu Close Button -->
+                <div class="button-close-fullsidebar">
+                    <i class="ri-close-fill align-middle"></i>
+                </div>
+            
+                <!-- Sidebar -left -->
+                <div class="h-100" id="leftside-menu-container" data-simplebar>
+            
+                    <!--- Sidemenu -->
+                    <ul class="side-nav">
+            
+                        <li class="side-nav-title">Home</li>
+            
+                        <li class="side-nav-item loadScreen">
+                            <a href="../Enrollment/Dashboard.html" class="side-nav-link" id="hover">
+                                <i class="uil-home-alt"></i>
+                                <span> Dashboards </span>
+                            </a>
+                        </li>
+            
+                        <li class="side-nav-title">Scholarship Management</li>
+            
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#scheduling" aria-expanded="false"
+                                aria-controls="sidebarEcommerce" class="side-nav-link " id="hover">
+                                <i class="mdi mdi-calendar-text"></i>
+                                <span>Scheduling</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="scheduling">
+                                <ul class="side-nav-second-level mt-2">
+            
+                                    <li>
+                                        <a href="../Enrollment/Application Schedule.html" class="side-nav-link loadScreen" id="hover">
+                                            <span>Application Schedule</span>
+                                        </a>
+                                    </li>
+            
+                                    <li>
+                                        <a href="../Enrollment/Exam-Schedule.html" class="side-nav-link loadScreen" id="hover">
+                                            <span>Exam Schedule</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../Enrollment/Interview-Schedule.html"class="side-nav-link loadScreen" id="hover">
+                                            <span>Interview Schedule</span>
+                                        </a>
+                                    </li>
+            
+                                    <li>
+                                        <a href="../Enrollment/Orientation-Schedule.html" class="side-nav-link loadScreen" id="hover">
+                                            <span>Orientation Schedule</span>
+                                        </a>
+                                    </li>
+            
+            
+                                </ul>
+                            </div>
+                        </li>
+            
+                        <li class="side-nav-item loadScreen">
+                            <a href="../Enrollment/Application-Email-Verification.html" class="side-nav-link " id="hover">
+                                <i class="mdi mdi-card-account-details"></i>
+                                <span>Applicant Email Verification</span>
+                            </a>
+                        </li>
+            
+                        <li class="side-nav-item loadScreen">
+                            <a href="../Enrollment/Scholarship-Applicants.html" class="side-nav-link " id="hover">
+                                <i class="mdi mdi-card-account-details"></i>
+                                <span> Scholarship Applicants </span>
+                            </a>
+                        </li>
+            
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#applicant-screening" aria-expanded="false"
+                                aria-controls="applicant-screening" class="side-nav-link " id="hover">
+                                <i class="mdi mdi-newspaper-variant-multiple"></i>
+                                <span> Applicant Screening </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="applicant-screening">
+                                <ul class="side-nav-second-level mt-2">
+                                    <li>
+                                        <a class="loadScreen" href="../Enrollment//For-Examination.html" class="side-nav-link" id="hover">
+                                            <span>For Examination</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="loadScreen" href="../Enrollment//For-Interview.html" id="hover">
+                                            <span>For Interview</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="loadScreen" href="../Enrollment//For-Orientation.html" id="hover">
+                                            <span>For Orientation</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="loadScreen" href="../Enrollment//For-Enrollment.html" id="hover">
+                                            <span>For Enrollment</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+            
+                        
+            
+                                        <li class="side-nav-item">
+                                <a data-bs-toggle="collapse" href="#export-reports" aria-expanded="false"
+                                    aria-controls="export-reports" class="side-nav-link" id="hover">
+                                    <i class="mdi mdi-application-export"></i>
+                                    <span>Export Reports</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="export-reports">
+                                    <ul class="side-nav-second-level mt-2">
+                                                                        <li>
+                                                <a class="loadScreen" href="#" id="hover">
+                                                    <span>Dashboard (Overall)</span>
+                                                </a>
+                                            </li>
+                                                                    <li>
+                                            <a class="loadScreen" href="#" class="side-nav-link" id="hover">
+                                                <span>Applicants Profile</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="loadScreen" href="#" id="hover">
+                                                <span>Examination Attendance</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="loadScreen" href="#" id="hover">
+                                                <span>Interview Attendance</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="loadScreen" href="#" id="hover">
+                                                <span>Orientation Attendance</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        
+                        <li class="side-nav-title">Pages</li>
+            
+                        
+                        <li class="side-nav-item loadScreen">
+                            <a href="../Enrollment/School-Branch.html" class="side-nav-link" id="hover" >
+                                <i class="ri-building-fill"></i>
+                                <span>School Branch</span>
+                            </a>
+                        </li>
+            
+                        
+                                        <li class="side-nav-item loadScreen">
+                                <a href="../Enrollment/Applicant-status-checking.html" class="side-nav-link" id="hover" >
+                                    <i class="mdi mdi-list-status"></i>
+                                    <span>Applicant Status Checking</span>
+                                </a>
+                            </li>
+                        
+                        
+            
+                        <li class="side-nav-item loadScreen">
+                            <a href="../Enrollment/Activity-logs.html" class="side-nav-link" id="hover" >
+                                <i class="mdi mdi-file-sign"></i>
+                                <span>Activity Logs</span>
+                            </a>
+                        </li>
+            
+                        <li class="side-nav-title">User Management</li>
+            
+                        <li class="side-nav-item loadScreen">
+                            <a href="../Enrollment/Users.html" class="side-nav-link" id="hover">
+                                <i class="mdi mdi-account-group"></i>
+                                <span>Users</span>
+                            </a>
+                        </li>
+            
+                        <li class="side-nav-item loadScreen">
+                            <a href="../Enrollment/Deleted-Users.html" class="side-nav-link" id="hover">
+                                <i class="mdi mdi-archive"></i>
+                                <span>Deleted Users</span>
+                            </a>
+                        </li>
+            
+                        
+            
+                        <li class="side-nav-item loadScreen">
+                            <a href="../Enrollment/Roles-&-Permissions.html" class="side-nav-link" id="hover">
+                                <i class="mdi mdi-account-lock-open"></i>
+                                <span>Roles and Permissions</span>
+                            </a>
+                        </li>
+            
+                        <li class="side-nav-item loadScreen">
+                            <a href="../Enrollment/Permissions.html" class="side-nav-link" id="hover">
+                                <i class="mdi mdi-account-lock-open"></i>
+                                <span>Permission</span>
+                            </a>
+                        </li>
+            
+                        
+            
+            
+            
+                        <br class="mb-5">
+            
+            
+            
+                    </ul>
+                    <!--- End Sidemenu -->
+            
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+             <!-- ========== Left Sidebar End ========== -->
+
+            <!-- ========== Left Sidebar End ========== -->
+
+
+            <div class="content-page">
+                <div class="content">
+
+    <!-- Start Content-->
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-flex align-items-center">
+                    <div class="page-title-right">
+                        
+                    </div>
+                    <div class="d-flex flex-grow-1">
+                        <h4 class="page-title">Dashboard</h4>
+                    </div>
+                    <div>
+                        <form action="" method="get">
+                            <select class="form-select" name="filter" id="filter" onchange="this.form.submit();">
+                                <option value="">Overall</option>
+                                                                    <option value="grade_1" >Pre Kinder (4 y/o)</option>
+                                                                    <option value="grade_2" >Kindergarten (5 y/o)</option>
+                                                                    <option value="grade_3" >Grade 1</option>
+                                                                    <option value="grade_4" >Grade 2</option>
+                                                                    <option value="grade_5" >Grade 3</option>
+                                                                    <option value="grade_6" >Grade 4</option>
+                                                                    <option value="grade_7" >Grade 5</option>
+                                                                    <option value="grade_8" >Grade 6</option>
+                                                                    <option value="grade_9" >Grade 7</option>
+                                                                    <option value="grade_10" >Grade 8</option>
+                                                                    <option value="grade_11" >Grade 9</option>
+                                                                    <option value="grade_12" >Grade 10</option>
+                                                                                                    <option value="course_1" >Grade 11 STEM</option>
+                                                                    <option value="course_2" >Grade 11 ABM</option>
+                                                                    <option value="course_3" >Grade 11 HUMSS</option>
+                                                                    <option value="course_4" >Grade 11 GAS</option>
+                                                                    <option value="course_5" >Grade 11 ICT</option>
+                                                                    <option value="course_6" >Grade 11 Culinary Arts</option>
+                                                                    <option value="course_7" >Bachelor of Arts in Broadcasting</option>
+                                                                    <option value="course_8" >Bachelor of Science in Accountancy</option>
+                                                                    <option value="course_9" >Bachelor of Science in Accounting Information Systems</option>
+                                                                    <option value="course_10" >Bachelor of Science in Social Work</option>
+                                                                    <option value="course_11" >Bachelor of Science in Information Systems</option>
+                                                                    <option value="course_12" >Associate in Computer Technology</option>
+                                                                    <option value="course_13" >Health Care Services NC II - 1-Year Course Program</option>
+                                                                    <option value="course_14" >International Cookery (Cookery NC II) - 1-Year Course Program</option>
+                                                            </select>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="col-xl-12 col-lg-2">
+                <!-- This row is for verification anf verified email-->
+                <div class="row">
+                    <!-- INQUIRIES -->
+                    <div class="col-sm-3">
+                        <div class="card widget-flat">
+                            <div class="card-body">
+                                <div class="float-end">
+                                    <i class="mdi mdi-account-question widget-icon bg-info-lighten text-info"></i>
+                                </div>
+                                <h4 class="fw-bolder mt-0 p-2 border border-2 rounded bg-info-lighten" title="For Email Verification + Verified Email + Applicants + Cancelled">INQUIRIES</h4>
+                                <h1 class="mt-3 mb-3">3691</h1>
+                                <p class="mb-0 ">
+                                                                            <span class="me-2">0.00%</span>
+                                                                        <span class="text-nowrap">Since yesterday</span>
+                                </p>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col-->
+                    <!-- END OF INQUIRIES -->
+
+                    <!-- APPLICANTS -->
+                    <div class="col-sm-3">
+                        <div class="card widget-flat">
+                            <div class="card-body">
+                                <div class="float-end">
+                                    <i class="mdi mdi-account-group widget-icon bg-info-lighten text-info"></i>
+                                </div>
+                                <h4 class="fw-bolder mt-0 p-2 border border-2 rounded bg-info-lighten" title="Application Received + For Reupload + Reuploaded + Verified Requirements + Verified Applicant + For Exam + Waiting List (Exam) + Passed Examination + Passed with Consideration + For Interview + Waiting List (Interview) + For Final Deliberation + For Orientation + For Enrollment + Failed">APPLICANTS</h4>
+                                <h1 class="mt-3 mb-3">1653</h1>
+                                <p class="mb-0 ">
+                                                                            <span class="me-2">0.00%</span>
+                                                                        <span class="text-nowrap">Since yesterday</span>
+                                </p>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col-->
+                    <!-- END OF APPLICANTS -->
+
+                    <!-- PASSED -->
+                    <div class="col-sm-3">
+                        <div class="card widget-flat">
+                            <div class="card-body">
+                                <div class="float-end">
+                                    <i class="mdi mdi-email-check widget-icon bg-success-lighten text-success"></i>
+                                </div>
+                                <h4 class="fw-bolder mt-0 p-2 border border-2 rounded bg-success-lighten" title="Number of For Enrollment">PASSED</h4>
+                                <h1 class="mt-3 mb-3">0</h1>
+                                <p class="mb-0 ">
+                                                                            <span class="me-2">0.00%</span>
+                                                                        <span class="text-nowrap">Since yesterday</span>
+                                </p>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col-->
+                    <!-- END OF PASSED -->
+
+                    <!-- Failed -->
+                    <div class="col-sm-3">
+                        <div class="card widget-flat">
+                            <div class="card-body">
+                                <div class="float-end">
+                                    <i class="mdi mdi-account-multiple-remove widget-icon bg-danger-lighten text-danger"></i>
+                                </div>
+                                <h4 class="fw-bolder mt-0 p-2 border border-2 rounded bg-danger-lighten text-danger" title="Not Qualified + Failed Examination + Failed Interview">FAILED</h4>
+                                <h1 class="mt-3 mb-3">186</h1>
+                                <p class="mb-0 ">
+                                                                            <span class="me-2">0.00%</span>
+                                                                        <span class="text-nowrap">Since yesterday</span>
+                                </p>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col-->
+                </div>
+            </div>
+
+            <div class="col-xl-12 col-lg-6">
+                <!-- This row is for verification anf verified email-->
+                <div class="row">
+                    <!-- Verified Email-->
+                    <div class="col-sm-3">
+                        <div class="card widget-flat">
+                            <div class="card-body">
+                                <div class="float-end">
+                                    <i class="mdi mdi-email-check widget-icon bg-success-lighten text-success"></i>
+                                </div>
+                                <h5 class=" fw-normal mt-0" title="Number of Verified Emails">Verified Email</h5>
+                                <h3 class="mt-3 mb-3">1379</h3>
+                                <p class="mb-0 ">
+                                                                            <span class="me-2">0.00%</span>
+                                                                        <span class="text-nowrap">Since yesterday</span>
+                                </p>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col-->
+
+                    <!-- Application Received -->
+                    <div class="col-sm-3">
+                        <div class="card widget-flat">
+                            <div class="card-body">
+                                <div class="float-end">
+                                    <i class="mdi mdi-badge-account-horizontal widget-icon bg-success-lighten text-success"></i>
+                                </div>
+                                <h5 class=" fw-normal mt-0" title="Number of Application Received">Application Received</h5>
+                                <h3 class="mt-3 mb-3">24</h3>
+                                <p class="mb-0 ">
+                                                                            <span class="me-2">0.00%</span>
+                                                                        <span class="text-nowrap">Since yesterday</span>
+                                </p>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col-->
+
+                    <!-- Reuploaded -->
+                    <div class="col-sm-3">
+                        <div class="card widget-flat">
+                            <div class="card-body">
+                                <div class="float-end">
+                                    <i class="mdi mdi-file-upload widget-icon bg-success-lighten text-success"></i>
+                                </div>
+                                <h5 class=" fw-normal mt-0" title="Number of Reuploaded">Reuploaded</h5>
+                                <h3 class="mt-3 mb-3">40</h3>
+                                <p class="mb-0 ">
+                                                                            <span class="me-2">0.00%</span>
+                                                                        <span class="text-nowrap">Since yesterday</span>
+                                </p>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col-->
+
+                    <!-- Verified Requirements -->
+                    <div class="col-sm-3">
+                        <div class="card widget-flat">
+                            <div class="card-body">
+                                <div class="float-end">
+                                    <i class="mdi mdi-file-check widget-icon bg-success-lighten text-success"></i>
+                                </div>
+                                <h5 class=" fw-normal mt-0" title="Number of Verified Requirements">Verified
+                                    Requirements</h5>
+                                <h3 class="mt-3 mb-3">51</h3>
+                                <p class="mb-0 ">
+                                                                            <span class="me-2">0.00%</span>
+                                                                        <span class="text-nowrap">Since yesterday</span>
+                                </p>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col-->
+
+                    <!-- Verified Applicant -->
+                    <div class="col-sm-3">
+                        <div class="card widget-flat">
+                            <div class="card-body">
+                                <div class="float-end">
+                                    <i class="mdi mdi-account-multiple-check widget-icon bg-success-lighten text-success"></i>
+                                </div>
+                                <h5 class=" fw-normal mt-0" title="Number of Verified Applicants">Verified Applicants</h5>
+                                <h3 class="mt-3 mb-3">30</h3>
+                                <p class="mb-0 ">
+                                                                            <span class="me-2">0.00%</span>
+                                                                        <span class="text-nowrap">Since yesterday</span>
+                                </p>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col-->
+
+                    <!-- Passed Examination -->
+                    <div class="col-sm-3">
+                        <div class="card widget-flat">
+                            <div class="card-body">
+                                <div class="float-end">
+                                    <i class="mdi mdi-email-check widget-icon bg-success-lighten text-success"></i>
+                                </div>
+                                <h5 class=" fw-normal mt-0" title="Number of Passed Examination">Passed Examination</h5>
+                                <h3 class="mt-3 mb-3">25</h3>
+                                <p class="mb-0 ">
+                                                                            <span class="me-2">0.00%</span>
+                                                                        <span class="text-nowrap">Since yesterday</span>
+                                </p>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col-->
+
+                    <!-- Passed with Consideration -->
+                    <div class="col-sm-3">
+                        <div class="card widget-flat">
+                            <div class="card-body">
+                                <div class="float-end">
+                                    <i class="mdi mdi-email-check widget-icon bg-success-lighten text-success"></i>
+                                </div>
+                                <h5 class=" fw-normal mt-0" title="Number of Passed with Consideration">Passed with Consideration</h5>
+                                <h3 class="mt-3 mb-3">13</h3>
+                                <p class="mb-0 ">
+                                                                            <span class="me-2">0.00%</span>
+                                                                        <span class="text-nowrap">Since yesterday</span>
+                                </p>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col-->
+
+                    <!-- For Final Deliberation -->
+                    <div class="col-sm-3">
+                        <div class="card widget-flat">
+                            <div class="card-body">
+                                <div class="float-end">
+                                    <i class="mdi mdi-text-account widget-icon bg-success-lighten text-success"></i>
+                                </div>
+                                <h5 class=" fw-normal mt-0" title="Number of For Final Deliberation">For Final Deliberation</h5>
+                                <h3 class="mt-3 mb-3">400</h3>
+                                <p class="mb-0 ">
+                                                                            <span class="me-2">0.00%</span>
+                                                                        <span class="text-nowrap">Since yesterday</span>
+                                </p>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col-->
+                </div>
+            </div>
+
+            <div class="col-xl-12 col-lg-6">
+                <!-- This row is for verification anf verified email-->
+                <div class="row">
+                    <!-- For Exam -->
+                    <div class="col-sm-3">
+                        <div class="card widget-flat">
+                            <div class="card-body">
+                                <div class="float-end">
+                                    <i class="mdi mdi-card-account-details-star widget-icon bg-info-lighten text-info"></i>
+                                </div>
+                                <h5 class=" fw-normal mt-0" title="Number of For Examination">For Exam</h5>
+                                <h3 class="mt-3 mb-3">214</h3>
+                                <p class="mb-0 ">
+                                                                            <span class="me-2">0.00%</span>
+                                                                        <span class="text-nowrap">Since yesterday</span>
+                                </p>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col-->
+
+                    <!-- For Interview -->
+                    <div class="col-sm-3">
+                        <div class="card widget-flat">
+                            <div class="card-body">
+                                <div class="float-end">
+                                    <i class="mdi mdi-card-account-phone widget-icon bg-info-lighten text-info"></i>
+                                </div>
+                                <h5 class=" fw-normal mt-0" title="Number of For Interview">For Interview</h5>
+                                <h3 class="mt-3 mb-3">152</h3>
+                                <p class="mb-0 ">
+                                                                            <span class="me-2">0.00%</span>
+                                                                        <span class="text-nowrap">Since yesterday</span>
+                                </p>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col-->
+
+                    <!-- For Orientation -->
+                    <div class="col-sm-3">
+                        <div class="card widget-flat">
+                            <div class="card-body">
+                                <div class="float-end">
+                                    <i class="mdi mdi-card-account-details widget-icon bg-info-lighten text-info"></i>
+                                </div>
+                                <h5 class=" fw-normal mt-0" title="Number of For Orientation">For Orientation</h5>
+                                <h3 class="mt-3 mb-3">0</h3>
+                                <p class="mb-0 ">
+                                                                            <span class="me-2">0.00%</span>
+                                                                        <span class="text-nowrap">Since yesterday</span>
+                                </p>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col-->
+
+                    <!-- For Enrollment -->
+                    <div class="col-sm-3">
+                        <div class="card widget-flat">
+                            <div class="card-body">
+                                <div class="float-end">
+                                    <i class="mdi mdi-card-account-mail widget-icon bg-info-lighten text-info"></i>
+                                </div>
+                                <h5 class=" fw-normal mt-0" title="Number of For Enrollment">For Enrollment</h5>
+                                <h3 class="mt-3 mb-3">0</h3>
+                                <p class="mb-0 ">
+                                                                            <span class="me-2">0.00%</span>
+                                                                        <span class="text-nowrap">Since yesterday</span>
+                                </p>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col-->
+
+                    <!-- For Email Verification-->
+                    <div class="col-sm-3">
+                        <div class="card widget-flat">
+                            <div class="card-body">
+                                <div class="float-end">
+                                    <i class="mdi mdi-email-alert widget-icon bg-warning-lighten text-warning"></i>
+                                </div>
+                                <h5 class=" fw-normal mt-0" title="Number of For Email Verification">For Email Verification</h5>
+                                <h3 class="mt-3 mb-3">508</h3>
+                                <p class="mb-0 ">
+                                                                            <span class="me-2">0.00%</span>
+                                                                        <span class="text-nowrap">Since yesterday</span>
+                                </p>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col-->
+
+                    <!-- For Reupload -->
+                    <div class="col-sm-3">
+                        <div class="card widget-flat">
+                            <div class="card-body">
+                                <div class="float-end">
+                                    <i class="mdi mdi-text-account widget-icon bg-warning-lighten text-warning"></i>
+                                </div>
+                                <h5 class=" fw-normal mt-0" title="Number of For Reupload">For Reupload</h5>
+                                <h3 class="mt-3 mb-3">510</h3>
+                                <p class="mb-0 ">
+                                                                            <span class="me-2">0.00%</span>
+                                                                        <span class="text-nowrap">Since yesterday</span>
+                                </p>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col-->
+
+                    <!-- Waiting List (Exam) -->
+                    <div class="col-sm-3">
+                        <div class="card widget-flat">
+                            <div class="card-body">
+                                <div class="float-end">
+                                    <i class="mdi mdi-book-account widget-icon bg-warning-lighten text-warning"></i>
+                                </div>
+                                <h5 class=" fw-normal mt-0" title="Number of Waiting List (Exam)">Waiting List (Exam)</h5>
+                                <h3 class="mt-3 mb-3">0</h3>
+                                <p class="mb-0 ">
+                                                                            <span class="me-2">0.00%</span>
+                                                                        <span class="text-nowrap">Since yesterday</span>
+                                </p>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col-->
+
+                    <!-- Waiting List (Interview) -->
+                    <div class="col-sm-3">
+                        <div class="card widget-flat">
+                            <div class="card-body">
+                                <div class="float-end">
+                                    <i class="mdi mdi-text-account widget-icon bg-warning-lighten text-warning"></i>
+                                </div>
+                                <h5 class=" fw-normal mt-0" title="Number of Waiting List (Interview)">Waiting List (Interview)</h5>
+                                <h3 class="mt-3 mb-3">8</h3>
+                                <p class="mb-0 ">
+                                                                            <span class="me-2">0.00%</span>
+                                                                        <span class="text-nowrap">Since yesterday</span>
+                                </p>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col-->
+
+                    <!-- Cancelled -->
+                    <div class="col-sm-3">
+                        <div class="card widget-flat">
+                            <div class="card-body">
+                                <div class="float-end">
+                                    <i class="mdi mdi-account-check widget-icon bg-danger-lighten text-danger"></i>
+                                </div>
+                                <h5 class=" fw-normal mt-0" title="Number of Cancelled">Cancelled</h5>
+                                <h3 class="mt-3 mb-3">151</h3>
+                                <p class="mb-0 ">
+                                                                            <span class="me-2">0.00%</span>
+                                                                        <span class="text-nowrap">Since yesterday</span>
+                                </p>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col-->
+
+                    <!-- Not Qualified -->
+                    <div class="col-sm-3">
+                        <div class="card widget-flat">
+                            <div class="card-body">
+                                <div class="float-end">
+                                    <i class="mdi mdi-account-off widget-icon bg-danger-lighten text-danger"></i>
+                                </div>
+                                <h5 class=" fw-normal mt-0" title="Number of Not Qualified for Scholarhip">Not Qualified</h5>
+                                <h3 class="mt-3 mb-3">42</h3>
+                                <p class="mb-0 ">
+                                                                            <span class="me-2">0.00%</span>
+                                                                        <span class="text-nowrap">Since yesterday</span>
+                                </p>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col-->
+
+                    <!-- Failed Examination -->
+                    <div class="col-sm-3">
+                        <div class="card widget-flat">
+                            <div class="card-body">
+                                <div class="float-end">
+                                    <i class="mdi mdi-email-check widget-icon bg-danger-lighten text-danger"></i>
+                                </div>
+                                <h5 class=" fw-normal mt-0" title="Number of Failed Examination">Failed Examination</h5>
+                                <h3 class="mt-3 mb-3">141</h3>
+                                <p class="mb-0 ">
+                                                                            <span class="me-2">0.00%</span>
+                                                                        <span class="text-nowrap">Since yesterday</span>
+                                </p>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col-->
+
+                    <!-- Failed Interview -->
+                    <div class="col-sm-3">
+                        <div class="card widget-flat">
+                            <div class="card-body">
+                                <div class="float-end">
+                                    <i class="mdi mdi-text-account widget-icon bg-danger-lighten text-danger"></i>
+                                </div>
+                                <h5 class=" fw-normal mt-0" title="Number of Failed Interview">Failed Interview</h5>
+                                <h3 class="mt-3 mb-3">3</h3>
+                                <p class="mb-0 ">
+                                                                            <span class="me-2">0.00%</span>
+                                                                        <span class="text-nowrap">Since yesterday</span>
+                                </p>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col-->
+                </div> <!-- end row -->
+
+            </div> <!-- end col -->
+
+            <!-- This Column is for only MONTLY Application -->
+            <div class="col-xl-12 col-lg-6 col-md-12">
+                <div class="card card-h-50">
+                    <div class="d-flex card-header justify-content-between align-items-center">
+                        <h4 class="header-title">APPLICANT STATISTICS</h4>
+                        <p>May 12-May 18 (Sun-Sat)</p>
+                        
+                    </div>
+                    <div class="card-body pt-0">
+                        <link rel="modulepreload" href="https://app.laverdad.edu.ph/build/assets/app-c8827808.js" /><script type="module" src="https://app.laverdad.edu.ph/build/assets/app-c8827808.js"></script>                        <div id="chart"></div>
+
+                        
+                    </div> <!-- end card-body-->
+                </div> <!-- end card-->
+
+            </div> <!-- end col -->
+        </div>
+        <!-- end row -->
+
+        <div class="row">
+
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="d-flex card-header justify-content-between align-items-center">
+                        <h4 class="header-title">DEMOGRAPHICS</h4>
+                        
+                    </div>
+
+                    <div class="card-body pt-0">
+
+                        <link rel="modulepreload" href="https://app.laverdad.edu.ph/build/assets/app-c8827808.js" /><script type="module" src="https://app.laverdad.edu.ph/build/assets/app-c8827808.js"></script>                        
+                        <div id="pie-chart" class="apex-charts"></div>
+                                                    <p>
+                                <i class="mdi mdi-square text-primary" ></i> Pre-School
+                                <span class="float-end">105</span>
+                            </p>
+                                                    <p>
+                                <i class="mdi mdi-square text-success" ></i> Elementary
+                                <span class="float-end">261</span>
+                            </p>
+                                                    <p>
+                                <i class="mdi mdi-square text-warning" ></i> Junior High School
+                                <span class="float-end">517</span>
+                            </p>
+                                                    <p>
+                                <i class="mdi mdi-square text-danger" ></i> Senior High School
+                                <span class="float-end">584</span>
+                            </p>
+                                                    <p>
+                                <i class="mdi mdi-square text-"  style="color: #775DD0;" ></i> College
+                                <span class="float-end">1333</span>
+                            </p>
+                                            </div> <!-- end card-body-->
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="d-flex card-header justify-content-between align-items-center">
+                        <h4 class="header-title">Recent Activity</h4>
+                        
+                    </div>
+                    
+                    <div class="card-body py-0 mb-3" data-simplebar style="max-height: 403px;">
+                        <div class="timeline-alt py-0">
+                                                                                            <div class="timeline-item">
+                                    <i class="mdi mdi-account bg-info-lighten text-info timeline-icon"></i>
+                                    <div class="timeline-item-info">
+                                        
+                                            
+
+                                                                                            
+                                                                                                    <a href="javascript:void(0);" class="text-primary fw-bold mb-1 d-block">Registrar Update</a>
+                                                    <small>Carlo Gerard Gorospe's</small>
+                                                
+                                            
+
+                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                        
+                                                            <small>submitted requirements have remarks from Ruth Angel Capellan (Registrar).</small>
+
+                                                                                                                                                                                                        </small>
+                                        
+                                        <p class="mb-0 pb-2">
+                                            <small class="">40 seconds ago</small>
+                                        </p>
+                                    </div>
+                                </div>
+                                                                                            <div class="timeline-item">
+                                    <i class="mdi mdi-account bg-info-lighten text-info timeline-icon"></i>
+                                    <div class="timeline-item-info">
+                                        
+                                            
+
+                                            
+                                                                                                    <a href="javascript:void(0);" class="text-primary fw-bold mb-1 d-block">Registrar Update</a>
+                                                    <small>Christy Pamintuan's
+                                                
+                                            
+
+                                                                                                                                                                                                                                                                            
+                                                                                                                            
+                                                                <small>
+                                                                    status has been changed from Reuploaded to Verified Requirements by Ruth Angel Capellan (Registrar)
+                                                                </small>
+                                                            
+                                                                                                                                                                                                                        
+                                                                                                                                                </small>
+                                        
+                                        <p class="mb-0 pb-2">
+                                            <small class="">3 minutes ago</small>
+                                        </p>
+                                    </div>
+                                </div>
+                                                                                            <div class="timeline-item">
+                                    <i class="mdi mdi-account bg-info-lighten text-info timeline-icon"></i>
+                                    <div class="timeline-item-info">
+                                        
+                                            
+
+                                                                                            
+                                                                                                    <a href="javascript:void(0);" class="text-primary fw-bold mb-1 d-block">Registrar Update</a>
+                                                    <small>Christy Pamintuan's</small>
+                                                
+                                            
+
+                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                        
+                                                            <small>submitted requirements have remarks from Ruth Angel Capellan (Registrar).</small>
+
+                                                                                                                                                                                                        </small>
+                                        
+                                        <p class="mb-0 pb-2">
+                                            <small class="">3 minutes ago</small>
+                                        </p>
+                                    </div>
+                                </div>
+                                                                                            <div class="timeline-item">
+                                    <i class="mdi mdi-account bg-info-lighten text-info timeline-icon"></i>
+                                    <div class="timeline-item-info">
+                                                                                                                                    
+                                                <a href="javascript:void(0);" class="text-primary fw-bold mb-1 d-block">Applicant Update</a>
+                                                <small>
+                                                    The examination schedule for Mikaela Fatima Nunga has been set.
+                                                </small>
+                                            
+                                        
+                                        <p class="mb-0 pb-2">
+                                            <small class="">17 minutes ago</small>
+                                        </p>
+                                    </div>
+                                </div>
+                                                                                            <div class="timeline-item">
+                                    <i class="mdi mdi-account bg-info-lighten text-info timeline-icon"></i>
+                                    <div class="timeline-item-info">
+                                        
+                                            
+
+                                            
+                                                                                                    <a href="javascript:void(0);" class="text-primary fw-bold mb-1 d-block">Registrar Update</a>
+                                                    <small>Mikaela Fatima Nunga's
+                                                
+                                            
+
+                                                                                                                                                                                                                                                                            
+                                                                                                                            
+                                                                <small>
+                                                                    status has been changed from Verified Applicant to Scheduled for Scholarship Examination by Ruth Angel Capellan (Registrar)
+                                                                </small>
+                                                            
+                                                                                                                                                                                                                        
+                                                                                                                                                </small>
+                                        
+                                        <p class="mb-0 pb-2">
+                                            <small class="">17 minutes ago</small>
+                                        </p>
+                                    </div>
+                                </div>
+                                                                                            <div class="timeline-item">
+                                    <i class="mdi mdi-account bg-info-lighten text-info timeline-icon"></i>
+                                    <div class="timeline-item-info">
+                                                                                                                                    
+                                                <a href="javascript:void(0);" class="text-primary fw-bold mb-1 d-block">Applicant Update</a>
+                                                <small>
+                                                    The examination schedule for Carl Jayden Dionisio has been set.
+                                                </small>
+                                            
+                                        
+                                        <p class="mb-0 pb-2">
+                                            <small class="">18 minutes ago</small>
+                                        </p>
+                                    </div>
+                                </div>
+                                                                                            <div class="timeline-item">
+                                    <i class="mdi mdi-account bg-info-lighten text-info timeline-icon"></i>
+                                    <div class="timeline-item-info">
+                                        
+                                            
+
+                                            
+                                                                                                    <a href="javascript:void(0);" class="text-primary fw-bold mb-1 d-block">Registrar Update</a>
+                                                    <small>Carl Jayden Dionisio's
+                                                
+                                            
+
+                                                                                                                                                                                                                                                                            
+                                                                                                                            
+                                                                <small>
+                                                                    status has been changed from Verified Applicant to Scheduled for Scholarship Examination by Ruth Angel Capellan (Registrar)
+                                                                </small>
+                                                            
+                                                                                                                                                                                                                        
+                                                                                                                                                </small>
+                                        
+                                        <p class="mb-0 pb-2">
+                                            <small class="">18 minutes ago</small>
+                                        </p>
+                                    </div>
+                                </div>
+                                                                                            <div class="timeline-item">
+                                    <i class="mdi mdi-account bg-info-lighten text-info timeline-icon"></i>
+                                    <div class="timeline-item-info">
+                                                                                                                                    
+                                                <a href="javascript:void(0);" class="text-primary fw-bold mb-1 d-block">Applicant Update</a>
+                                                <small>
+                                                    The examination schedule for Sarah Christelle Bailon has been set.
+                                                </small>
+                                            
+                                        
+                                        <p class="mb-0 pb-2">
+                                            <small class="">22 minutes ago</small>
+                                        </p>
+                                    </div>
+                                </div>
+                                                                                            <div class="timeline-item">
+                                    <i class="mdi mdi-account bg-info-lighten text-info timeline-icon"></i>
+                                    <div class="timeline-item-info">
+                                        
+                                            
+
+                                            
+                                                                                                    <a href="javascript:void(0);" class="text-primary fw-bold mb-1 d-block">Registrar Update</a>
+                                                    <small>Sarah Christelle Bailon's
+                                                
+                                            
+
+                                                                                                                                                                                                                                                                            
+                                                                                                                            
+                                                                <small>
+                                                                    status has been changed from Verified Applicant to Scheduled for Scholarship Examination by Ruth Angel Capellan (Registrar)
+                                                                </small>
+                                                            
+                                                                                                                                                                                                                        
+                                                                                                                                                </small>
+                                        
+                                        <p class="mb-0 pb-2">
+                                            <small class="">22 minutes ago</small>
+                                        </p>
+                                    </div>
+                                </div>
+                                                                                            <div class="timeline-item">
+                                    <i class="mdi mdi-account bg-info-lighten text-info timeline-icon"></i>
+                                    <div class="timeline-item-info">
+                                                                                                                                    
+                                                <a href="javascript:void(0);" class="text-primary fw-bold mb-1 d-block">Applicant Update</a>
+                                                <small>
+                                                    The examination schedule for Kurt Joserey Contreras has been set.
+                                                </small>
+                                            
+                                        
+                                        <p class="mb-0 pb-2">
+                                            <small class="">24 minutes ago</small>
+                                        </p>
+                                    </div>
+                                </div>
+                                                    </div>
+                        <!-- end timeline -->
+                    </div> <!-- end slimscroll -->
+                            
+                </div>
+                <!-- end card-->
+            </div>
+        </div>
+
+    </div>
+    <!-- container -->
+    
+
+    <!-- Applicant Statistics Bar Graph -->
+    <script type="module">
+        var seriesData = [{"name":"Applicants","type":"column","data":[0,0,0,0,0,0,0]}];
+
+        var options = {
+            chart: {
+                height: 256,
+                type: "bar",
+                stacked: !0
+            },
+            plotOptions: {
+                bar: {
+                    horizontal: !1,
+                    columnWidth: "50%",
+                }
+            },
+            dataLabels: {
+                enabled: !1
+            },
+            stroke: {
+                show: !0,
+                width: 2,
+                colors: ["transparent"]
+            },
+            series: seriesData,
+            stroke: {
+                width: [0]
+            },
+            plotOptions: {
+                bar: {
+                    columnWidth: "50%" // Adjust the column width as needed
+                }
+            },
+            xaxis: {
+                categories: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+                axisBorder: {
+                    show: !1
+                }
+            },
+            yaxis: {
+                labels: {
+                    formatter: function(val) {
+                        return parseInt(val);
+                    }
+                },
+            },
+            tooltip: {
+                shared: false,
+                intersect: true,
+                x: {
+                    show: false
+                }
+            },
+            toolbar: {
+                show: !1, // Hide the toolbar
+            },
+            legend: {
+                show: false, // Always hide the legend
+                horizontalAlign: "left",
+                offsetX: 40
+            }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+    </script>
+
+    <!-- Pie Chart -->
+    <script type="module">
+       var options = {
+        series: [105,261,517,584,1333],
+        labels: ["Pre-School","Elementary","Junior High School","Senior High School","College"],
+        chart: {
+            type: 'donut',
+        },
+        legend: {
+            show: false, // Hide the legend
+        },
+        };
+
+        var chart = new ApexCharts(document.querySelector("#pie-chart"), options);
+        chart.render();
+    </script>
+</div>
+            </div>
+
+            <!-- Footer Start -->
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="text-md-end footer-links d-none d-md-block">
+                                <strong>
+                                    <u>
+                                        <a href="https://app.laverdad.edu.ph/scholarship-application/privacy-policy" target="_blank">
+                                            Terms and Conditions
+                                        </a>
+                                    </u>
+                                </strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- end Footer -->
+
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+        </div>
+        
+        <!-- END wrapper -->   
+        
+        <!-- Vendor js -->
+        <script src="../assets/js/vendor.min.js"></script>
+
+        <!-- Dashboard App js -->
+        <script src="../assets/js/pages/demo.dashboard.js"></script>
+
+        <!-- App js -->
+        <script src="../assets/js/app.min.js"></script>
+        <script src="js/app.js"></script>
+          <!-- Apex Charts js -->
+          <script src="https://app.laverdad.edu.ph/assets/vendor/apexcharts/apexcharts.min.js"></script>
+
+        <!-- Datatables js -->
+		<script src="../assets/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+		<script src="../assets/vendor/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+		<script src="../assets/vendor/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+		<script src="../assets/vendor/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
+
+		<!-- Datatable Init js -->
+		<script src="../assets/js/pages/demo.datatable-init.js"></script>
+
+    </body>
+</html> 

@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Dashboard Enrollment</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="../assets/images/lvcc-logo.png"> <!-- Set favicon to LVCC logo -->
+
+        <!-- Theme Config Js -->
+        <script src="../assets/js/hyper-config.js"></script>
+
+        <!-- App css -->
+        <link href="../assets/css/app-creative.min.css" rel="stylesheet" type="text/css" id="app-style" />
+        <!-- LVCC css -->
+        <link rel="stylesheet" type="text/css" href="../assets/css/lvcc.css">
+
+        <!-- Icons css -->
+        <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" /> <!-- link for locale icons from Hyper Kit -->
+
+		<!-- Datatables css -->
+		<link href="../assets/vendor/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+		<link href="../assets/vendor/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+    </head>
+
+	<body>
+        <!-- Begin page -->
+        <div class="wrapper">
+
+    <!-- ========== Topbar Start ========== -->
+    <div class="navbar-custom">
+    <div class="topbar container-fluid">
+        <div class="d-flex align-items-center gap-lg-2 gap-1">
+
+            <!-- Sidebar Menu Toggle Button -->
+            <button class="button-toggle-menu text-secondary">
+                <i class="mdi mdi-menu"></i> <!-- burger menu icon -->
+            </button>
+        </div>
+
+        <ul class="topbar-menu d-flex align-items-center gap-3">
+            <!-- Notification List Start -->
+            <li class="dropdown notification-list">
+                                    <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <i class="ri-notification-3-line font-22 text-secondary"></i>
+                                                    <span class="noti-icon-badge"></span>
+                                            </a>
+                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg py-0">
+                    <div class="p-2 border-top-0 border-start-0 border-end-0 border-dashed border">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h6 class="m-0 font-16 fw-semibold"> Notification</h6>
+                            </div>
+                            <!-- <div class="col-auto">
+                                <a href="javascript: void(0);" class="text-dark text-decoration-underline">
+                                    <small>Clear All</small>
+                                </a>
+                            </div> -->
+                        </div>
+                    </div>
+
+                    <div class="px-3" style="max-height: 300px;" data-simplebar>
+
+                        <!-- <h5 class="text-muted font-13 fw-normal mt-2">Today</h5> -->
+
+                        <!-- item-->
+                                                    <form id="notificationForm_1219" action="https://app.laverdad.edu.ph/admin/read-noti/1219" method="post">
+                                <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                <a href="#" onclick="document.getElementById('notificationForm_1219').submit()" class="dropdown-item p-0 notify-item card shadow-none mb-2 unread-noti">
+                                    <div class="card-body">
+                                        <!-- <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span> -->
+                                        <div class="d-flex align-items-center">
+                                            <div class="flex-shrink-0">
+                                                <div class="notify-icon bg-primary">
+                                                    <i class="mdi mdi-comment-account-outline"></i>
+                                                </div>
+                                            </div>
+                                            <div class="flex-grow-1 text-truncate ms-2">
+                                                <h5 class="noti-item-title fw-semibold font-14">New Upload <small class="fw-normal text-muted ms-1">35 minutes ago</small></h5>
+                                                <small class="noti-item-subtitle text-muted">Axl Ulrich Giron has new uploads.</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </form>
+                            <!-- <a href="https://app.laverdad.edu.ph/admin/review-requirements/2754" class="dropdown-item p-0 notify-item card shadow-none mb-2 unread-noti"> -->
+            <!-- item-->
+                        <!-- <a href="javascript:void(0);" class="dropdown-item p-0 notify-item card unread-noti shadow-none mb-2">
+                            <div class="card-body">
+                                <span class="float-end noti-close-btn text-muted"><i class="mdi mdi-close"></i></span>
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-shrink-0">
+                                        <div class="notify-icon bg-primary">
+                                            <i class="mdi mdi-comment-account-outline"></i>
+                                        </div>
+                                    </div>
+                                    <div class="flex-grow-1 text-truncate ms-2">
+                                        <h5 class="noti-item-title fw-semibold font-14">New Reupload</h5>
+                                        <small class="noti-item-subtitle text-muted">[Applicant's name] has new reupload</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </a> -->
+
+                        <!-- <div class="text-center">
+                            <i class="mdi mdi-dots-circle mdi-spin text-muted h3 mt-0"></i>
+                        </div> -->
+                    </div>
+
+                    <!-- All-->
+                    <!-- <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item border-top border-light py-2">
+                        View All
+                    </a> -->
+
+                </div>
+            </li>
+            <!-- Notification List End -->
+
+
+            <!-- logged in user tab in header -->
+            <li class="dropdown">
+                <a id="profile-dropdown" class="border-0 nav-link dropdown-toggle arrow-none nav-user px-2 text-dark bg-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                    <span class="account-user-avatar">
+                        <img src="https://app.laverdad.edu.ph/assets/images/users/default-profile-picture1.jpg" alt="user-image" width="32" class="rounded-circle"> <!-- user avatar -->
+                    </span>
+                    <span class="d-lg-flex flex-column gap-1 d-none">
+                        <h5 class="my-0">
+                            Timothy Carl Bundalian
+                        </h5> <!-- user name -->
+                        <h6 class="my-0 fw-normal">System Admin</h6> <!-- user position -->
+                    </span>
+                </a>
+                <!-- dropdown menu at user tab in header -->
+                <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated profile-dropdown">
+                    <!-- item-->
+                    <div class=" dropdown-header noti-title">
+                        <h6 class="text-overflow m-0">Welcome !</h6>
+                    </div>
+
+                    <!-- item-->
+                    <a href="https://app.laverdad.edu.ph/admin/profile" class="dropdown-item">
+                        <i class="mdi mdi-account-circle me-1"></i>
+                        <span>My Account</span>
+                    </a>
+                   <!-- item-->
+                    <form method="POST" action="https://app.laverdad.edu.ph/logout">
+                        <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                        <button class="dropdown-item btn btn-link" type="submit">
+                            <i class="mdi mdi-logout me-1"></i>
+                            <span>Logout</span>
+                        </button>
+
+                    </form>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+            <!-- ========== Topbar End ========== -->             
+
+             <!-- ========== Left Sidebar Start ========== -->
+             <div class="leftside-menu">
+
+                <a id="logo-bg" href="" class="logo logo-light">
+                    <span class="logo-lg">
+                        <img src="https://app.laverdad.edu.ph/assets/images/lvcc-logo.png" id="logo" alt="logo"> <!-- LVCC logo in side nav -->
+                    </span>
+                    <span class="logo-sm">
+                        <img id="logo-sm" src="https://app.laverdad.edu.ph/assets/images/lvcc-logo.png" alt="small logo"> <!-- LVCC logo in collapsed side nav -->
+                    </span>
+                </a>
+            
+                <!-- Sidebar Hover Menu Toggle Button -->
+                <div class="button-sm-hover" data-bs-toggle="tooltip" data-bs-placement="right" title="Show Full Sidebar">
+                    <i class="ri-checkbox-blank-circle-line align-middle"></i>
+                </div>
+            
+                <!-- Full Sidebar Menu Close Button -->
+                <div class="button-close-fullsidebar">
+                    <i class="ri-close-fill align-middle"></i>
+                </div>
+            
+                <!-- Sidebar -left -->
+                <div class="h-100" id="leftside-menu-container" data-simplebar>
+            
+                    <!--- Sidemenu -->
+                    <ul class="side-nav">
+            
+                        <li class="side-nav-title">Home</li>
+            
+                        <li class="side-nav-item loadScreen">
+                            <a href="../Enrollment/Dashboard.html" class="side-nav-link" id="hover">
+                                <i class="uil-home-alt"></i>
+                                <span> Dashboards </span>
+                            </a>
+                        </li>
+            
+                        <li class="side-nav-title">Scholarship Management</li>
+            
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#scheduling" aria-expanded="false"
+                                aria-controls="sidebarEcommerce" class="side-nav-link " id="hover">
+                                <i class="mdi mdi-calendar-text"></i>
+                                <span>Scheduling</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="scheduling">
+                                <ul class="side-nav-second-level mt-2">
+            
+                                    <li>
+                                        <a href="../Enrollment/Application Schedule.html" class="side-nav-link loadScreen" id="hover">
+                                            <span>Application Schedule</span>
+                                        </a>
+                                    </li>
+            
+                                    <li>
+                                        <a href="../Enrollment/Exam-Schedule.html" class="side-nav-link loadScreen" id="hover">
+                                            <span>Exam Schedule</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../Enrollment/Interview-Schedule.html"class="side-nav-link loadScreen" id="hover">
+                                            <span>Interview Schedule</span>
+                                        </a>
+                                    </li>
+            
+                                    <li>
+                                        <a href="../Enrollment/Orientation-Schedule.html" class="side-nav-link loadScreen" id="hover">
+                                            <span>Orientation Schedule</span>
+                                        </a>
+                                    </li>
+            
+            
+                                </ul>
+                            </div>
+                        </li>
+            
+                        <li class="side-nav-item loadScreen">
+                            <a href="../Enrollment/Application-Email-Verification.html" class="side-nav-link " id="hover">
+                                <i class="mdi mdi-card-account-details"></i>
+                                <span>Applicant Email Verification</span>
+                            </a>
+                        </li>
+            
+                        <li class="side-nav-item loadScreen">
+                            <a href="../Enrollment/Scholarship-Applicants.html" class="side-nav-link " id="hover">
+                                <i class="mdi mdi-card-account-details"></i>
+                                <span> Scholarship Applicants </span>
+                            </a>
+                        </li>
+            
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#applicant-screening" aria-expanded="false"
+                                aria-controls="applicant-screening" class="side-nav-link " id="hover">
+                                <i class="mdi mdi-newspaper-variant-multiple"></i>
+                                <span> Applicant Screening </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="applicant-screening">
+                                <ul class="side-nav-second-level mt-2">
+                                    <li>
+                                        <a class="loadScreen" href="../Enrollment//For-Examination.html" class="side-nav-link" id="hover">
+                                            <span>For Examination</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="loadScreen" href="../Enrollment//For-Interview.html" id="hover">
+                                            <span>For Interview</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="loadScreen" href="../Enrollment//For-Orientation.html" id="hover">
+                                            <span>For Orientation</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="loadScreen" href="../Enrollment//For-Enrollment.html" id="hover">
+                                            <span>For Enrollment</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+            
+                        
+            
+                                        <li class="side-nav-item">
+                                <a data-bs-toggle="collapse" href="#export-reports" aria-expanded="false"
+                                    aria-controls="export-reports" class="side-nav-link" id="hover">
+                                    <i class="mdi mdi-application-export"></i>
+                                    <span>Export Reports</span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <div class="collapse" id="export-reports">
+                                    <ul class="side-nav-second-level mt-2">
+                                                                        <li>
+                                                <a class="loadScreen" href="#" id="hover">
+                                                    <span>Dashboard (Overall)</span>
+                                                </a>
+                                            </li>
+                                                                    <li>
+                                            <a class="loadScreen" href="#" class="side-nav-link" id="hover">
+                                                <span>Applicants Profile</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="loadScreen" href="#" id="hover">
+                                                <span>Examination Attendance</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="loadScreen" href="#" id="hover">
+                                                <span>Interview Attendance</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="loadScreen" href="#" id="hover">
+                                                <span>Orientation Attendance</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        
+                        <li class="side-nav-title">Pages</li>
+            
+                        
+                        <li class="side-nav-item loadScreen">
+                            <a href="../Enrollment/School-Branch.html" class="side-nav-link" id="hover" >
+                                <i class="ri-building-fill"></i>
+                                <span>School Branch</span>
+                            </a>
+                        </li>
+            
+                        
+                                        <li class="side-nav-item loadScreen">
+                                <a href="../Enrollment/Applicant-status-checking.html" class="side-nav-link" id="hover" >
+                                    <i class="mdi mdi-list-status"></i>
+                                    <span>Applicant Status Checking</span>
+                                </a>
+                            </li>
+                        
+                        
+            
+                        <li class="side-nav-item loadScreen">
+                            <a href="../Enrollment//Activity-logs.html" class="side-nav-link" id="hover" >
+                                <i class="mdi mdi-file-sign"></i>
+                                <span>Activity Logs</span>
+                            </a>
+                        </li>
+            
+                        <li class="side-nav-title">User Management</li>
+            
+                        <li class="side-nav-item loadScreen">
+                            <a href="../Enrollment/Users.html" class="side-nav-link" id="hover">
+                                <i class="mdi mdi-account-group"></i>
+                                <span>Users</span>
+                            </a>
+                        </li>
+            
+                        <li class="side-nav-item loadScreen">
+                            <a href="../Enrollment/Deleted-Users.html" class="side-nav-link" id="hover">
+                                <i class="mdi mdi-archive"></i>
+                                <span>Deleted Users</span>
+                            </a>
+                        </li>
+            
+                        
+            
+                        <li class="side-nav-item loadScreen">
+                            <a href="../Enrollment/Roles-&-Permissions.html" class="side-nav-link" id="hover">
+                                <i class="mdi mdi-account-lock-open"></i>
+                                <span>Roles and Permissions</span>
+                            </a>
+                        </li>
+            
+                        <li class="side-nav-item loadScreen">
+                            <a href="../Enrollment/Permissions.html" class="side-nav-link" id="hover">
+                                <i class="mdi mdi-account-lock-open"></i>
+                                <span>Permission</span>
+                            </a>
+                        </li>
+            
+                        
+            
+            
+            
+                        <br class="mb-5">
+            
+            
+            
+                    </ul>
+                    <!--- End Sidemenu -->
+            
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+             <!-- ========== Left Sidebar End ========== -->
+
+           
+            <!-- Start Content-->
+    
+    <div class="content-page">
+                
+        <div class="content">
+        
+            <!-- Start Content -->
+            <div class="container-fluid">
+        
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+                                    <li class="breadcrumb-item"><a href="javascript: void(0);">Pages</a></li>
+                                    <li class="breadcrumb-item active">Application Schedules</li>
+                                </ol>
+                            </div>
+                            <h4 class="page-title">Batch Schedules</h4>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="d-flex card-header justify-content-between align-items-center">
+                                <h3 class="header-title fw-bolder">Manage Batch Schedules</h3>
+                                
+                                                        
+                                <button type="button"
+                                    class="btn btn-primary"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#addBatch"
+                                    style="background-color: #1F3463; border: none;"
+                                    >
+                                    <i class="mdi mdi-plus-thick"></i> <span>Add Schedule</span>
+                                </button>
+                                <div id="addBatch" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                        <form id="myForm" action="https://app.laverdad.edu.ph/admin/batch-scheduling/batch-schedule" method="post">
+                                            <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                    
+                                            <div class="modal-header">
+                                                <h4 class="modal-title"  id="multiple-oneModalLabel">Add Batch</h4>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="mb-3">
+                                                    <label for="school_year" class="form-label">School Year</label>
+                                                    <select name="school_year" id="school_year" class="form-select">
+                                                        <option value="" selected disabled>Set the school year</option>
+                                                        <option value="2024-2025">2024-2025</option>
+                                                    </select>
+                                                    <span class="text-danger" id="school_yearError"></span>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="start_date" class="form-label">Start Date</label>
+                                                    <input type="date" id="start_date" name="start_date" class="form-control" placeholder="Start Date">
+                                                    <span class="text-danger" id="start_dateError"></span>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="end_date" class="form-label">End Date</label>
+                                                    <input type="date" id="end_date" name="end_date" class="form-control" placeholder="End Date">
+                                                    <span class="text-danger" id="end_dateError"></span>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="school_branch_id" class="form-label">School Branch</label>
+                                                    <select class="form-select" name="school_branch_id" id="school_branch_id">
+                                                        <option value="" selected disabled>Select a branch</option>
+                                                                                                            <option value="1">La Verdad Christian College - Apalit</option>
+                                                                                                    </select>
+                                                </div>
+                                                <input type="hidden" name="created_by" value="36">
+                                                <input type="hidden" name="updated_by" value="36">
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-info loadScreen">Submit</button>
+                                            </div>
+                                        </form>
+        
+                                        <script>
+                                            document.getElementById('myForm').addEventListener('submit', function (e) {
+                                                e.preventDefault();
+        
+                                                let batchName = document.getElementById('school_year').value;
+                                                let startDate = document.getElementById('start_date').value;
+                                                let endDate = document.getElementById('end_date').value;
+                                                let schoolBranchId = document.getElementById('school_branch_id').value;
+        
+                                                // Reset error messages
+                                                document.querySelectorAll('.error').forEach(errorElement => errorElement.textContent = '');
+        
+                                                // Perform client-side validation
+                                                let isValid = true;
+        
+                                                if (batchName === '') {
+                                                    document.getElementById('school_yearError').textContent = 'School Year is required.';
+                                                    isValid = false;
+                                                }
+        
+                                                if (startDate === '') {
+                                                    document.getElementById('start_dateError').textContent = 'Start Date is required.';
+                                                    isValid = false;
+                                                }
+        
+                                                if (endDate === '') {
+                                                    document.getElementById('end_dateError').textContent = 'End Date is required.';
+                                                    isValid = false;
+                                                }
+        
+                                                if (startDate >= endDate) {
+                                                    document.getElementById('start_dateError').textContent = 'The Start Date must be earlier than the End Date.';
+                                                    document.getElementById('end_dateError').textContent = 'The End Date must be later than the Start Date.';
+                                                    isValid = false;
+                                                }
+        
+                                                if (schoolBranchId === '') {
+                                                    document.getElementById('school_branch_idError').textContent = 'School Branch is required.';
+                                                    isValid = false;
+                                                }
+                                                // Add more validation rules as needed
+        
+                                                if (isValid) {
+                                                    this.submit(); // If all validations pass, you can submit the form
+                                                }
+                                            });
+                                        </script>
+        
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+        
+                            </div>
+                            <div class="card-body">
+                                <table id="basic-datatable" class="table dt-responsive nowrap w-100">
+                                    <thead style="background-color: #1F3463; color: #fff;">
+                                        <tr>
+                                            <th>School Year</th>
+                                            <th>Start Date</th>
+                                            <th>End Date</th>
+                                            <th>School Branch</th>
+                                            <th>Is Closed?</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                                                            <tr>
+                                                <td>2024-2025</td>
+                                                <td>January 25, 2024</td>
+                                                <td>February 25, 2024</td>
+                                                <td>La Verdad Christian College - Apalit</td>
+                                                <td>
+                                                    <div>
+                                                        <input type="checkbox"
+                                                            onclick="event.preventDefault();"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target="#is-close-modal-1-1"
+                                                            id="switch-1"
+                                                            checked
+                                                            data-switch="danger"
+                                                             />
+                                                        <label for="switch-1" data-on-label="Yes" data-off-label="No" class="mb-0 d-block"></label>
+                                                    </div>
+                                                </td>
+        
+                                                <!-- Danger Alert Modal -->
+                                                <div id="is-close-modal-1-0" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                                    <div class="modal-dialog modal-sm">
+                                                        <div class="modal-content modal-filled bg-danger">
+                                                            <form action="https://app.laverdad.edu.ph/admin/batch-scheduling/batch-schedule/1" method="post">
+                                                                <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                        <input type="hidden" name="_method" value="PUT">                                                        <div class="modal-body p-4">
+                                                                    <div class="text-center">
+                                                                        <i class="ri-close-circle-line h1"></i>
+                                                                        <h4 class="mt-2">Oh snap!</h4>
+                                                                        <input type="hidden" name="is_close" value="1">
+                                                                        <input type="hidden" name="updated_by" value="36">
+                                                                        <p class="mt-3">Are you sure to set 2024-2025 to close?</p>
+                                                                        <button type="submit" class="btn btn-light my-2 loadScreen" data-bs-dismiss="modal">Continue</button>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div><!-- /.modal-content -->
+                                                    </div><!-- /.modal-dialog -->
+                                                </div><!-- /.modal -->
+        
+                                                <!-- Info Alert Modal -->
+                                                <div id="is-close-modal-1-1" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                                    <div class="modal-dialog modal-sm">
+                                                        <div class="modal-content">
+                                                            <form action="https://app.laverdad.edu.ph/admin/batch-scheduling/batch-schedule/1" method="post">
+                                                                <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                        <input type="hidden" name="_method" value="PUT">                                                        <div class="modal-body p-4">
+                                                                    <div class="text-center">
+                                                                        <i class="ri-information-line h1 text-info"></i>
+                                                                        <h4 class="mt-2">Heads up!</h4>
+                                                                        <input type="hidden" name="is_close" value="0">
+                                                                        <input type="hidden" name="updated_by" value="36">
+                                                                        <p class="mt-3">Are you sure to re-open 2024-2025?</p>
+                                                                        <button type="submit" class="btn btn-info my-2 loadScreen" data-bs-dismiss="modal">Continue</button>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div><!-- /.modal-content -->
+                                                    </div><!-- /.modal-dialog -->
+                                                </div><!-- /.modal -->
+        
+                                                <td class="table-action">
+                                                                                                    <a type="button" data-bs-toggle="modal" data-bs-target="#editBatch-1" class="action-icon" style="color: #1F3463"> <i class="mdi mdi-pencil"></i></a>
+                                                                                                <!-- content -->
+                                                    <div id="editBatch-1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <form action="https://app.laverdad.edu.ph/admin/batch-scheduling/batch-schedule/1" method="post">
+                                                                    <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                            <input type="hidden" name="_method" value="PUT">
+                                                                    <div class="modal-header">
+                                                                        <h4 class="modal-title" id="multiple-oneModalLabel">Edit Batch</h4>
+                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <div class="mb-3">
+                                                                            <label for="school_year" class="form-label">School Year</label>
+                                                                            <input type="text" name="school_year" id="school_year" class="form-control" value="2024-2025">
+                                                                        </div>
+                                                                        <!-- Date Picker -->
+                                                                        <div class="mb-3 position-relative" id="datepicker1">
+                                                                            <label for="start_date" class="form-label">Start Date</label>
+                                                                            <input type="date" name="start_date" id="start_date" class="form-control" value="2024-01-25" data-provide="datepicker" data-date-container="#datepicker1">
+                                                                        </div>
+                                                                        <!-- Date Picker -->
+                                                                        <div class="mb-3 position-relative" id="datepicker2">
+                                                                            <label for="end_date" class="form-label">End Date</label>
+                                                                            <input type="date" name="end_date" id="end_date" class="form-control" value="2024-02-25" data-provide="datepicker" data-date-container="#datepicker2">
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label for="school_branch_id" class="form-label">School Branch</label>
+                                                                            <select class="form-select" name="school_branch_id" id="school_branch_id">
+                                                                                                                                                            <option value="1"  selected >La Verdad Christian College - Apalit</option>
+                                                                                                                                                    </select>
+                                                                        </div>
+                                                                        <div class="mt-2 ml-3">
+                                                                            <input type="hidden" name="updated_by" id="updated_by" value="36">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="submit" class="btn btn-info loadScreen">Save</button>
+                                                                    </div>
+                                                                </form>
+                                                            </div><!-- /.modal-content -->
+                                                        </div><!-- /.modal-dialog -->
+                                                    </div><!-- /.modal -->
+                                                                                                    <a type="button" class="action-icon text-danger" data-bs-toggle="modal" data-bs-target="#danger-header-modal-1"> <i class="mdi mdi-delete"></i></a>
+                                                                                            </td>
+                                                <!-- Danger Alert Modal -->
+                                                <div id="danger-header-modal-1" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                                    <div class="modal-dialog modal-sm">
+                                                        <div class="modal-content modal-filled bg-danger">
+                                                            <div class="modal-body p-4">
+                                                                <div class="text-center">
+                                                                    <form action="https://app.laverdad.edu.ph/admin/batch-scheduling/batch-schedule/1" method="post">
+                                                                        <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                                <input type="hidden" name="_method" value="DELETE">                                                                <i class="ri-close-circle-line h1"></i>
+                                                                        <h4 class="mt-2">Oh snap!</h4>
+                                                                        <p class="mt-3">Are you sure, do you want to delete this batch schedule?</p>
+                                                                        <button type="submit" class="btn btn-light my-2 loadScreen" data-bs-dismiss="modal">Continue</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div><!-- /.modal-content -->
+                                                    </div><!-- /.modal-dialog -->
+                                                </div><!-- /.modal -->
+                                            </tr>
+                                                                            <tr>
+                                                <td>2024-2025</td>
+                                                <td>February 26, 2024</td>
+                                                <td>March 29, 2024</td>
+                                                <td>La Verdad Christian College - Apalit</td>
+                                                <td>
+                                                    <div>
+                                                        <input type="checkbox"
+                                                            onclick="event.preventDefault();"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target="#is-close-modal-2-1"
+                                                            id="switch-2"
+                                                            checked
+                                                            data-switch="danger"
+                                                             />
+                                                        <label for="switch-2" data-on-label="Yes" data-off-label="No" class="mb-0 d-block"></label>
+                                                    </div>
+                                                </td>
+        
+                                                <!-- Danger Alert Modal -->
+                                                <div id="is-close-modal-2-0" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                                    <div class="modal-dialog modal-sm">
+                                                        <div class="modal-content modal-filled bg-danger">
+                                                            <form action="https://app.laverdad.edu.ph/admin/batch-scheduling/batch-schedule/2" method="post">
+                                                                <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                        <input type="hidden" name="_method" value="PUT">                                                        <div class="modal-body p-4">
+                                                                    <div class="text-center">
+                                                                        <i class="ri-close-circle-line h1"></i>
+                                                                        <h4 class="mt-2">Oh snap!</h4>
+                                                                        <input type="hidden" name="is_close" value="1">
+                                                                        <input type="hidden" name="updated_by" value="36">
+                                                                        <p class="mt-3">Are you sure to set 2024-2025 to close?</p>
+                                                                        <button type="submit" class="btn btn-light my-2 loadScreen" data-bs-dismiss="modal">Continue</button>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div><!-- /.modal-content -->
+                                                    </div><!-- /.modal-dialog -->
+                                                </div><!-- /.modal -->
+        
+                                                <!-- Info Alert Modal -->
+                                                <div id="is-close-modal-2-1" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                                    <div class="modal-dialog modal-sm">
+                                                        <div class="modal-content">
+                                                            <form action="https://app.laverdad.edu.ph/admin/batch-scheduling/batch-schedule/2" method="post">
+                                                                <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                        <input type="hidden" name="_method" value="PUT">                                                        <div class="modal-body p-4">
+                                                                    <div class="text-center">
+                                                                        <i class="ri-information-line h1 text-info"></i>
+                                                                        <h4 class="mt-2">Heads up!</h4>
+                                                                        <input type="hidden" name="is_close" value="0">
+                                                                        <input type="hidden" name="updated_by" value="36">
+                                                                        <p class="mt-3">Are you sure to re-open 2024-2025?</p>
+                                                                        <button type="submit" class="btn btn-info my-2 loadScreen" data-bs-dismiss="modal">Continue</button>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div><!-- /.modal-content -->
+                                                    </div><!-- /.modal-dialog -->
+                                                </div><!-- /.modal -->
+        
+                                                <td class="table-action">
+                                                                                                    <a type="button" data-bs-toggle="modal" data-bs-target="#editBatch-2" class="action-icon" style="color: #1F3463"> <i class="mdi mdi-pencil"></i></a>
+                                                                                                <!-- content -->
+                                                    <div id="editBatch-2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <form action="https://app.laverdad.edu.ph/admin/batch-scheduling/batch-schedule/2" method="post">
+                                                                    <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                            <input type="hidden" name="_method" value="PUT">
+                                                                    <div class="modal-header">
+                                                                        <h4 class="modal-title" id="multiple-oneModalLabel">Edit Batch</h4>
+                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <div class="mb-3">
+                                                                            <label for="school_year" class="form-label">School Year</label>
+                                                                            <input type="text" name="school_year" id="school_year" class="form-control" value="2024-2025">
+                                                                        </div>
+                                                                        <!-- Date Picker -->
+                                                                        <div class="mb-3 position-relative" id="datepicker1">
+                                                                            <label for="start_date" class="form-label">Start Date</label>
+                                                                            <input type="date" name="start_date" id="start_date" class="form-control" value="2024-02-26" data-provide="datepicker" data-date-container="#datepicker1">
+                                                                        </div>
+                                                                        <!-- Date Picker -->
+                                                                        <div class="mb-3 position-relative" id="datepicker2">
+                                                                            <label for="end_date" class="form-label">End Date</label>
+                                                                            <input type="date" name="end_date" id="end_date" class="form-control" value="2024-03-29" data-provide="datepicker" data-date-container="#datepicker2">
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label for="school_branch_id" class="form-label">School Branch</label>
+                                                                            <select class="form-select" name="school_branch_id" id="school_branch_id">
+                                                                                                                                                            <option value="1"  selected >La Verdad Christian College - Apalit</option>
+                                                                                                                                                    </select>
+                                                                        </div>
+                                                                        <div class="mt-2 ml-3">
+                                                                            <input type="hidden" name="updated_by" id="updated_by" value="36">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="submit" class="btn btn-info loadScreen">Save</button>
+                                                                    </div>
+                                                                </form>
+                                                            </div><!-- /.modal-content -->
+                                                        </div><!-- /.modal-dialog -->
+                                                    </div><!-- /.modal -->
+                                                                                                    <a type="button" class="action-icon text-danger" data-bs-toggle="modal" data-bs-target="#danger-header-modal-2"> <i class="mdi mdi-delete"></i></a>
+                                                                                            </td>
+                                                <!-- Danger Alert Modal -->
+                                                <div id="danger-header-modal-2" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                                    <div class="modal-dialog modal-sm">
+                                                        <div class="modal-content modal-filled bg-danger">
+                                                            <div class="modal-body p-4">
+                                                                <div class="text-center">
+                                                                    <form action="https://app.laverdad.edu.ph/admin/batch-scheduling/batch-schedule/2" method="post">
+                                                                        <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                                <input type="hidden" name="_method" value="DELETE">                                                                <i class="ri-close-circle-line h1"></i>
+                                                                        <h4 class="mt-2">Oh snap!</h4>
+                                                                        <p class="mt-3">Are you sure, do you want to delete this batch schedule?</p>
+                                                                        <button type="submit" class="btn btn-light my-2 loadScreen" data-bs-dismiss="modal">Continue</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div><!-- /.modal-content -->
+                                                    </div><!-- /.modal-dialog -->
+                                                </div><!-- /.modal -->
+                                            </tr>
+                                                                            <tr>
+                                                <td>2024-2025</td>
+                                                <td>April 1, 2024</td>
+                                                <td>April 26, 2024</td>
+                                                <td>La Verdad Christian College - Apalit</td>
+                                                <td>
+                                                    <div>
+                                                        <input type="checkbox"
+                                                            onclick="event.preventDefault();"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target="#is-close-modal-3-0"
+                                                            id="switch-3"
+                                                            
+                                                            data-switch="danger"
+                                                             />
+                                                        <label for="switch-3" data-on-label="Yes" data-off-label="No" class="mb-0 d-block"></label>
+                                                    </div>
+                                                </td>
+        
+                                                <!-- Danger Alert Modal -->
+                                                <div id="is-close-modal-3-0" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                                    <div class="modal-dialog modal-sm">
+                                                        <div class="modal-content modal-filled bg-danger">
+                                                            <form action="https://app.laverdad.edu.ph/admin/batch-scheduling/batch-schedule/3" method="post">
+                                                                <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                        <input type="hidden" name="_method" value="PUT">                                                        <div class="modal-body p-4">
+                                                                    <div class="text-center">
+                                                                        <i class="ri-close-circle-line h1"></i>
+                                                                        <h4 class="mt-2">Oh snap!</h4>
+                                                                        <input type="hidden" name="is_close" value="1">
+                                                                        <input type="hidden" name="updated_by" value="36">
+                                                                        <p class="mt-3">Are you sure to set 2024-2025 to close?</p>
+                                                                        <button type="submit" class="btn btn-light my-2 loadScreen" data-bs-dismiss="modal">Continue</button>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div><!-- /.modal-content -->
+                                                    </div><!-- /.modal-dialog -->
+                                                </div><!-- /.modal -->
+        
+                                                <!-- Info Alert Modal -->
+                                                <div id="is-close-modal-3-1" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                                    <div class="modal-dialog modal-sm">
+                                                        <div class="modal-content">
+                                                            <form action="https://app.laverdad.edu.ph/admin/batch-scheduling/batch-schedule/3" method="post">
+                                                                <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                        <input type="hidden" name="_method" value="PUT">                                                        <div class="modal-body p-4">
+                                                                    <div class="text-center">
+                                                                        <i class="ri-information-line h1 text-info"></i>
+                                                                        <h4 class="mt-2">Heads up!</h4>
+                                                                        <input type="hidden" name="is_close" value="0">
+                                                                        <input type="hidden" name="updated_by" value="36">
+                                                                        <p class="mt-3">Are you sure to re-open 2024-2025?</p>
+                                                                        <button type="submit" class="btn btn-info my-2 loadScreen" data-bs-dismiss="modal">Continue</button>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div><!-- /.modal-content -->
+                                                    </div><!-- /.modal-dialog -->
+                                                </div><!-- /.modal -->
+        
+                                                <td class="table-action">
+                                                                                                    <a type="button" data-bs-toggle="modal" data-bs-target="#editBatch-3" class="action-icon" style="color: #1F3463"> <i class="mdi mdi-pencil"></i></a>
+                                                                                                <!-- content -->
+                                                    <div id="editBatch-3" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <form action="https://app.laverdad.edu.ph/admin/batch-scheduling/batch-schedule/3" method="post">
+                                                                    <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                            <input type="hidden" name="_method" value="PUT">
+                                                                    <div class="modal-header">
+                                                                        <h4 class="modal-title" id="multiple-oneModalLabel">Edit Batch</h4>
+                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <div class="mb-3">
+                                                                            <label for="school_year" class="form-label">School Year</label>
+                                                                            <input type="text" name="school_year" id="school_year" class="form-control" value="2024-2025">
+                                                                        </div>
+                                                                        <!-- Date Picker -->
+                                                                        <div class="mb-3 position-relative" id="datepicker1">
+                                                                            <label for="start_date" class="form-label">Start Date</label>
+                                                                            <input type="date" name="start_date" id="start_date" class="form-control" value="2024-04-01" data-provide="datepicker" data-date-container="#datepicker1">
+                                                                        </div>
+                                                                        <!-- Date Picker -->
+                                                                        <div class="mb-3 position-relative" id="datepicker2">
+                                                                            <label for="end_date" class="form-label">End Date</label>
+                                                                            <input type="date" name="end_date" id="end_date" class="form-control" value="2024-04-26" data-provide="datepicker" data-date-container="#datepicker2">
+                                                                        </div>
+                                                                        <div class="mb-3">
+                                                                            <label for="school_branch_id" class="form-label">School Branch</label>
+                                                                            <select class="form-select" name="school_branch_id" id="school_branch_id">
+                                                                                                                                                            <option value="1"  selected >La Verdad Christian College - Apalit</option>
+                                                                                                                                                    </select>
+                                                                        </div>
+                                                                        <div class="mt-2 ml-3">
+                                                                            <input type="hidden" name="updated_by" id="updated_by" value="36">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="submit" class="btn btn-info loadScreen">Save</button>
+                                                                    </div>
+                                                                </form>
+                                                            </div><!-- /.modal-content -->
+                                                        </div><!-- /.modal-dialog -->
+                                                    </div><!-- /.modal -->
+                                                                                                    <a type="button" class="action-icon text-danger" data-bs-toggle="modal" data-bs-target="#danger-header-modal-3"> <i class="mdi mdi-delete"></i></a>
+                                                                                            </td>
+                                                <!-- Danger Alert Modal -->
+                                                <div id="danger-header-modal-3" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                                    <div class="modal-dialog modal-sm">
+                                                        <div class="modal-content modal-filled bg-danger">
+                                                            <div class="modal-body p-4">
+                                                                <div class="text-center">
+                                                                    <form action="https://app.laverdad.edu.ph/admin/batch-scheduling/batch-schedule/3" method="post">
+                                                                        <input type="hidden" name="_token" value="pqj0LA5ayhf1873L7nzH2U12vd4CUkBGSg1wEezc" autocomplete="off">                                                                <input type="hidden" name="_method" value="DELETE">                                                                <i class="ri-close-circle-line h1"></i>
+                                                                        <h4 class="mt-2">Oh snap!</h4>
+                                                                        <p class="mt-3">Are you sure, do you want to delete this batch schedule?</p>
+                                                                        <button type="submit" class="btn btn-light my-2 loadScreen" data-bs-dismiss="modal">Continue</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                        </div><!-- /.modal-content -->
+                                                    </div><!-- /.modal-dialog -->
+                                                </div><!-- /.modal -->
+                                            </tr>
+                                                                    </tbody>
+                                </table>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col-->
+                </div>
+            </div>
+            <!-- end of content -->
+        
+            <!-- modal -->
+            <!-- Danger Header Modal -->
+            <div id="danger-header-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="danger-header-modalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header bg-danger">
+                            <h4 class="modal-title" id="danger-header-modalLabel">Delete Batch</h4>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-hidden="true"></button>
+                        </div>
+                        <div class="modal-body">
+                            You are trying to delete this batch?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-danger">Save changes</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div>
+        
+            <!-- content -->
+            <div id="editBatch" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="multiple-oneModalLabel">Edit Batch</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label for="school_year" class="form-label">School Year</label>
+                                <input type="text" id="school_year" class="form-control" placeholder="Enter School Year">
+                            </div>
+                            <!-- Date Picker -->
+                            <div class="mb-3 position-relative" id="datepicker1">
+                                <label class="form-label">Start Date</label>
+                                <input type="text" class="form-control" data-provide="datepicker" data-date-container="#datepicker1">
+                            </div>
+                            <!-- Date Picker -->
+                            <div class="mb-3 position-relative" id="datepicker2">
+                                <label class="form-label">End Date</label>
+                                <input type="text" class="form-control" data-provide="datepicker" data-date-container="#datepicker2">
+                            </div>
+                            <div class="mb-3">
+                                <label for="school_branch" class="form-label">School Branch</label>
+                                <select class="form-select" id="school_branch" name="school_branch">
+                                    <option>LVCC Apalit</option>
+                                    <option>LVCC Caloocan</option>
+                                </select>
+                            </div>
+                            <div class="mt-2 ml-3">
+                                <label for="is_close" class="form-label">Is Batch Closed?</label>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="customRadio3" name="customRadio1" class="form-check-input">
+                                    <label class="form-check-label" for="customRadio3">Yes</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" id="customRadio4" name="customRadio1" class="form-check-input">
+                                    <label class="form-check-label" for="customRadio4">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-info" data-bs-target="#submit" data-bs-toggle="modal" data-bs-dismiss="modal">Submit</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+        </div>
+                    </div>
+
+            <!-- End Content-->
+        
+                    <!-- Footer Start -->
+                    <footer class="footer">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="text-md-end footer-links d-none d-md-block">
+                                        <strong>
+                                            <u>
+                                                <a href="https://app.laverdad.edu.ph/scholarship-application/privacy-policy" target="_blank">
+                                                    Terms and Conditions
+                                                </a>
+                                            </u>
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                    <!-- end Footer -->
+        
+        
+                    <!-- ============================================================== -->
+                    <!-- End Page content -->
+                    <!-- ============================================================== -->
+                    <!-- Warning Alert Modal -->
+    <!-- container -->
+    
+
+  
+</div>
+            </div>
+
+            <!-- Footer Start -->
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="text-md-end footer-links d-none d-md-block">
+                                <strong>
+                                    <u>
+                                        <a href="https://app.laverdad.edu.ph/scholarship-application/privacy-policy" target="_blank">
+                                            Terms and Conditions
+                                        </a>
+                                    </u>
+                                </strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- end Footer -->
+
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+        </div>
+        
+        <!-- END wrapper -->   
+        
+        <!-- Vendor js -->
+        <script src="../assets/js/vendor.min.js"></script>
+
+        <!-- Dashboard App js -->
+        <script src="../assets/js/pages/demo.dashboard.js"></script>
+
+        <!-- App js -->
+        <script src="../assets/js/app.min.js"></script>
+        <script src="js/app.js"></script>
+          <!-- Apex Charts js -->
+          <script src="https://app.laverdad.edu.ph/assets/vendor/apexcharts/apexcharts.min.js"></script>
+
+        <!-- Datatables js -->
+		<script src="../assets/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+		<script src="../assets/vendor/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+		<script src="../assets/vendor/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+		<script src="../assets/vendor/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
+
+		<!-- Datatable Init js -->
+		<script src="../assets/js/pages/demo.datatable-init.js"></script>
+
+    </body>
+</html> 
