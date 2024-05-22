@@ -401,10 +401,2041 @@
                 <div class="content">
 
     <!-- Start Content-->
-    
-    <!-- container -->
+    <!-- ============================================================== -->
+<!-- Start Page Content here -->
+<!-- ============================================================== -->
+<!-- Start Content-->
+<div class="container-fluid">
 
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box">
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="https://app.laverdad.edu.ph/admin/dashboard">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="https://app.laverdad.edu.ph/admin/user-management">User Management</a></li>
+                        <li class="breadcrumb-item active">Roles</li>
+                    </ol>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="d-flex card-header justify-content-between align-items-center">
+                    <h3 class="header-title fw-bolder">Roles and Permissions</h3>
+                    <div class="float-end">
+                        
+                        <button type="button" class="btn text-light mx-1" style="background-color: #1F3463;" data-bs-toggle="modal" data-bs-target="#addRole">
+                            Add New Role
+                        </button>
+
+                        <!-- Add role modal -->
+                        <div id="addRole" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <div class="text-center mt-2 mb-4">
+                                            <h4>Roles and Permissions</h4>
+                                        </div>
+
+                                        <form action="https://app.laverdad.edu.ph/admin/roles" method="POST">
+                                            <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                                    <div class="form-group">
+                                                        <strong>Name:</strong>
+                                                        <input type="text" name="name" class="form-control" placeholder="Name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                                    <div class="form-group">
+                                                        <strong>Permission:</strong>
+                                                        <br />
+                                                                                                                    <label>
+                                                                <input type="checkbox" name="permission[]" value="1" class="name">
+                                                                users.view</label>
+                                                            <br />
+                                                                                                                    <label>
+                                                                <input type="checkbox" name="permission[]" value="2" class="name">
+                                                                users.add</label>
+                                                            <br />
+                                                                                                                    <label>
+                                                                <input type="checkbox" name="permission[]" value="3" class="name">
+                                                                users.edit</label>
+                                                            <br />
+                                                                                                                    <label>
+                                                                <input type="checkbox" name="permission[]" value="4" class="name">
+                                                                users.delete</label>
+                                                            <br />
+                                                                                                                    <label>
+                                                                <input type="checkbox" name="permission[]" value="5" class="name">
+                                                                branches.view</label>
+                                                            <br />
+                                                                                                                    <label>
+                                                                <input type="checkbox" name="permission[]" value="6" class="name">
+                                                                branches.add</label>
+                                                            <br />
+                                                                                                                    <label>
+                                                                <input type="checkbox" name="permission[]" value="7" class="name">
+                                                                branches.edit</label>
+                                                            <br />
+                                                                                                                    <label>
+                                                                <input type="checkbox" name="permission[]" value="8" class="name">
+                                                                branches.delete</label>
+                                                            <br />
+                                                                                                                    <label>
+                                                                <input type="checkbox" name="permission[]" value="9" class="name">
+                                                                scholarship-batches.view</label>
+                                                            <br />
+                                                                                                                    <label>
+                                                                <input type="checkbox" name="permission[]" value="10" class="name">
+                                                                scholarship-batches.add</label>
+                                                            <br />
+                                                                                                                    <label>
+                                                                <input type="checkbox" name="permission[]" value="11" class="name">
+                                                                scholarship-batches.edit</label>
+                                                            <br />
+                                                                                                                    <label>
+                                                                <input type="checkbox" name="permission[]" value="12" class="name">
+                                                                scholarship-batches.delete</label>
+                                                            <br />
+                                                                                                                    <label>
+                                                                <input type="checkbox" name="permission[]" value="13" class="name">
+                                                                exam-schedules.view</label>
+                                                            <br />
+                                                                                                                    <label>
+                                                                <input type="checkbox" name="permission[]" value="14" class="name">
+                                                                exam-schedules.add</label>
+                                                            <br />
+                                                                                                                    <label>
+                                                                <input type="checkbox" name="permission[]" value="15" class="name">
+                                                                exam-schedules.edit</label>
+                                                            <br />
+                                                                                                                    <label>
+                                                                <input type="checkbox" name="permission[]" value="16" class="name">
+                                                                exam-schedules.delete</label>
+                                                            <br />
+                                                                                                                    <label>
+                                                                <input type="checkbox" name="permission[]" value="17" class="name">
+                                                                interview-schedules.view</label>
+                                                            <br />
+                                                                                                                    <label>
+                                                                <input type="checkbox" name="permission[]" value="18" class="name">
+                                                                interview-schedules.add</label>
+                                                            <br />
+                                                                                                                    <label>
+                                                                <input type="checkbox" name="permission[]" value="19" class="name">
+                                                                interview-schedules.edit</label>
+                                                            <br />
+                                                                                                                    <label>
+                                                                <input type="checkbox" name="permission[]" value="20" class="name">
+                                                                interview-schedules.delete</label>
+                                                            <br />
+                                                                                                                    <label>
+                                                                <input type="checkbox" name="permission[]" value="21" class="name">
+                                                                orientation-scheds.view</label>
+                                                            <br />
+                                                                                                                    <label>
+                                                                <input type="checkbox" name="permission[]" value="22" class="name">
+                                                                orientation-scheds.add</label>
+                                                            <br />
+                                                                                                                    <label>
+                                                                <input type="checkbox" name="permission[]" value="23" class="name">
+                                                                orientation-scheds.edit</label>
+                                                            <br />
+                                                                                                                    <label>
+                                                                <input type="checkbox" name="permission[]" value="24" class="name">
+                                                                orientation-scheds.delete</label>
+                                                            <br />
+                                                                                                                    <label>
+                                                                <input type="checkbox" name="permission[]" value="25" class="name">
+                                                                applicants.view</label>
+                                                            <br />
+                                                                                                                    <label>
+                                                                <input type="checkbox" name="permission[]" value="26" class="name">
+                                                                applicants.add</label>
+                                                            <br />
+                                                                                                                    <label>
+                                                                <input type="checkbox" name="permission[]" value="27" class="name">
+                                                                applicants.edit</label>
+                                                            <br />
+                                                                                                                    <label>
+                                                                <input type="checkbox" name="permission[]" value="28" class="name">
+                                                                applicants.delete</label>
+                                                            <br />
+                                                                                                            </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                                </div>
+                                            </div>
+                                        </form>
+
+
+                                    </div>
+                                </div><!-- /.modal-content -->
+                            </div><!-- /.modal-dialog -->
+                        </div><!-- /.modal -->
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="card-body">
+
+                    <table id="basic-datatable" class="table dt-responsive nowrap w-100" >
+                        <thead style="background-color: #1F3463; color: #fff;">
+                            <tr>
+                                <th>Role Name</th>
+
+                                <th class="text-center">Action</th>
+
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                                                            <tr>
+                                    <td class="fw-bold">users.view</td>
+
+                                    <td class="table-action text-center">
+
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#edit--1" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#delete--1" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- Edit role modal -->
+                                <div id="edit--1" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="text-center mt-2 mb-4">
+                                                    <h4>Roles and Permissions</h4>
+                                                </div>
+
+                                                <form action="https://app.laverdad.edu.ph/admin/permissions/1" class="ps-3 pe-3" method="POST">
+                                                    <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                    <input type="hidden" name="_method" value="PUT">                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name<em class="text-danger">*</em></label>
+                                                        <input class="form-control" type="name" id="name" required="" value="users.view" placeholder="e.g. Admin">
+                                                    </div>
+
+                                                    <div class="mb-3 text-center">
+                                                        <button class="btn btn-info" type="submit">Save</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                
+                                <div id="delete--1" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-md">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-4">
+                                                <div class="text-center">
+                                                    <i class="ri-alert-line h1 text-danger"></i>
+                                                    <h4 class="mt-2">Are you sure you want to delete this role?</strong>?</h4>
+
+
+                                                    <div class="d-flex mx-2 justify-content-center">
+                                                        <button type="button" class="btn btn-light my-2 mx-2" data-bs-dismiss="modal">Close</button>
+                                                        <form action="https://app.laverdad.edu.ph/admin/permissions/1" method="POST">
+                                                            <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                            <input type="hidden" name="_method" value="DELETE">                                                            <button type="submit" class="btn btn-danger my-2" data-bs-dismiss="modal">Confirm</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div>
+
+
+                                
+
+                                                            <tr>
+                                    <td class="fw-bold">users.add</td>
+
+                                    <td class="table-action text-center">
+
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#edit--2" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#delete--2" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- Edit role modal -->
+                                <div id="edit--2" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="text-center mt-2 mb-4">
+                                                    <h4>Roles and Permissions</h4>
+                                                </div>
+
+                                                <form action="https://app.laverdad.edu.ph/admin/permissions/2" class="ps-3 pe-3" method="POST">
+                                                    <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                    <input type="hidden" name="_method" value="PUT">                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name<em class="text-danger">*</em></label>
+                                                        <input class="form-control" type="name" id="name" required="" value="users.add" placeholder="e.g. Admin">
+                                                    </div>
+
+                                                    <div class="mb-3 text-center">
+                                                        <button class="btn btn-info" type="submit">Save</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                
+                                <div id="delete--2" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-md">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-4">
+                                                <div class="text-center">
+                                                    <i class="ri-alert-line h1 text-danger"></i>
+                                                    <h4 class="mt-2">Are you sure you want to delete this role?</strong>?</h4>
+
+
+                                                    <div class="d-flex mx-2 justify-content-center">
+                                                        <button type="button" class="btn btn-light my-2 mx-2" data-bs-dismiss="modal">Close</button>
+                                                        <form action="https://app.laverdad.edu.ph/admin/permissions/2" method="POST">
+                                                            <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                            <input type="hidden" name="_method" value="DELETE">                                                            <button type="submit" class="btn btn-danger my-2" data-bs-dismiss="modal">Confirm</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div>
+
+
+                                
+
+                                                            <tr>
+                                    <td class="fw-bold">users.edit</td>
+
+                                    <td class="table-action text-center">
+
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#edit--3" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#delete--3" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- Edit role modal -->
+                                <div id="edit--3" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="text-center mt-2 mb-4">
+                                                    <h4>Roles and Permissions</h4>
+                                                </div>
+
+                                                <form action="https://app.laverdad.edu.ph/admin/permissions/3" class="ps-3 pe-3" method="POST">
+                                                    <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                    <input type="hidden" name="_method" value="PUT">                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name<em class="text-danger">*</em></label>
+                                                        <input class="form-control" type="name" id="name" required="" value="users.edit" placeholder="e.g. Admin">
+                                                    </div>
+
+                                                    <div class="mb-3 text-center">
+                                                        <button class="btn btn-info" type="submit">Save</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                
+                                <div id="delete--3" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-md">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-4">
+                                                <div class="text-center">
+                                                    <i class="ri-alert-line h1 text-danger"></i>
+                                                    <h4 class="mt-2">Are you sure you want to delete this role?</strong>?</h4>
+
+
+                                                    <div class="d-flex mx-2 justify-content-center">
+                                                        <button type="button" class="btn btn-light my-2 mx-2" data-bs-dismiss="modal">Close</button>
+                                                        <form action="https://app.laverdad.edu.ph/admin/permissions/3" method="POST">
+                                                            <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                            <input type="hidden" name="_method" value="DELETE">                                                            <button type="submit" class="btn btn-danger my-2" data-bs-dismiss="modal">Confirm</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div>
+
+
+                                
+
+                                                            <tr>
+                                    <td class="fw-bold">users.delete</td>
+
+                                    <td class="table-action text-center">
+
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#edit--4" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#delete--4" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- Edit role modal -->
+                                <div id="edit--4" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="text-center mt-2 mb-4">
+                                                    <h4>Roles and Permissions</h4>
+                                                </div>
+
+                                                <form action="https://app.laverdad.edu.ph/admin/permissions/4" class="ps-3 pe-3" method="POST">
+                                                    <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                    <input type="hidden" name="_method" value="PUT">                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name<em class="text-danger">*</em></label>
+                                                        <input class="form-control" type="name" id="name" required="" value="users.delete" placeholder="e.g. Admin">
+                                                    </div>
+
+                                                    <div class="mb-3 text-center">
+                                                        <button class="btn btn-info" type="submit">Save</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                
+                                <div id="delete--4" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-md">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-4">
+                                                <div class="text-center">
+                                                    <i class="ri-alert-line h1 text-danger"></i>
+                                                    <h4 class="mt-2">Are you sure you want to delete this role?</strong>?</h4>
+
+
+                                                    <div class="d-flex mx-2 justify-content-center">
+                                                        <button type="button" class="btn btn-light my-2 mx-2" data-bs-dismiss="modal">Close</button>
+                                                        <form action="https://app.laverdad.edu.ph/admin/permissions/4" method="POST">
+                                                            <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                            <input type="hidden" name="_method" value="DELETE">                                                            <button type="submit" class="btn btn-danger my-2" data-bs-dismiss="modal">Confirm</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div>
+
+
+                                
+
+                                                            <tr>
+                                    <td class="fw-bold">branches.view</td>
+
+                                    <td class="table-action text-center">
+
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#edit--5" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#delete--5" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- Edit role modal -->
+                                <div id="edit--5" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="text-center mt-2 mb-4">
+                                                    <h4>Roles and Permissions</h4>
+                                                </div>
+
+                                                <form action="https://app.laverdad.edu.ph/admin/permissions/5" class="ps-3 pe-3" method="POST">
+                                                    <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                    <input type="hidden" name="_method" value="PUT">                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name<em class="text-danger">*</em></label>
+                                                        <input class="form-control" type="name" id="name" required="" value="branches.view" placeholder="e.g. Admin">
+                                                    </div>
+
+                                                    <div class="mb-3 text-center">
+                                                        <button class="btn btn-info" type="submit">Save</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                
+                                <div id="delete--5" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-md">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-4">
+                                                <div class="text-center">
+                                                    <i class="ri-alert-line h1 text-danger"></i>
+                                                    <h4 class="mt-2">Are you sure you want to delete this role?</strong>?</h4>
+
+
+                                                    <div class="d-flex mx-2 justify-content-center">
+                                                        <button type="button" class="btn btn-light my-2 mx-2" data-bs-dismiss="modal">Close</button>
+                                                        <form action="https://app.laverdad.edu.ph/admin/permissions/5" method="POST">
+                                                            <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                            <input type="hidden" name="_method" value="DELETE">                                                            <button type="submit" class="btn btn-danger my-2" data-bs-dismiss="modal">Confirm</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div>
+
+
+                                
+
+                                                            <tr>
+                                    <td class="fw-bold">branches.add</td>
+
+                                    <td class="table-action text-center">
+
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#edit--6" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#delete--6" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- Edit role modal -->
+                                <div id="edit--6" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="text-center mt-2 mb-4">
+                                                    <h4>Roles and Permissions</h4>
+                                                </div>
+
+                                                <form action="https://app.laverdad.edu.ph/admin/permissions/6" class="ps-3 pe-3" method="POST">
+                                                    <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                    <input type="hidden" name="_method" value="PUT">                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name<em class="text-danger">*</em></label>
+                                                        <input class="form-control" type="name" id="name" required="" value="branches.add" placeholder="e.g. Admin">
+                                                    </div>
+
+                                                    <div class="mb-3 text-center">
+                                                        <button class="btn btn-info" type="submit">Save</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                
+                                <div id="delete--6" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-md">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-4">
+                                                <div class="text-center">
+                                                    <i class="ri-alert-line h1 text-danger"></i>
+                                                    <h4 class="mt-2">Are you sure you want to delete this role?</strong>?</h4>
+
+
+                                                    <div class="d-flex mx-2 justify-content-center">
+                                                        <button type="button" class="btn btn-light my-2 mx-2" data-bs-dismiss="modal">Close</button>
+                                                        <form action="https://app.laverdad.edu.ph/admin/permissions/6" method="POST">
+                                                            <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                            <input type="hidden" name="_method" value="DELETE">                                                            <button type="submit" class="btn btn-danger my-2" data-bs-dismiss="modal">Confirm</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div>
+
+
+                                
+
+                                                            <tr>
+                                    <td class="fw-bold">branches.edit</td>
+
+                                    <td class="table-action text-center">
+
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#edit--7" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#delete--7" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- Edit role modal -->
+                                <div id="edit--7" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="text-center mt-2 mb-4">
+                                                    <h4>Roles and Permissions</h4>
+                                                </div>
+
+                                                <form action="https://app.laverdad.edu.ph/admin/permissions/7" class="ps-3 pe-3" method="POST">
+                                                    <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                    <input type="hidden" name="_method" value="PUT">                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name<em class="text-danger">*</em></label>
+                                                        <input class="form-control" type="name" id="name" required="" value="branches.edit" placeholder="e.g. Admin">
+                                                    </div>
+
+                                                    <div class="mb-3 text-center">
+                                                        <button class="btn btn-info" type="submit">Save</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                
+                                <div id="delete--7" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-md">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-4">
+                                                <div class="text-center">
+                                                    <i class="ri-alert-line h1 text-danger"></i>
+                                                    <h4 class="mt-2">Are you sure you want to delete this role?</strong>?</h4>
+
+
+                                                    <div class="d-flex mx-2 justify-content-center">
+                                                        <button type="button" class="btn btn-light my-2 mx-2" data-bs-dismiss="modal">Close</button>
+                                                        <form action="https://app.laverdad.edu.ph/admin/permissions/7" method="POST">
+                                                            <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                            <input type="hidden" name="_method" value="DELETE">                                                            <button type="submit" class="btn btn-danger my-2" data-bs-dismiss="modal">Confirm</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div>
+
+
+                                
+
+                                                            <tr>
+                                    <td class="fw-bold">branches.delete</td>
+
+                                    <td class="table-action text-center">
+
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#edit--8" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#delete--8" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- Edit role modal -->
+                                <div id="edit--8" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="text-center mt-2 mb-4">
+                                                    <h4>Roles and Permissions</h4>
+                                                </div>
+
+                                                <form action="https://app.laverdad.edu.ph/admin/permissions/8" class="ps-3 pe-3" method="POST">
+                                                    <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                    <input type="hidden" name="_method" value="PUT">                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name<em class="text-danger">*</em></label>
+                                                        <input class="form-control" type="name" id="name" required="" value="branches.delete" placeholder="e.g. Admin">
+                                                    </div>
+
+                                                    <div class="mb-3 text-center">
+                                                        <button class="btn btn-info" type="submit">Save</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                
+                                <div id="delete--8" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-md">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-4">
+                                                <div class="text-center">
+                                                    <i class="ri-alert-line h1 text-danger"></i>
+                                                    <h4 class="mt-2">Are you sure you want to delete this role?</strong>?</h4>
+
+
+                                                    <div class="d-flex mx-2 justify-content-center">
+                                                        <button type="button" class="btn btn-light my-2 mx-2" data-bs-dismiss="modal">Close</button>
+                                                        <form action="https://app.laverdad.edu.ph/admin/permissions/8" method="POST">
+                                                            <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                            <input type="hidden" name="_method" value="DELETE">                                                            <button type="submit" class="btn btn-danger my-2" data-bs-dismiss="modal">Confirm</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div>
+
+
+                                
+
+                                                            <tr>
+                                    <td class="fw-bold">scholarship-batches.view</td>
+
+                                    <td class="table-action text-center">
+
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#edit--9" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#delete--9" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- Edit role modal -->
+                                <div id="edit--9" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="text-center mt-2 mb-4">
+                                                    <h4>Roles and Permissions</h4>
+                                                </div>
+
+                                                <form action="https://app.laverdad.edu.ph/admin/permissions/9" class="ps-3 pe-3" method="POST">
+                                                    <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                    <input type="hidden" name="_method" value="PUT">                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name<em class="text-danger">*</em></label>
+                                                        <input class="form-control" type="name" id="name" required="" value="scholarship-batches.view" placeholder="e.g. Admin">
+                                                    </div>
+
+                                                    <div class="mb-3 text-center">
+                                                        <button class="btn btn-info" type="submit">Save</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                
+                                <div id="delete--9" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-md">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-4">
+                                                <div class="text-center">
+                                                    <i class="ri-alert-line h1 text-danger"></i>
+                                                    <h4 class="mt-2">Are you sure you want to delete this role?</strong>?</h4>
+
+
+                                                    <div class="d-flex mx-2 justify-content-center">
+                                                        <button type="button" class="btn btn-light my-2 mx-2" data-bs-dismiss="modal">Close</button>
+                                                        <form action="https://app.laverdad.edu.ph/admin/permissions/9" method="POST">
+                                                            <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                            <input type="hidden" name="_method" value="DELETE">                                                            <button type="submit" class="btn btn-danger my-2" data-bs-dismiss="modal">Confirm</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div>
+
+
+                                
+
+                                                            <tr>
+                                    <td class="fw-bold">scholarship-batches.add</td>
+
+                                    <td class="table-action text-center">
+
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#edit--10" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#delete--10" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- Edit role modal -->
+                                <div id="edit--10" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="text-center mt-2 mb-4">
+                                                    <h4>Roles and Permissions</h4>
+                                                </div>
+
+                                                <form action="https://app.laverdad.edu.ph/admin/permissions/10" class="ps-3 pe-3" method="POST">
+                                                    <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                    <input type="hidden" name="_method" value="PUT">                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name<em class="text-danger">*</em></label>
+                                                        <input class="form-control" type="name" id="name" required="" value="scholarship-batches.add" placeholder="e.g. Admin">
+                                                    </div>
+
+                                                    <div class="mb-3 text-center">
+                                                        <button class="btn btn-info" type="submit">Save</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                
+                                <div id="delete--10" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-md">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-4">
+                                                <div class="text-center">
+                                                    <i class="ri-alert-line h1 text-danger"></i>
+                                                    <h4 class="mt-2">Are you sure you want to delete this role?</strong>?</h4>
+
+
+                                                    <div class="d-flex mx-2 justify-content-center">
+                                                        <button type="button" class="btn btn-light my-2 mx-2" data-bs-dismiss="modal">Close</button>
+                                                        <form action="https://app.laverdad.edu.ph/admin/permissions/10" method="POST">
+                                                            <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                            <input type="hidden" name="_method" value="DELETE">                                                            <button type="submit" class="btn btn-danger my-2" data-bs-dismiss="modal">Confirm</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div>
+
+
+                                
+
+                                                            <tr>
+                                    <td class="fw-bold">scholarship-batches.edit</td>
+
+                                    <td class="table-action text-center">
+
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#edit--11" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#delete--11" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- Edit role modal -->
+                                <div id="edit--11" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="text-center mt-2 mb-4">
+                                                    <h4>Roles and Permissions</h4>
+                                                </div>
+
+                                                <form action="https://app.laverdad.edu.ph/admin/permissions/11" class="ps-3 pe-3" method="POST">
+                                                    <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                    <input type="hidden" name="_method" value="PUT">                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name<em class="text-danger">*</em></label>
+                                                        <input class="form-control" type="name" id="name" required="" value="scholarship-batches.edit" placeholder="e.g. Admin">
+                                                    </div>
+
+                                                    <div class="mb-3 text-center">
+                                                        <button class="btn btn-info" type="submit">Save</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                
+                                <div id="delete--11" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-md">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-4">
+                                                <div class="text-center">
+                                                    <i class="ri-alert-line h1 text-danger"></i>
+                                                    <h4 class="mt-2">Are you sure you want to delete this role?</strong>?</h4>
+
+
+                                                    <div class="d-flex mx-2 justify-content-center">
+                                                        <button type="button" class="btn btn-light my-2 mx-2" data-bs-dismiss="modal">Close</button>
+                                                        <form action="https://app.laverdad.edu.ph/admin/permissions/11" method="POST">
+                                                            <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                            <input type="hidden" name="_method" value="DELETE">                                                            <button type="submit" class="btn btn-danger my-2" data-bs-dismiss="modal">Confirm</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div>
+
+
+                                
+
+                                                            <tr>
+                                    <td class="fw-bold">scholarship-batches.delete</td>
+
+                                    <td class="table-action text-center">
+
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#edit--12" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#delete--12" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- Edit role modal -->
+                                <div id="edit--12" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="text-center mt-2 mb-4">
+                                                    <h4>Roles and Permissions</h4>
+                                                </div>
+
+                                                <form action="https://app.laverdad.edu.ph/admin/permissions/12" class="ps-3 pe-3" method="POST">
+                                                    <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                    <input type="hidden" name="_method" value="PUT">                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name<em class="text-danger">*</em></label>
+                                                        <input class="form-control" type="name" id="name" required="" value="scholarship-batches.delete" placeholder="e.g. Admin">
+                                                    </div>
+
+                                                    <div class="mb-3 text-center">
+                                                        <button class="btn btn-info" type="submit">Save</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                
+                                <div id="delete--12" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-md">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-4">
+                                                <div class="text-center">
+                                                    <i class="ri-alert-line h1 text-danger"></i>
+                                                    <h4 class="mt-2">Are you sure you want to delete this role?</strong>?</h4>
+
+
+                                                    <div class="d-flex mx-2 justify-content-center">
+                                                        <button type="button" class="btn btn-light my-2 mx-2" data-bs-dismiss="modal">Close</button>
+                                                        <form action="https://app.laverdad.edu.ph/admin/permissions/12" method="POST">
+                                                            <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                            <input type="hidden" name="_method" value="DELETE">                                                            <button type="submit" class="btn btn-danger my-2" data-bs-dismiss="modal">Confirm</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div>
+
+
+                                
+
+                                                            <tr>
+                                    <td class="fw-bold">exam-schedules.view</td>
+
+                                    <td class="table-action text-center">
+
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#edit--13" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#delete--13" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- Edit role modal -->
+                                <div id="edit--13" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="text-center mt-2 mb-4">
+                                                    <h4>Roles and Permissions</h4>
+                                                </div>
+
+                                                <form action="https://app.laverdad.edu.ph/admin/permissions/13" class="ps-3 pe-3" method="POST">
+                                                    <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                    <input type="hidden" name="_method" value="PUT">                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name<em class="text-danger">*</em></label>
+                                                        <input class="form-control" type="name" id="name" required="" value="exam-schedules.view" placeholder="e.g. Admin">
+                                                    </div>
+
+                                                    <div class="mb-3 text-center">
+                                                        <button class="btn btn-info" type="submit">Save</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                
+                                <div id="delete--13" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-md">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-4">
+                                                <div class="text-center">
+                                                    <i class="ri-alert-line h1 text-danger"></i>
+                                                    <h4 class="mt-2">Are you sure you want to delete this role?</strong>?</h4>
+
+
+                                                    <div class="d-flex mx-2 justify-content-center">
+                                                        <button type="button" class="btn btn-light my-2 mx-2" data-bs-dismiss="modal">Close</button>
+                                                        <form action="https://app.laverdad.edu.ph/admin/permissions/13" method="POST">
+                                                            <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                            <input type="hidden" name="_method" value="DELETE">                                                            <button type="submit" class="btn btn-danger my-2" data-bs-dismiss="modal">Confirm</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div>
+
+
+                                
+
+                                                            <tr>
+                                    <td class="fw-bold">exam-schedules.add</td>
+
+                                    <td class="table-action text-center">
+
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#edit--14" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#delete--14" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- Edit role modal -->
+                                <div id="edit--14" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="text-center mt-2 mb-4">
+                                                    <h4>Roles and Permissions</h4>
+                                                </div>
+
+                                                <form action="https://app.laverdad.edu.ph/admin/permissions/14" class="ps-3 pe-3" method="POST">
+                                                    <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                    <input type="hidden" name="_method" value="PUT">                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name<em class="text-danger">*</em></label>
+                                                        <input class="form-control" type="name" id="name" required="" value="exam-schedules.add" placeholder="e.g. Admin">
+                                                    </div>
+
+                                                    <div class="mb-3 text-center">
+                                                        <button class="btn btn-info" type="submit">Save</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                
+                                <div id="delete--14" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-md">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-4">
+                                                <div class="text-center">
+                                                    <i class="ri-alert-line h1 text-danger"></i>
+                                                    <h4 class="mt-2">Are you sure you want to delete this role?</strong>?</h4>
+
+
+                                                    <div class="d-flex mx-2 justify-content-center">
+                                                        <button type="button" class="btn btn-light my-2 mx-2" data-bs-dismiss="modal">Close</button>
+                                                        <form action="https://app.laverdad.edu.ph/admin/permissions/14" method="POST">
+                                                            <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                            <input type="hidden" name="_method" value="DELETE">                                                            <button type="submit" class="btn btn-danger my-2" data-bs-dismiss="modal">Confirm</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div>
+
+
+                                
+
+                                                            <tr>
+                                    <td class="fw-bold">exam-schedules.edit</td>
+
+                                    <td class="table-action text-center">
+
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#edit--15" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#delete--15" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- Edit role modal -->
+                                <div id="edit--15" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="text-center mt-2 mb-4">
+                                                    <h4>Roles and Permissions</h4>
+                                                </div>
+
+                                                <form action="https://app.laverdad.edu.ph/admin/permissions/15" class="ps-3 pe-3" method="POST">
+                                                    <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                    <input type="hidden" name="_method" value="PUT">                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name<em class="text-danger">*</em></label>
+                                                        <input class="form-control" type="name" id="name" required="" value="exam-schedules.edit" placeholder="e.g. Admin">
+                                                    </div>
+
+                                                    <div class="mb-3 text-center">
+                                                        <button class="btn btn-info" type="submit">Save</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                
+                                <div id="delete--15" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-md">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-4">
+                                                <div class="text-center">
+                                                    <i class="ri-alert-line h1 text-danger"></i>
+                                                    <h4 class="mt-2">Are you sure you want to delete this role?</strong>?</h4>
+
+
+                                                    <div class="d-flex mx-2 justify-content-center">
+                                                        <button type="button" class="btn btn-light my-2 mx-2" data-bs-dismiss="modal">Close</button>
+                                                        <form action="https://app.laverdad.edu.ph/admin/permissions/15" method="POST">
+                                                            <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                            <input type="hidden" name="_method" value="DELETE">                                                            <button type="submit" class="btn btn-danger my-2" data-bs-dismiss="modal">Confirm</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div>
+
+
+                                
+
+                                                            <tr>
+                                    <td class="fw-bold">exam-schedules.delete</td>
+
+                                    <td class="table-action text-center">
+
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#edit--16" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#delete--16" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- Edit role modal -->
+                                <div id="edit--16" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="text-center mt-2 mb-4">
+                                                    <h4>Roles and Permissions</h4>
+                                                </div>
+
+                                                <form action="https://app.laverdad.edu.ph/admin/permissions/16" class="ps-3 pe-3" method="POST">
+                                                    <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                    <input type="hidden" name="_method" value="PUT">                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name<em class="text-danger">*</em></label>
+                                                        <input class="form-control" type="name" id="name" required="" value="exam-schedules.delete" placeholder="e.g. Admin">
+                                                    </div>
+
+                                                    <div class="mb-3 text-center">
+                                                        <button class="btn btn-info" type="submit">Save</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                
+                                <div id="delete--16" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-md">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-4">
+                                                <div class="text-center">
+                                                    <i class="ri-alert-line h1 text-danger"></i>
+                                                    <h4 class="mt-2">Are you sure you want to delete this role?</strong>?</h4>
+
+
+                                                    <div class="d-flex mx-2 justify-content-center">
+                                                        <button type="button" class="btn btn-light my-2 mx-2" data-bs-dismiss="modal">Close</button>
+                                                        <form action="https://app.laverdad.edu.ph/admin/permissions/16" method="POST">
+                                                            <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                            <input type="hidden" name="_method" value="DELETE">                                                            <button type="submit" class="btn btn-danger my-2" data-bs-dismiss="modal">Confirm</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div>
+
+
+                                
+
+                                                            <tr>
+                                    <td class="fw-bold">interview-schedules.view</td>
+
+                                    <td class="table-action text-center">
+
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#edit--17" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#delete--17" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- Edit role modal -->
+                                <div id="edit--17" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="text-center mt-2 mb-4">
+                                                    <h4>Roles and Permissions</h4>
+                                                </div>
+
+                                                <form action="https://app.laverdad.edu.ph/admin/permissions/17" class="ps-3 pe-3" method="POST">
+                                                    <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                    <input type="hidden" name="_method" value="PUT">                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name<em class="text-danger">*</em></label>
+                                                        <input class="form-control" type="name" id="name" required="" value="interview-schedules.view" placeholder="e.g. Admin">
+                                                    </div>
+
+                                                    <div class="mb-3 text-center">
+                                                        <button class="btn btn-info" type="submit">Save</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                
+                                <div id="delete--17" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-md">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-4">
+                                                <div class="text-center">
+                                                    <i class="ri-alert-line h1 text-danger"></i>
+                                                    <h4 class="mt-2">Are you sure you want to delete this role?</strong>?</h4>
+
+
+                                                    <div class="d-flex mx-2 justify-content-center">
+                                                        <button type="button" class="btn btn-light my-2 mx-2" data-bs-dismiss="modal">Close</button>
+                                                        <form action="https://app.laverdad.edu.ph/admin/permissions/17" method="POST">
+                                                            <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                            <input type="hidden" name="_method" value="DELETE">                                                            <button type="submit" class="btn btn-danger my-2" data-bs-dismiss="modal">Confirm</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div>
+
+
+                                
+
+                                                            <tr>
+                                    <td class="fw-bold">interview-schedules.add</td>
+
+                                    <td class="table-action text-center">
+
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#edit--18" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#delete--18" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- Edit role modal -->
+                                <div id="edit--18" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="text-center mt-2 mb-4">
+                                                    <h4>Roles and Permissions</h4>
+                                                </div>
+
+                                                <form action="https://app.laverdad.edu.ph/admin/permissions/18" class="ps-3 pe-3" method="POST">
+                                                    <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                    <input type="hidden" name="_method" value="PUT">                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name<em class="text-danger">*</em></label>
+                                                        <input class="form-control" type="name" id="name" required="" value="interview-schedules.add" placeholder="e.g. Admin">
+                                                    </div>
+
+                                                    <div class="mb-3 text-center">
+                                                        <button class="btn btn-info" type="submit">Save</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                
+                                <div id="delete--18" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-md">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-4">
+                                                <div class="text-center">
+                                                    <i class="ri-alert-line h1 text-danger"></i>
+                                                    <h4 class="mt-2">Are you sure you want to delete this role?</strong>?</h4>
+
+
+                                                    <div class="d-flex mx-2 justify-content-center">
+                                                        <button type="button" class="btn btn-light my-2 mx-2" data-bs-dismiss="modal">Close</button>
+                                                        <form action="https://app.laverdad.edu.ph/admin/permissions/18" method="POST">
+                                                            <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                            <input type="hidden" name="_method" value="DELETE">                                                            <button type="submit" class="btn btn-danger my-2" data-bs-dismiss="modal">Confirm</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div>
+
+
+                                
+
+                                                            <tr>
+                                    <td class="fw-bold">interview-schedules.edit</td>
+
+                                    <td class="table-action text-center">
+
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#edit--19" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#delete--19" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- Edit role modal -->
+                                <div id="edit--19" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="text-center mt-2 mb-4">
+                                                    <h4>Roles and Permissions</h4>
+                                                </div>
+
+                                                <form action="https://app.laverdad.edu.ph/admin/permissions/19" class="ps-3 pe-3" method="POST">
+                                                    <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                    <input type="hidden" name="_method" value="PUT">                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name<em class="text-danger">*</em></label>
+                                                        <input class="form-control" type="name" id="name" required="" value="interview-schedules.edit" placeholder="e.g. Admin">
+                                                    </div>
+
+                                                    <div class="mb-3 text-center">
+                                                        <button class="btn btn-info" type="submit">Save</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                
+                                <div id="delete--19" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-md">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-4">
+                                                <div class="text-center">
+                                                    <i class="ri-alert-line h1 text-danger"></i>
+                                                    <h4 class="mt-2">Are you sure you want to delete this role?</strong>?</h4>
+
+
+                                                    <div class="d-flex mx-2 justify-content-center">
+                                                        <button type="button" class="btn btn-light my-2 mx-2" data-bs-dismiss="modal">Close</button>
+                                                        <form action="https://app.laverdad.edu.ph/admin/permissions/19" method="POST">
+                                                            <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                            <input type="hidden" name="_method" value="DELETE">                                                            <button type="submit" class="btn btn-danger my-2" data-bs-dismiss="modal">Confirm</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div>
+
+
+                                
+
+                                                            <tr>
+                                    <td class="fw-bold">interview-schedules.delete</td>
+
+                                    <td class="table-action text-center">
+
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#edit--20" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#delete--20" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- Edit role modal -->
+                                <div id="edit--20" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="text-center mt-2 mb-4">
+                                                    <h4>Roles and Permissions</h4>
+                                                </div>
+
+                                                <form action="https://app.laverdad.edu.ph/admin/permissions/20" class="ps-3 pe-3" method="POST">
+                                                    <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                    <input type="hidden" name="_method" value="PUT">                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name<em class="text-danger">*</em></label>
+                                                        <input class="form-control" type="name" id="name" required="" value="interview-schedules.delete" placeholder="e.g. Admin">
+                                                    </div>
+
+                                                    <div class="mb-3 text-center">
+                                                        <button class="btn btn-info" type="submit">Save</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                
+                                <div id="delete--20" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-md">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-4">
+                                                <div class="text-center">
+                                                    <i class="ri-alert-line h1 text-danger"></i>
+                                                    <h4 class="mt-2">Are you sure you want to delete this role?</strong>?</h4>
+
+
+                                                    <div class="d-flex mx-2 justify-content-center">
+                                                        <button type="button" class="btn btn-light my-2 mx-2" data-bs-dismiss="modal">Close</button>
+                                                        <form action="https://app.laverdad.edu.ph/admin/permissions/20" method="POST">
+                                                            <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                            <input type="hidden" name="_method" value="DELETE">                                                            <button type="submit" class="btn btn-danger my-2" data-bs-dismiss="modal">Confirm</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div>
+
+
+                                
+
+                                                            <tr>
+                                    <td class="fw-bold">orientation-scheds.view</td>
+
+                                    <td class="table-action text-center">
+
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#edit--21" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#delete--21" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- Edit role modal -->
+                                <div id="edit--21" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="text-center mt-2 mb-4">
+                                                    <h4>Roles and Permissions</h4>
+                                                </div>
+
+                                                <form action="https://app.laverdad.edu.ph/admin/permissions/21" class="ps-3 pe-3" method="POST">
+                                                    <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                    <input type="hidden" name="_method" value="PUT">                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name<em class="text-danger">*</em></label>
+                                                        <input class="form-control" type="name" id="name" required="" value="orientation-scheds.view" placeholder="e.g. Admin">
+                                                    </div>
+
+                                                    <div class="mb-3 text-center">
+                                                        <button class="btn btn-info" type="submit">Save</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                
+                                <div id="delete--21" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-md">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-4">
+                                                <div class="text-center">
+                                                    <i class="ri-alert-line h1 text-danger"></i>
+                                                    <h4 class="mt-2">Are you sure you want to delete this role?</strong>?</h4>
+
+
+                                                    <div class="d-flex mx-2 justify-content-center">
+                                                        <button type="button" class="btn btn-light my-2 mx-2" data-bs-dismiss="modal">Close</button>
+                                                        <form action="https://app.laverdad.edu.ph/admin/permissions/21" method="POST">
+                                                            <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                            <input type="hidden" name="_method" value="DELETE">                                                            <button type="submit" class="btn btn-danger my-2" data-bs-dismiss="modal">Confirm</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div>
+
+
+                                
+
+                                                            <tr>
+                                    <td class="fw-bold">orientation-scheds.add</td>
+
+                                    <td class="table-action text-center">
+
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#edit--22" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#delete--22" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- Edit role modal -->
+                                <div id="edit--22" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="text-center mt-2 mb-4">
+                                                    <h4>Roles and Permissions</h4>
+                                                </div>
+
+                                                <form action="https://app.laverdad.edu.ph/admin/permissions/22" class="ps-3 pe-3" method="POST">
+                                                    <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                    <input type="hidden" name="_method" value="PUT">                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name<em class="text-danger">*</em></label>
+                                                        <input class="form-control" type="name" id="name" required="" value="orientation-scheds.add" placeholder="e.g. Admin">
+                                                    </div>
+
+                                                    <div class="mb-3 text-center">
+                                                        <button class="btn btn-info" type="submit">Save</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                
+                                <div id="delete--22" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-md">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-4">
+                                                <div class="text-center">
+                                                    <i class="ri-alert-line h1 text-danger"></i>
+                                                    <h4 class="mt-2">Are you sure you want to delete this role?</strong>?</h4>
+
+
+                                                    <div class="d-flex mx-2 justify-content-center">
+                                                        <button type="button" class="btn btn-light my-2 mx-2" data-bs-dismiss="modal">Close</button>
+                                                        <form action="https://app.laverdad.edu.ph/admin/permissions/22" method="POST">
+                                                            <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                            <input type="hidden" name="_method" value="DELETE">                                                            <button type="submit" class="btn btn-danger my-2" data-bs-dismiss="modal">Confirm</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div>
+
+
+                                
+
+                                                            <tr>
+                                    <td class="fw-bold">orientation-scheds.edit</td>
+
+                                    <td class="table-action text-center">
+
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#edit--23" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#delete--23" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- Edit role modal -->
+                                <div id="edit--23" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="text-center mt-2 mb-4">
+                                                    <h4>Roles and Permissions</h4>
+                                                </div>
+
+                                                <form action="https://app.laverdad.edu.ph/admin/permissions/23" class="ps-3 pe-3" method="POST">
+                                                    <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                    <input type="hidden" name="_method" value="PUT">                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name<em class="text-danger">*</em></label>
+                                                        <input class="form-control" type="name" id="name" required="" value="orientation-scheds.edit" placeholder="e.g. Admin">
+                                                    </div>
+
+                                                    <div class="mb-3 text-center">
+                                                        <button class="btn btn-info" type="submit">Save</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                
+                                <div id="delete--23" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-md">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-4">
+                                                <div class="text-center">
+                                                    <i class="ri-alert-line h1 text-danger"></i>
+                                                    <h4 class="mt-2">Are you sure you want to delete this role?</strong>?</h4>
+
+
+                                                    <div class="d-flex mx-2 justify-content-center">
+                                                        <button type="button" class="btn btn-light my-2 mx-2" data-bs-dismiss="modal">Close</button>
+                                                        <form action="https://app.laverdad.edu.ph/admin/permissions/23" method="POST">
+                                                            <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                            <input type="hidden" name="_method" value="DELETE">                                                            <button type="submit" class="btn btn-danger my-2" data-bs-dismiss="modal">Confirm</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div>
+
+
+                                
+
+                                                            <tr>
+                                    <td class="fw-bold">orientation-scheds.delete</td>
+
+                                    <td class="table-action text-center">
+
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#edit--24" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#delete--24" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- Edit role modal -->
+                                <div id="edit--24" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="text-center mt-2 mb-4">
+                                                    <h4>Roles and Permissions</h4>
+                                                </div>
+
+                                                <form action="https://app.laverdad.edu.ph/admin/permissions/24" class="ps-3 pe-3" method="POST">
+                                                    <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                    <input type="hidden" name="_method" value="PUT">                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name<em class="text-danger">*</em></label>
+                                                        <input class="form-control" type="name" id="name" required="" value="orientation-scheds.delete" placeholder="e.g. Admin">
+                                                    </div>
+
+                                                    <div class="mb-3 text-center">
+                                                        <button class="btn btn-info" type="submit">Save</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                
+                                <div id="delete--24" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-md">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-4">
+                                                <div class="text-center">
+                                                    <i class="ri-alert-line h1 text-danger"></i>
+                                                    <h4 class="mt-2">Are you sure you want to delete this role?</strong>?</h4>
+
+
+                                                    <div class="d-flex mx-2 justify-content-center">
+                                                        <button type="button" class="btn btn-light my-2 mx-2" data-bs-dismiss="modal">Close</button>
+                                                        <form action="https://app.laverdad.edu.ph/admin/permissions/24" method="POST">
+                                                            <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                            <input type="hidden" name="_method" value="DELETE">                                                            <button type="submit" class="btn btn-danger my-2" data-bs-dismiss="modal">Confirm</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div>
+
+
+                                
+
+                                                            <tr>
+                                    <td class="fw-bold">applicants.view</td>
+
+                                    <td class="table-action text-center">
+
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#edit--25" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#delete--25" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- Edit role modal -->
+                                <div id="edit--25" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="text-center mt-2 mb-4">
+                                                    <h4>Roles and Permissions</h4>
+                                                </div>
+
+                                                <form action="https://app.laverdad.edu.ph/admin/permissions/25" class="ps-3 pe-3" method="POST">
+                                                    <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                    <input type="hidden" name="_method" value="PUT">                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name<em class="text-danger">*</em></label>
+                                                        <input class="form-control" type="name" id="name" required="" value="applicants.view" placeholder="e.g. Admin">
+                                                    </div>
+
+                                                    <div class="mb-3 text-center">
+                                                        <button class="btn btn-info" type="submit">Save</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                
+                                <div id="delete--25" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-md">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-4">
+                                                <div class="text-center">
+                                                    <i class="ri-alert-line h1 text-danger"></i>
+                                                    <h4 class="mt-2">Are you sure you want to delete this role?</strong>?</h4>
+
+
+                                                    <div class="d-flex mx-2 justify-content-center">
+                                                        <button type="button" class="btn btn-light my-2 mx-2" data-bs-dismiss="modal">Close</button>
+                                                        <form action="https://app.laverdad.edu.ph/admin/permissions/25" method="POST">
+                                                            <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                            <input type="hidden" name="_method" value="DELETE">                                                            <button type="submit" class="btn btn-danger my-2" data-bs-dismiss="modal">Confirm</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div>
+
+
+                                
+
+                                                            <tr>
+                                    <td class="fw-bold">applicants.add</td>
+
+                                    <td class="table-action text-center">
+
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#edit--26" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#delete--26" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- Edit role modal -->
+                                <div id="edit--26" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="text-center mt-2 mb-4">
+                                                    <h4>Roles and Permissions</h4>
+                                                </div>
+
+                                                <form action="https://app.laverdad.edu.ph/admin/permissions/26" class="ps-3 pe-3" method="POST">
+                                                    <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                    <input type="hidden" name="_method" value="PUT">                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name<em class="text-danger">*</em></label>
+                                                        <input class="form-control" type="name" id="name" required="" value="applicants.add" placeholder="e.g. Admin">
+                                                    </div>
+
+                                                    <div class="mb-3 text-center">
+                                                        <button class="btn btn-info" type="submit">Save</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                
+                                <div id="delete--26" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-md">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-4">
+                                                <div class="text-center">
+                                                    <i class="ri-alert-line h1 text-danger"></i>
+                                                    <h4 class="mt-2">Are you sure you want to delete this role?</strong>?</h4>
+
+
+                                                    <div class="d-flex mx-2 justify-content-center">
+                                                        <button type="button" class="btn btn-light my-2 mx-2" data-bs-dismiss="modal">Close</button>
+                                                        <form action="https://app.laverdad.edu.ph/admin/permissions/26" method="POST">
+                                                            <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                            <input type="hidden" name="_method" value="DELETE">                                                            <button type="submit" class="btn btn-danger my-2" data-bs-dismiss="modal">Confirm</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div>
+
+
+                                
+
+                                                            <tr>
+                                    <td class="fw-bold">applicants.edit</td>
+
+                                    <td class="table-action text-center">
+
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#edit--27" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#delete--27" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- Edit role modal -->
+                                <div id="edit--27" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="text-center mt-2 mb-4">
+                                                    <h4>Roles and Permissions</h4>
+                                                </div>
+
+                                                <form action="https://app.laverdad.edu.ph/admin/permissions/27" class="ps-3 pe-3" method="POST">
+                                                    <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                    <input type="hidden" name="_method" value="PUT">                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name<em class="text-danger">*</em></label>
+                                                        <input class="form-control" type="name" id="name" required="" value="applicants.edit" placeholder="e.g. Admin">
+                                                    </div>
+
+                                                    <div class="mb-3 text-center">
+                                                        <button class="btn btn-info" type="submit">Save</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                
+                                <div id="delete--27" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-md">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-4">
+                                                <div class="text-center">
+                                                    <i class="ri-alert-line h1 text-danger"></i>
+                                                    <h4 class="mt-2">Are you sure you want to delete this role?</strong>?</h4>
+
+
+                                                    <div class="d-flex mx-2 justify-content-center">
+                                                        <button type="button" class="btn btn-light my-2 mx-2" data-bs-dismiss="modal">Close</button>
+                                                        <form action="https://app.laverdad.edu.ph/admin/permissions/27" method="POST">
+                                                            <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                            <input type="hidden" name="_method" value="DELETE">                                                            <button type="submit" class="btn btn-danger my-2" data-bs-dismiss="modal">Confirm</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div>
+
+
+                                
+
+                                                            <tr>
+                                    <td class="fw-bold">applicants.delete</td>
+
+                                    <td class="table-action text-center">
+
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#edit--28" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#delete--28" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+
+                                <!-- Edit role modal -->
+                                <div id="edit--28" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="text-center mt-2 mb-4">
+                                                    <h4>Roles and Permissions</h4>
+                                                </div>
+
+                                                <form action="https://app.laverdad.edu.ph/admin/permissions/28" class="ps-3 pe-3" method="POST">
+                                                    <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                    <input type="hidden" name="_method" value="PUT">                                                    <div class="mb-3">
+                                                        <label for="name" class="form-label">Name<em class="text-danger">*</em></label>
+                                                        <input class="form-control" type="name" id="name" required="" value="applicants.delete" placeholder="e.g. Admin">
+                                                    </div>
+
+                                                    <div class="mb-3 text-center">
+                                                        <button class="btn btn-info" type="submit">Save</button>
+                                                    </div>
+
+                                                </form>
+
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                
+                                <div id="delete--28" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog modal-md">
+                                        <div class="modal-content">
+                                            <div class="modal-body p-4">
+                                                <div class="text-center">
+                                                    <i class="ri-alert-line h1 text-danger"></i>
+                                                    <h4 class="mt-2">Are you sure you want to delete this role?</strong>?</h4>
+
+
+                                                    <div class="d-flex mx-2 justify-content-center">
+                                                        <button type="button" class="btn btn-light my-2 mx-2" data-bs-dismiss="modal">Close</button>
+                                                        <form action="https://app.laverdad.edu.ph/admin/permissions/28" method="POST">
+                                                            <input type="hidden" name="_token" value="tgnKgonnm4cw4yopsEcdvGsEH6OTFhAFIFZhiZzB" autocomplete="off">                                                            <input type="hidden" name="_method" value="DELETE">                                                            <button type="submit" class="btn btn-danger my-2" data-bs-dismiss="modal">Confirm</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div>
+
+
+                                
+
+                            
+                        </tbody>
+                    </table>
+
+
+                </div> <!-- end card-body-->
+            </div> <!-- end card-->
+        </div> <!-- end col-->
+    </div>
 </div>
+<!-- container -->
+</div>
+<!-- content -->
+</div>
+
+
             </div>
 
             <!-- Footer Start -->
@@ -431,6 +2462,15 @@
             <!-- ============================================================== -->
             <!-- End Page content -->
             <!-- ============================================================== -->
+            <!-- Warning Alert Modal -->
+
+    
+    <!-- container -->
+
+</div>
+            </div>
+
+           
 
         </div>
         

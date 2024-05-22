@@ -401,10 +401,342 @@
                 <div class="content">
 
     <!-- Start Content-->
-    
-    <!-- container -->
+    <!-- ============================================================== -->
+<!-- Start Page Content here -->
+<!-- ============================================================== -->
+<!-- Start Content-->
+<div class="container-fluid">
 
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box">
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="javascript: void(0);">User-Management</a></li>
+                        <li class="breadcrumb-item active">Roles and Permissions</li>
+                    </ol>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="d-flex card-header justify-content-between align-items-center">
+                    <h3 class="header-title fw-bolder">Roles and Permissions</h3>
+                    <div class="float-end">
+                        
+                        <button type="button" class="btn text-light mx-1" style="background-color: #1F3463;" data-bs-toggle="modal" data-bs-target="#addRole">
+                            Add New Role
+                        </button>
+
+                        <!-- Add role modal -->
+                        <div id="addRole" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <div class="text-center mt-2 mb-4">
+                                            <h4>Roles and Permissions</h4>
+                                        </div>
+
+                                        <form action="#" class="ps-3 pe-3">
+
+                                            <div class="mb-3">
+                                                <label for="name" class="form-label">Name<em class="text-danger">*</em></label>
+                                                <input class="form-control" type="name" id="name" required="" placeholder="e.g. Admin">
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="permissions" class="form-label">Permissions</label>
+                                                <div class="mb-3">
+                                                    <select id="permissions" multiple class="form-control">
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                        <option>5</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="mb-3 text-center">
+                                                <button class="btn btn-info" type="submit">Add Role</button>
+                                            </div>
+
+                                        </form>
+
+                                    </div>
+                                </div><!-- /.modal-content -->
+                            </div><!-- /.modal-dialog -->
+                        </div><!-- /.modal -->
+
+
+
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="card-body">
+
+                    <table id="basic-datatable" class="table dt-responsive nowrap w-100" >
+                        <thead style="background-color: #1F3463; color: #fff;">
+                            <tr>
+                                <th>Role Name</th>
+
+                                <th class="text-center">Action</th>
+
+                            </tr>
+                        </thead>
+
+
+                        <tbody>
+
+                                                            <tr>
+                                    <td class="fw-bold">System Admin</td>
+
+
+
+                                    <td class="table-action text-center">
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#editUser" class="action-icon text-info"><i
+                                            class="mdi mdi-eye"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#editUser" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#deleteUser" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+                                
+                                                            <tr>
+                                    <td class="fw-bold">Registrar</td>
+
+
+
+                                    <td class="table-action text-center">
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#editUser" class="action-icon text-info"><i
+                                            class="mdi mdi-eye"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#editUser" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#deleteUser" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+                                
+                                                            <tr>
+                                    <td class="fw-bold">Academic Coordinator</td>
+
+
+
+                                    <td class="table-action text-center">
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#editUser" class="action-icon text-info"><i
+                                            class="mdi mdi-eye"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#editUser" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#deleteUser" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+                                
+                                                            <tr>
+                                    <td class="fw-bold">Program Head</td>
+
+
+
+                                    <td class="table-action text-center">
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#editUser" class="action-icon text-info"><i
+                                            class="mdi mdi-eye"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#editUser" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#deleteUser" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+                                
+                                                            <tr>
+                                    <td class="fw-bold">Finance</td>
+
+
+
+                                    <td class="table-action text-center">
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#editUser" class="action-icon text-info"><i
+                                            class="mdi mdi-eye"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#editUser" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#deleteUser" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+                                
+                                                            <tr>
+                                    <td class="fw-bold">Data Privacy Officer</td>
+
+
+
+                                    <td class="table-action text-center">
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#editUser" class="action-icon text-info"><i
+                                            class="mdi mdi-eye"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#editUser" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#deleteUser" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+                                
+                                                            <tr>
+                                    <td class="fw-bold">Student</td>
+
+
+
+                                    <td class="table-action text-center">
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#editUser" class="action-icon text-info"><i
+                                            class="mdi mdi-eye"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#editUser" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#deleteUser" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+                                
+                                                            <tr>
+                                    <td class="fw-bold">School Admin</td>
+
+
+
+                                    <td class="table-action text-center">
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#editUser" class="action-icon text-info"><i
+                                            class="mdi mdi-eye"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#editUser" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#deleteUser" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+                                
+                                                            <tr>
+                                    <td class="fw-bold">Department Coordinator (Preschool)</td>
+
+
+
+                                    <td class="table-action text-center">
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#editUser" class="action-icon text-info"><i
+                                            class="mdi mdi-eye"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#editUser" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#deleteUser" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+                                
+                                                            <tr>
+                                    <td class="fw-bold">Department Coordinator (Elementary)</td>
+
+
+
+                                    <td class="table-action text-center">
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#editUser" class="action-icon text-info"><i
+                                            class="mdi mdi-eye"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#editUser" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#deleteUser" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+                                
+                                                            <tr>
+                                    <td class="fw-bold">Department Coordinator (Junior High)</td>
+
+
+
+                                    <td class="table-action text-center">
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#editUser" class="action-icon text-info"><i
+                                            class="mdi mdi-eye"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#editUser" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#deleteUser" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+                                
+                                                            <tr>
+                                    <td class="fw-bold">Department Coordinator (Senior High)</td>
+
+
+
+                                    <td class="table-action text-center">
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#editUser" class="action-icon text-info"><i
+                                            class="mdi mdi-eye"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#editUser" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#deleteUser" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+                                
+                                                            <tr>
+                                    <td class="fw-bold">Custom Role</td>
+
+
+
+                                    <td class="table-action text-center">
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#editUser" class="action-icon text-info"><i
+                                            class="mdi mdi-eye"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#editUser" class="action-icon" style="color: #1F3463"><i
+                                                class="mdi mdi-pencil"></i></a>
+                                        <a type="button" data-bs-toggle="modal" data-bs-target="#deleteUser" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a>
+                                    </td>
+
+                                </tr>
+
+
+                                
+                            
+                        </tbody>
+                    </table>
+
+
+                </div> <!-- end card-body-->
+            </div> <!-- end card-->
+        </div> <!-- end col-->
+    </div>
 </div>
+<!-- container -->
+</div>
+<!-- content -->
+</div>
+
+
             </div>
 
             <!-- Footer Start -->
@@ -431,6 +763,14 @@
             <!-- ============================================================== -->
             <!-- End Page content -->
             <!-- ============================================================== -->
+            <!-- Warning Alert Modal -->
+    
+    <!-- container -->
+
+</div>
+            </div>
+
+          
 
         </div>
         

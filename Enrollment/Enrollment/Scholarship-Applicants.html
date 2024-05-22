@@ -401,6 +401,160 @@
                 <div class="content">
 
     <!-- Start Content-->
+     <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+    <!-- Start Content-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box">
+                    <div class="page-title-right">
+                        <ol class="breadcrumb m-0">
+                            <li class="breadcrumb-item"><a href="https://app.laverdad.edu.ph/admin/dashboard">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a href="https://app.laverdad.edu.ph/admin/scholarship-applicants/application-received">Scholarship Management</a></li>
+                            <li class="breadcrumb-item active">Scholarship Applicants</li>
+                        </ol>
+                    </div>
+                    <h4 class="page-title">Scholarship Applicants</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <!-- <div class="d-flex card-header justify-content-between align-items-center">
+                        <h3 class="header-title fw-bolder">Scholarship Application</h3>
+                    </div> -->
+
+                    <!-- Start Content-->
+                    <div class="row">
+                        <!-- Start nav-->
+                        <div class="col-12 ">
+                            <div class="card">
+
+
+                                <div class="card-body">
+                                    <ul class="nav nav-pills bg-nav-pills nav-justified mb-3">
+                                                                                    <li class="nav-item loadScreen">
+                                                <a href="https://app.laverdad.edu.ph/admin/scholarship-applicants/application-received" class="nav-link rounded-0  active ">
+                                                    Application Received <span class="small">(24)</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item loadScreen">
+                                                <a href="https://app.laverdad.edu.ph/admin/scholarship-applicants/unverified-unclear-attachments" class="nav-link rounded-0 ">
+                                                    Unclear Attachments <span class="small">(493)</span> /
+                                                    Reuploaded <span class="small">(35)</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item loadScreen">
+                                                <a href="https://app.laverdad.edu.ph/admin/scholarship-applicants/verified-requirements" class="nav-link rounded-0 ">
+                                                    Verified Requirements <span class="small">(65)</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item loadScreen">
+                                                <a href="https://app.laverdad.edu.ph/admin/scholarship-applicants/verified-applicants" class="nav-link rounded-0 ">
+                                                    Verified Applicants <span class="small">(72)</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item loadScreen">
+                                                <a href="https://app.laverdad.edu.ph/admin/scholarship-applicants/not-qualified-or-cancelled" class="nav-link rounded-0 ">
+                                                    Existing Scholar <span class="small">(19)</span> /
+                                                    Not Qualified <span class="small">(42)</span> /
+                                                    Cancelled <span class="small">(152)</span>
+                                                </a>
+                                            </li>
+                                                                            </ul>
+
+
+                                                                             <!-- /.modal -->
+                                                                             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+                                                                             <!-- <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script> -->
+                                                                             <script>
+                                                                                 var checkboxes = document.querySelectorAll('input[type="checkbox"][name="id[]"]');
+                                 
+                                                                                 var count = 0;
+                                                                                 document.getElementById('select_all_ids').onclick = function() {
+                                                                                     count = 0;
+                                                                                     for (var checkbox of checkboxes) {
+                                                                                         checkbox.checked = this.checked;
+                                                                                         if (checkbox.checked == true) {
+                                                                                             count++;
+                                                                                             document.getElementById('selected').innerHTML = count;
+                                                                                         } else {
+                                                                                             count = 0;
+                                                                                             document.getElementById('selected').innerHTML = count;
+                                                                                         }
+                                                                                     }
+                                                                                 }
+                                 
+                                                                                 for (var i = 0; i < checkboxes.length; i++) {
+                                                                                     checkboxes[i].addEventListener('click', function() {
+                                                                                         if(this.checked == true) {
+                                                                                             count++;
+                                                                                         } else {
+                                                                                             count--;
+                                                                                         }
+                                                                                         document.getElementById('selected').innerHTML = count;
+                                                                                     })
+                                                                                 }
+                                 
+                                                                                 $(function(e) {
+                                                                                     $(".checkbox_ids").change(function() {
+                                                                                         if ($(".checkbox_ids:checked").length > 0) {
+                                                                                             $(".submitButton").show();
+                                                                                             $(".resend").addClass('disabled');
+                                                                                             $(".set-exam").addClass('disabled');
+                                                                                         } else {
+                                                                                             $(".submitButton").hide();
+                                                                                             $(".resend").removeClass('disabled');
+                                                                                             $(".set-exam").removeClass('disabled');
+                                                                                         }
+                                                                                     });
+                                 
+                                                                                     $("#select_all_ids").click(function() {
+                                                                                         $('.checkbox_ids').prop('checked', $(this).prop('checked'));
+                                                                                         if ($(this).prop('checked')) {
+                                                                                             $(".submitButton").show();
+                                                                                             $(".resend").addClass('disabled');
+                                                                                             $(".set-exam").addClass('disabled');
+                                                                                         } else {
+                                                                                             $(".submitButton").hide();
+                                                                                             $(".resend").removeClass('disabled');
+                                                                                             $(".set-exam").removeClass('disabled');
+                                                                                         }
+                                                                                     });
+                                 
+                                                                                     $("#unselect-all").click(function () {
+                                                                                         $("#select_all_ids").prop('checked', false);
+                                                                                         $(".checkbox_ids").prop('checked', false);
+                                                                                         $(".submitButton").hide();
+                                                                                         $(".resend").removeClass('disabled');
+                                                                                         $(".set-exam").removeClass('disabled');
+                                                                                         count = 0;
+                                                                                         document.getElementById('selected').innerHTML = count;
+                                                                                     });
+                                                                                 });
+                                                                             </script>
+                                                                             <script>
+                                 
+                                                                             </script>
+                                                                         </div> <!-- end tab-pane -->
+                                                                         <!-- end New Applicants content -->
+                                                                     </div> <!-- end tab-content -->
+                                                                 </div> <!-- end card body -->
+                                                             </div> <!-- end card -->
+                                                         </div> <!-- end col -->
+                                                     </div>
+                                                     <!-- end row-->
+                                                 </div> <!-- end card -->
+                                             </div> <!-- end col -->
+                                         </div> <!-- end row -->
+                                     </div> <!-- container -->
+                                     <!-- ============================================================== -->
+                                     <!-- End Page content -->
+                                     <!-- ============================================================== -->
     
     <!-- container -->
 

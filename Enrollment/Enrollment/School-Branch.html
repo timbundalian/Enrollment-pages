@@ -401,6 +401,295 @@
                 <div class="content">
 
     <!-- Start Content-->
+     <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+    <!-- Start Content-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box">
+                    <div class="page-title-right">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-0">
+                                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">School Branches</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="d-flex card-header justify-content-between align-items-center">
+                        <h3 class="header-title fw-bolder">School Branches</h3>
+
+                        <button type="button" class="btn text-white" data-bs-toggle="modal" data-bs-target="#AddBranch" style="background-color: #1F3463;"><i class="mdi mdi-plus-thick"></i> <span>Add Branch</span></button>
+                    </div>
+
+                    <!-- Modal -->
+                    <div id="AddBranch" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <form action="https://app.laverdad.edu.ph/admin/school-branches/add-branch" method="POST" enctype="multipart/form-data">
+                                <input type="hidden" name="_token" value="MdXpGNSWmsRa47CI3txx2PxR65s89jnaiCacXUIE" autocomplete="off">                                <div class="modal-content">
+
+                                    <div class="modal-header" style="border: none">
+                                        <h4 class="modal-title mt-2" id="multiple-oneModalLabel">Add Branch</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="row g-2">
+                                            <div class="col-md form-floating mb-3">
+                                                <input type="text" class="form-control "
+                                                    id="branch_name" name="branch_name" placeholder="La Verdad Christian College" required />
+                                                <label for="branch_name">Branch Name</label>
+                                                                                            </div>
+                                            <div class="col-md form-floating mb-3">
+                                                <input type="email" class="form-control " id="email" name="email" placeholder="name@example.com" required />
+                                                <label for="email">Email address</label>
+                                                                                            </div>
+                                        </div>
+
+                                        <div class="row g-2">
+                                            <div class="col-md form-floating mb-3">
+                                                <input type="text" class="form-control " id="address1" name="address1" placeholder="Address" required />
+                                                <label for="address1">Address 1</label>
+                                                                                            </div>
+                                            <div class="col-md form-floating mb-3">
+                                                <input type="text" class="form-control" id="address2" name="address2" placeholder="Address" />
+                                                <label for="address2">Address 2</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="row g-2">
+                                            <div class="col-md">
+                                                <div class="form-floating">
+                                                    <select class="form-select " id="is_main_branch" name="is_main_branch" aria-label="Floating label select example" required>
+                                                        <option selected disabled>Open this select menu</option>
+                                                        <option value="1">Yes</option>
+                                                        <option value="0">No</option>
+                                                    </select>
+                                                    <label for="is_main_branch">Is this a Main Branch?</label>
+                                                                                                    </div>
+                                            </div>
+
+                                            <div class="col-md">
+                                                <div class="form-floating">
+                                                    <select class="form-select " id="is_active"
+                                                        name="is_active" aria-label="Floating label select example" required>
+                                                        <option selected disabled>Open this select menu</option>
+                                                        <option value="1">Yes</option>
+                                                        <option value="0">No</option>
+                                                    </select>
+                                                    <label for="is_active">Is this Branch Active?</label>
+                                                                                                    </div>
+                                            </div>
+
+                                            <div class="row g-2">
+                                                <div class="col-md-6 form-floating mb-3">
+                                                    <input type="tel" class="form-control " id="contact_no" name="contact_no" placeholder="La Verdad Christian College" required />
+                                                    <label for="contact_no">Contact Number</label>
+                                                                                                    </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-6 mb-2">
+                                                    <label class="form-label">Branch Logo</label>
+                                                    <input class="form-control " type="file" id="logo_header" name="logo_header" accept="image/*" required />
+                                                                                                    </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="float-end mx-2">
+                                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn" style="background-color: #1F3463; color: #fff;">Save</button>
+                                        </div>
+
+                                    </div>
+
+                                </div><!-- /.modal-content -->
+
+                            </form>
+
+                        </div><!-- /.modal-dialog -->
+                    </div>
+
+                    <div class="card-body pt-0">
+                        <table id="basic-datatable" class="table dt-responsive nowrap w-100">
+                                                        <thead style="background-color: #1F3463; color: #fff;">
+                                <tr>
+                                    <th>Branch Name</th>
+                                    <th>Address 1</th>
+                                    <th>Contact Number</th>
+                                    <th>Email</th>
+                                    <th>Is Main Branch?</th>
+                                    <th>Is Active?</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                                                    <tr>
+                                        <td>La Verdad Christian College - Apalit</td>
+                                        <td>Mac Arthur High-way, Sampaloc, Apalit, Pampanga</td>
+                                        <td>09479998499</td>
+                                        <td>registrar@laverdad.edu.ph</td>
+                                        <td>
+                                                                                            Yes
+                                                                                    </td>
+                                        <td>
+                                                                                            Yes
+                                                                                    </td>
+                                        <td class="table-action">
+                                            <a type="button" data-bs-toggle="modal" data-bs-target="#editBranch-1" class="action-icon" style="color: #1F3463"> <i class="mdi mdi-pencil"></i></a>
+                                            <!-- <a type="button" data-bs-toggle="modal" data-bs-target="#deleteBranch-1" class="action-icon text-danger"> <i class="mdi mdi-delete"></i></a> -->
+                                        </td>
+
+                                    </tr>
+
+                                    <div id="editBranch-1" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="multiple-oneModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg">
+                                            <form action="https://app.laverdad.edu.ph/admin/school-branches/update/1" method="POST" enctype="multipart/form-data">
+                                                <input type="hidden" name="_token" value="MdXpGNSWmsRa47CI3txx2PxR65s89jnaiCacXUIE" autocomplete="off">                                                <input type="hidden" name="_method" value="PUT">                                                <div class="modal-content">
+
+                                                    <div class="modal-header" style="border: none">
+                                                        <h4 class="modal-title mt-2" id="multiple-oneModalLabel">Edit Branch</h4>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+
+                                                        <div class="row g-2">
+                                                            <div class="col-md form-floating mb-3">
+                                                                <input type="text" class="form-control "
+                                                                    id="branch_name" name="branch_name" value="La Verdad Christian College - Apalit" required />
+                                                                <label for="branch_name">Branch Name</label>
+                                                                                                                            </div>
+                                                            <div class="col-md form-floating mb-3">
+                                                                <input type="email" class="form-control " id="email" name="email" value="registrar@laverdad.edu.ph" required />
+                                                                <label for="email">Email address</label>
+                                                                                                                            </div>
+                                                        </div>
+
+                                                        <div class="row g-2">
+                                                            <div class="col-md form-floating mb-3">
+                                                                <input type="text" class="form-control " id="Address1" name="address1" value="Mac Arthur High-way, Sampaloc, Apalit, Pampanga" required />
+                                                                <label for="address1">Address 1</label>
+                                                                                                                            </div>
+                                                            <div class="col-md form-floating mb-3">
+                                                                <input type="text" class="form-control" id="address2" name="address2" value="" />
+                                                                <label for="address2">Address 2</label>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row g-2">
+                                                            <div class="col-md">
+                                                                <div class="form-floating">
+                                                                    <select class="form-select " id="is_main_branch" name="is_main_branch" aria-label="Floating label select example" required>
+                                                                        <option value="">Open this select menu</option>
+                                                                        <option value="1" selected>Yes</option>
+                                                                        <option value="0" >No</option>
+                                                                    </select>
+                                                                    <label for="is_main_branch">Is this a Main Branch?</label>
+                                                                                                                                    </div>
+                                                            </div>
+
+                                                            <div class="col-md">
+                                                                <div class="form-floating">
+                                                                    <select class="form-select " id="is_active" name="is_active" aria-label="Floating label select example" required>
+                                                                        <option value="">Open this select menu</option>
+                                                                        <option value="1" selected>Yes</option>
+                                                                        <option value="0" >No</option>
+                                                                    </select>
+                                                                    <label for="is_active">Is this Branch Active?</label>
+                                                                                                                                    </div>
+                                                            </div>
+
+                                                            <div class="row g-2">
+                                                                <div class="col-md-6 form-floating mb-3">
+                                                                    <input type="tel" class="form-control " id="Contact_no" name="contact_no" value="09479998499" required />
+                                                                    <label for="contact_no">Contact Number</label>
+                                                                                                                                    </div>
+                                                            </div>
+
+                                                            
+
+                                                        </div>
+
+                                                        <div class="float-end mx-2">
+                                                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn" style="background-color: #1F3463; color: #fff;">Save</button>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div><!-- /.modal-content -->
+
+                                            </form>
+
+                                        </div><!-- /.modal-dialog -->
+                                    </div> <!-- Update modal -->
+
+                                    <!-- Danger Alert Modal -->
+                                    <div id="deleteBranch-1" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog modal-sm">
+                                            <div class="modal-content modal-filled bg-danger">
+                                                <form action="https://app.laverdad.edu.ph/admin/school-branches/delete/1" method="post">
+                                                    <input type="hidden" name="_token" value="MdXpGNSWmsRa47CI3txx2PxR65s89jnaiCacXUIE" autocomplete="off">                                                    <input type="hidden" name="_method" value="DELETE">                                                    <div class="modal-body p-4">
+                                                        <div class="text-center">
+                                                            <i class="ri-close-circle-line h1"></i>
+                                                            <h4 class="mt-2">Oh snap!</h4>
+                                                            <p class="mt-3"><strong>Are you sure you want to delete La Verdad Christian College - Apalit</strong>?</p>
+                                                            <p class="mt-3">Please note that when you delete this branch, all data associated with this branch will also be deleted.</p>
+                                                            <button type="submit" class="btn btn-light my-2" data-bs-dismiss="modal">Continue</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div><!-- /.modal -->
+                                                            </tbody>
+                        </table>
+                    </div> <!-- end card-->
+                </div> <!-- end col-->
+            </div> <!-- end row -->
+        </div>
+        <!-- container -->
+    </div>
+
+    <!-- End Page content -->
+            </div>
+
+            <!-- Footer Start -->
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="text-md-end footer-links d-none d-md-block">
+                                <strong>
+                                    <u>
+                                        <a href="https://app.laverdad.edu.ph/scholarship-application/privacy-policy" target="_blank">
+                                            Terms and Conditions
+                                        </a>
+                                    </u>
+                                </strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- end Footer -->
+
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+            <!-- Warning Alert Modal -->
+
     
     <!-- container -->
 
